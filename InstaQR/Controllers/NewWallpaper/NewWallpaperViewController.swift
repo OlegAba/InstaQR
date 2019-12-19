@@ -9,10 +9,15 @@
 import UIKit
 import LPLivePhotoGenerator
 
+protocol NewWallpaperDelegate {
+    func newWallpaper(_ newWallpaperViewController: NewWallpaperViewController, didSelectSection section: NewWallpaperSection)
+}
+
 class NewWallpaperViewController: InsetGroupedTableViewController {
     
     // MARK: - Internal Properties
     
+    var delegate: NewWallpaperDelegate!
     var wallpaperImage: UIImage?
     var wallpaperSource: String?
     var barcode: Barcode?
@@ -177,6 +182,17 @@ extension NewWallpaperViewController: ButtonsPopUpNotificationDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension NewWallpaperViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        deselectTableViewRow()
+        guard let section = NewWallpaperSection(rawValue: indexPath.section) else { return }
+        delegate.newWallpaper(self, didSelectSection: section)
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension NewWallpaperViewController: UITableViewDataSource {
     
@@ -236,30 +252,4 @@ extension NewWallpaperViewController: UITableViewDataSource {
         }
     }
     
-}
-
-// MARK: - UITableViewDelegate
-extension NewWallpaperViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        deselectTableViewRow()
-        
-        guard let newWallpaperNavigationController = System.shared.appDelegate().newWallpaperNavigationController else { return }
-        
-        guard let section = NewWallpaperSection(rawValue: indexPath.section) else { return }
-        
-        switch section {
-        case .Wallpaper:
-            
-            let selectWallpaperViewController = SelectWallpaperViewController()
-            selectWallpaperViewController.delegate = newWallpaperNavigationController
-            newWallpaperNavigationController.pushViewController(selectWallpaperViewController, animated: true)
-        case .ShareAction:
-            
-            let createShareActionViewController = CreateShareActionViewController()
-            createShareActionViewController.delegate = newWallpaperNavigationController
-            newWallpaperNavigationController.pushViewController(createShareActionViewController, animated: true)
-        }
-    }
 }

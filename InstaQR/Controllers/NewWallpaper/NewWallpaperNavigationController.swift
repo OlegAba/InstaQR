@@ -27,6 +27,7 @@ class NewWallpaperNavigationController: UINavigationController {
     init() {
         newWallpaperViewController = NewWallpaperViewController()
         super.init(rootViewController: newWallpaperViewController)
+        newWallpaperViewController.delegate = self
     }
     
     // MARK: - View Life Cycle
@@ -45,6 +46,23 @@ class NewWallpaperNavigationController: UINavigationController {
         alertPopUpNotificationViewController.alertType = .error
         alertPopUpNotificationViewController.messageText = message
         present(alertPopUpNotificationViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - NewWallpaperDelegate
+extension NewWallpaperNavigationController: NewWallpaperDelegate {
+    func newWallpaper(_ newWallpaperViewController: NewWallpaperViewController, didSelectSection section: NewWallpaperSection) {
+        
+        switch section {
+        case .Wallpaper:
+            let selectWallpaperViewController = SelectWallpaperViewController()
+            selectWallpaperViewController.delegate = self
+            pushViewController(selectWallpaperViewController, animated: true)
+        case .ShareAction:
+            let createShareActionViewController = CreateShareActionViewController()
+            createShareActionViewController.delegate = self
+            pushViewController(createShareActionViewController, animated: true)
+        }
     }
 }
 
