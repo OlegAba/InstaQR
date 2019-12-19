@@ -77,7 +77,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
-        cell.backgroundColor = .tableViewCellBackgroundColor
+        cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
         cell.iconImage = UIImage(systemName: "chevron.right")
         cell.logoImageView.tintColor = .systemBlue
         
