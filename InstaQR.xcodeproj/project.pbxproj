@@ -28,6 +28,12 @@
 		7C5D283C23AB06920019111F /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283823AB06920019111F /* FAQViewController.swift */; };
 		7C5D283D23AB06920019111F /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283923AB06920019111F /* AnswersViewController.swift */; };
 		7C5D283E23AB06920019111F /* PageSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283A23AB06920019111F /* PageSectionViewController.swift */; };
+		7C5D284623AB073C0019111F /* LoadingNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284023AB073C0019111F /* LoadingNotificationViewController.swift */; };
+		7C5D284723AB073C0019111F /* ButtonsPopUpNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284123AB073C0019111F /* ButtonsPopUpNotificationViewController.swift */; };
+		7C5D284823AB073C0019111F /* AlertPopUpNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284223AB073C0019111F /* AlertPopUpNotificationViewController.swift */; };
+		7C5D284923AB073C0019111F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284323AB073C0019111F /* NotificationViewController.swift */; };
+		7C5D284A23AB073C0019111F /* PopUpNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284423AB073C0019111F /* PopUpNotificationViewController.swift */; };
+		7C5D284B23AB073C0019111F /* NotificationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284523AB073C0019111F /* NotificationAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		7C5D283823AB06920019111F /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		7C5D283923AB06920019111F /* AnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
 		7C5D283A23AB06920019111F /* PageSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageSectionViewController.swift; sourceTree = "<group>"; };
+		7C5D284023AB073C0019111F /* LoadingNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingNotificationViewController.swift; sourceTree = "<group>"; };
+		7C5D284123AB073C0019111F /* ButtonsPopUpNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsPopUpNotificationViewController.swift; sourceTree = "<group>"; };
+		7C5D284223AB073C0019111F /* AlertPopUpNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPopUpNotificationViewController.swift; sourceTree = "<group>"; };
+		7C5D284323AB073C0019111F /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		7C5D284423AB073C0019111F /* PopUpNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpNotificationViewController.swift; sourceTree = "<group>"; };
+		7C5D284523AB073C0019111F /* NotificationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,7 @@
 				7C5D281D23AB03580019111F /* TableViewController.swift */,
 				7C5D281F23AB03820019111F /* NewWallpaper */,
 				7C5D283223AB06330019111F /* Settings */,
+				7C5D283F23AB07230019111F /* Notifications */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +199,19 @@
 				7C5D283923AB06920019111F /* AnswersViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		7C5D283F23AB07230019111F /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D284523AB073C0019111F /* NotificationAnimationController.swift */,
+				7C5D284323AB073C0019111F /* NotificationViewController.swift */,
+				7C5D284023AB073C0019111F /* LoadingNotificationViewController.swift */,
+				7C5D284423AB073C0019111F /* PopUpNotificationViewController.swift */,
+				7C5D284223AB073C0019111F /* AlertPopUpNotificationViewController.swift */,
+				7C5D284123AB073C0019111F /* ButtonsPopUpNotificationViewController.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
@@ -322,10 +348,14 @@
 			files = (
 				7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */,
 				7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */,
+				7C5D284A23AB073C0019111F /* PopUpNotificationViewController.swift in Sources */,
 				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
 				7C5D283E23AB06920019111F /* PageSectionViewController.swift in Sources */,
+				7C5D284723AB073C0019111F /* ButtonsPopUpNotificationViewController.swift in Sources */,
+				7C5D284623AB073C0019111F /* LoadingNotificationViewController.swift in Sources */,
 				7C5D283C23AB06920019111F /* FAQViewController.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
+				7C5D284B23AB073C0019111F /* NotificationAnimationController.swift in Sources */,
 				7C5D282F23AB055E0019111F /* PreviewWallpaperViewController.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
@@ -333,7 +363,9 @@
 				7C5D281E23AB03580019111F /* TableViewController.swift in Sources */,
 				7C5D282B23AB05010019111F /* BarcodeScannerViewController.swift in Sources */,
 				7C5D283B23AB06920019111F /* OnBoardingViewController.swift in Sources */,
+				7C5D284823AB073C0019111F /* AlertPopUpNotificationViewController.swift in Sources */,
 				7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */,
+				7C5D284923AB073C0019111F /* NotificationViewController.swift in Sources */,
 				7C5D282923AB04DF0019111F /* CreateShareActionViewController.swift in Sources */,
 				7C5D283423AB064A0019111F /* SettingsViewController.swift in Sources */,
 				7C5D283623AB067E0019111F /* ContainerPageViewController.swift in Sources */,
