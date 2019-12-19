@@ -19,6 +19,7 @@
 		7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */; };
 		7C5D282923AB04DF0019111F /* CreateShareActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282823AB04DF0019111F /* CreateShareActionViewController.swift */; };
 		7C5D282B23AB05010019111F /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282A23AB05010019111F /* BarcodeScannerViewController.swift */; };
+		7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282C23AB053E0019111F /* UserInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropWallpaperViewController.swift; sourceTree = "<group>"; };
 		7C5D282823AB04DF0019111F /* CreateShareActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShareActionViewController.swift; sourceTree = "<group>"; };
 		7C5D282A23AB05010019111F /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		7C5D282C23AB053E0019111F /* UserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */,
 				7C5D282823AB04DF0019111F /* CreateShareActionViewController.swift */,
 				7C5D282A23AB05010019111F /* BarcodeScannerViewController.swift */,
+				7C5D282C23AB053E0019111F /* UserInputViewController.swift */,
 			);
 			path = NewWallpaper;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */,
+				7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */,
 				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
