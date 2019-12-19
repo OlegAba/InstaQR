@@ -22,6 +22,7 @@
 		7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282C23AB053E0019111F /* UserInputViewController.swift */; };
 		7C5D282F23AB055E0019111F /* PreviewWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282E23AB055E0019111F /* PreviewWallpaperViewController.swift */; };
 		7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283023AB05860019111F /* PhotoAlbumSelectionViewController.swift */; };
+		7C5D283423AB064A0019111F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283323AB064A0019111F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7C5D282C23AB053E0019111F /* UserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputViewController.swift; sourceTree = "<group>"; };
 		7C5D282E23AB055E0019111F /* PreviewWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewWallpaperViewController.swift; sourceTree = "<group>"; };
 		7C5D283023AB05860019111F /* PhotoAlbumSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumSelectionViewController.swift; sourceTree = "<group>"; };
+		7C5D283323AB064A0019111F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				7C5D281D23AB03580019111F /* TableViewController.swift */,
 				7C5D281F23AB03820019111F /* NewWallpaper */,
+				7C5D283223AB06330019111F /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +163,14 @@
 				7C5D283023AB05860019111F /* PhotoAlbumSelectionViewController.swift */,
 			);
 			path = NewWallpaper;
+			sourceTree = "<group>";
+		};
+		7C5D283223AB06330019111F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D283323AB064A0019111F /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
@@ -305,6 +316,7 @@
 				7C5D282B23AB05010019111F /* BarcodeScannerViewController.swift in Sources */,
 				7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */,
 				7C5D282923AB04DF0019111F /* CreateShareActionViewController.swift in Sources */,
+				7C5D283423AB064A0019111F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
