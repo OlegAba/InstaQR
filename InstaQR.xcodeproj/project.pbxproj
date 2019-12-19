@@ -79,6 +79,11 @@
 		7C5D28AA23AB08B90019111F /* EthereumBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288A23AB08B90019111F /* EthereumBarcode.swift */; };
 		7C5D28AB23AB08B90019111F /* BitcoinCashBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288B23AB08B90019111F /* BitcoinCashBarcode.swift */; };
 		7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288C23AB08B90019111F /* ImageManager.swift */; };
+		7C5D28AE23AB0DCA0019111F /* NewWallpaperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28AD23AB0DCA0019111F /* NewWallpaperViewModel.swift */; };
+		7C5D28B323AB0DE40019111F /* GenerateLiveWallpaperWithBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28AF23AB0DE30019111F /* GenerateLiveWallpaperWithBarcode.swift */; };
+		7C5D28B423AB0DE40019111F /* UnsplashEndpointRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28B023AB0DE30019111F /* UnsplashEndpointRequest.swift */; };
+		7C5D28B523AB0DE40019111F /* VideoFromImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28B123AB0DE30019111F /* VideoFromImages.swift */; };
+		7C5D28B623AB0DE40019111F /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28B223AB0DE40019111F /* System.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +163,11 @@
 		7C5D288A23AB08B90019111F /* EthereumBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumBarcode.swift; sourceTree = "<group>"; };
 		7C5D288B23AB08B90019111F /* BitcoinCashBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashBarcode.swift; sourceTree = "<group>"; };
 		7C5D288C23AB08B90019111F /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		7C5D28AD23AB0DCA0019111F /* NewWallpaperViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperViewModel.swift; sourceTree = "<group>"; };
+		7C5D28AF23AB0DE30019111F /* GenerateLiveWallpaperWithBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateLiveWallpaperWithBarcode.swift; sourceTree = "<group>"; };
+		7C5D28B023AB0DE30019111F /* UnsplashEndpointRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsplashEndpointRequest.swift; sourceTree = "<group>"; };
+		7C5D28B123AB0DE30019111F /* VideoFromImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFromImages.swift; sourceTree = "<group>"; };
+		7C5D28B223AB0DE40019111F /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +265,7 @@
 		7C5D281A23AB029D0019111F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7C5D28AD23AB0DCA0019111F /* NewWallpaperViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -262,6 +273,10 @@
 		7C5D281B23AB02AF0019111F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7C5D28B223AB0DE40019111F /* System.swift */,
+				7C5D28AF23AB0DE30019111F /* GenerateLiveWallpaperWithBarcode.swift */,
+				7C5D28B023AB0DE30019111F /* UnsplashEndpointRequest.swift */,
+				7C5D28B123AB0DE30019111F /* VideoFromImages.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -543,6 +558,7 @@
 				7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */,
 				7C5D28A623AB08B90019111F /* RippleBarcode.swift in Sources */,
 				7C5D286423AB07F30019111F /* BarcodeScanGuideView.swift in Sources */,
+				7C5D28B323AB0DE40019111F /* GenerateLiveWallpaperWithBarcode.swift in Sources */,
 				7C5D284A23AB073C0019111F /* PopUpNotificationViewController.swift in Sources */,
 				7C5D289423AB08B90019111F /* BarcodeInput.swift in Sources */,
 				7C5D289623AB08B90019111F /* LinkedinBarcode.swift in Sources */,
@@ -553,6 +569,7 @@
 				7C5D285923AB07DF0019111F /* BaseTableViewCell.swift in Sources */,
 				7C5D289C23AB08B90019111F /* YoutubeBarcode.swift in Sources */,
 				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
+				7C5D28B523AB0DE40019111F /* VideoFromImages.swift in Sources */,
 				7C5D283E23AB06920019111F /* PageSectionViewController.swift in Sources */,
 				7C5D288E23AB08B90019111F /* SettingsSection.swift in Sources */,
 				7C5D289723AB08B90019111F /* SnapchatBarcode.swift in Sources */,
@@ -568,6 +585,7 @@
 				7C5D285023AB07D50019111F /* SubtitleLabelHeaderView.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
 				7C5D284B23AB073C0019111F /* NotificationAnimationController.swift in Sources */,
+				7C5D28B623AB0DE40019111F /* System.swift in Sources */,
 				7C5D282F23AB055E0019111F /* PreviewWallpaperViewController.swift in Sources */,
 				7C5D286723AB07F30019111F /* PrimaryButton.swift in Sources */,
 				7C5D285B23AB07DF0019111F /* TableViewCell.swift in Sources */,
@@ -592,7 +610,9 @@
 				7C5D288D23AB08B90019111F /* SelectWallpaperSection.swift in Sources */,
 				7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */,
 				7C5D289523AB08B90019111F /* BarcodeCategory.swift in Sources */,
+				7C5D28B423AB0DE40019111F /* UnsplashEndpointRequest.swift in Sources */,
 				7C5D289123AB08B90019111F /* NewWallpaperSection.swift in Sources */,
+				7C5D28AE23AB0DCA0019111F /* NewWallpaperViewModel.swift in Sources */,
 				7C5D284923AB073C0019111F /* NotificationViewController.swift in Sources */,
 				7C5D28A423AB08B90019111F /* MoneroBarcode.swift in Sources */,
 				7C5D282923AB04DF0019111F /* CreateShareActionViewController.swift in Sources */,
