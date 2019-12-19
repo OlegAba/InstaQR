@@ -78,7 +78,9 @@ class Barcode: NSObject {
     }
     
     static func primaryColorFor(barcodeType: BarcodeType) -> UIColor? {
-        return UIColor.barcodeTypePrimaryColorDict[barcodeType]
+        let barcodeTypeName = barcodeType.rawValue
+        let colorName = barcodeTypeName.lowercased().replacingOccurrences(of: " ", with: "")
+        return UIColor(named: colorName)
     }
     
     func generateQRImageWith(data: String, size: CGSize) -> UIImage? {

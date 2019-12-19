@@ -51,7 +51,7 @@ extension FAQViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
-        cell.backgroundColor = .tableViewCellBackgroundColor
+        cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
         cell.iconImage = UIImage(systemName: "chevron.right")
         
         let currentFAQ = FAQSection[indexPath.row]
