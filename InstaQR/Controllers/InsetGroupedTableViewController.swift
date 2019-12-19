@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  InsetGroupedTableViewController.swift
 //  InstaQR
 //
 //  Created by Oleg Abalonski on 12/18/19.
