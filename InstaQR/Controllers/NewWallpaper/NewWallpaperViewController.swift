@@ -11,10 +11,14 @@ import LPLivePhotoGenerator
 
 class NewWallpaperViewController: InsetGroupedTableViewController {
     
+    // MARK: - Internal Properties
+    
     var wallpaperImage: UIImage?
     var wallpaperSource: String?
     var barcode: Barcode?
     var barcodeLink: String?
+    
+    // MARK: - Private Properties
     
     fileprivate lazy var createPrimaryButton: PrimaryButton = {
         let button = PrimaryButton()
@@ -23,7 +27,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         return button
     }()
     
-    fileprivate let newWallpaperTableViewCellID = "NewWallpaperTableViewCellReuseIdentifier"
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,8 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
             createPrimaryButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
         ])
     }
+    
+    // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
         navigationItem.title = "New Wallpaper"
@@ -60,28 +66,15 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: newWallpaperTableViewCellID)
+        tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.rowHeight = 100.0
         tableView.isScrollEnabled = false
     }
     
-    func set(wallpaperImage: UIImage, sourceTitle: String) {
-        self.wallpaperImage = wallpaperImage
-        self.wallpaperSource = sourceTitle
-        tableView.reloadData()
-        navigationItem.rightBarButtonItem?.isEnabled = true
-    }
-    
-    func set(barcode: Barcode, shareActionLink: String) {
-        self.barcode = barcode
-        self.barcodeLink = shareActionLink
-        tableView.reloadData()
-        navigationItem.rightBarButtonItem?.isEnabled = true
-    }
+    // MARK: - Actions
     
     @objc fileprivate func settingsButtonWasTapped() {
         let settingsViewController = UINavigationController(rootViewController: SettingsViewController())
-        //settingsViewController.modalPresentationStyle = .overFullScreen
         present(settingsViewController, animated: true, completion: nil)
     }
     
@@ -110,6 +103,8 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         
         createLiveWallpaper()
     }
+    
+    // MARK: - Private Methods
     
     fileprivate func createLiveWallpaper() {
         guard let wallpaperImage = wallpaperImage, let barcode = barcode else { return }
@@ -146,11 +141,27 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         }
     }
     
+    // MARK: - Internal Methods
+    
+    func set(wallpaperImage: UIImage, sourceTitle: String) {
+        self.wallpaperImage = wallpaperImage
+        self.wallpaperSource = sourceTitle
+        tableView.reloadData()
+        navigationItem.rightBarButtonItem?.isEnabled = true
+    }
+    
+    func set(barcode: Barcode, shareActionLink: String) {
+        self.barcode = barcode
+        self.barcodeLink = shareActionLink
+        tableView.reloadData()
+        navigationItem.rightBarButtonItem?.isEnabled = true
+    }
 }
 
 // MARK: - ButtonsPopUpNotificationDelegate
 extension NewWallpaperViewController: ButtonsPopUpNotificationDelegate {
     
+    // NOTE: - Button confirms deletion of current wallpaper
     func primaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
         
         buttonsPopUpNotificationViewController.dismiss(animated: true) {
@@ -166,14 +177,15 @@ extension NewWallpaperViewController: ButtonsPopUpNotificationDelegate {
     }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension NewWallpaperViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension NewWallpaperViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return NewWallpaperSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         guard let section = NewWallpaperSection(rawValue: section) else { return 0 }
         
         switch section {
@@ -183,7 +195,8 @@ extension NewWallpaperViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: newWallpaperTableViewCellID, for: indexPath) as? NewWallpaperTableViewCell else { return UITableViewCell() }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? NewWallpaperTableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         
@@ -191,29 +204,48 @@ extension NewWallpaperViewController: UITableViewDelegate, UITableViewDataSource
         
         switch section {
         case .Wallpaper:
+            
             guard let wallpaperItem = WallpaperItem(rawValue: indexPath.row) else { return cell }
             let wallpaperViewModel = NewWallpaperViewModel(newWallpaperItem: wallpaperItem)
-            wallpaperViewModel.wallpaperImage = wallpaperImage
-            wallpaperViewModel.subtitle = wallpaperSource
-            wallpaperViewModel.isComplete = (wallpaperImage != nil)
+            setup(viewModel: wallpaperViewModel, for: section)
             cell.set(viewModel: wallpaperViewModel)
         case .ShareAction:
+            
             guard let shareActionItem = ShareActionItem(rawValue: indexPath.row) else { return cell }
             let shareActionViewModel = NewWallpaperViewModel(newWallpaperItem: shareActionItem)
-            shareActionViewModel.wallpaperImage = wallpaperImage
-            shareActionViewModel.barcodeImage = barcode?.icon
-            shareActionViewModel.subtitle = barcodeLink
-            shareActionViewModel.isComplete = (barcode != nil)
+            setup(viewModel: shareActionViewModel, for: section)
             cell.set(viewModel: shareActionViewModel)
         }
         
         return cell
     }
     
+    fileprivate func setup(viewModel: NewWallpaperViewModel, for newWallpaperSection: NewWallpaperSection) {
+        viewModel.wallpaperImage = wallpaperImage
+        
+        switch newWallpaperSection {
+        case .Wallpaper:
+            
+            viewModel.subtitle = wallpaperSource
+            viewModel.isComplete = (wallpaperImage != nil)
+        case .ShareAction:
+            
+            viewModel.barcodeImage = barcode?.icon
+            viewModel.subtitle = barcodeLink
+            viewModel.isComplete = (barcode != nil)
+        }
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension NewWallpaperViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         deselectTableViewRow()
         
-        guard let newWallpaperNavigationController = (parent as? NewWallpaperNavigationController) else { return }
+        guard let newWallpaperNavigationController = System.shared.appDelegate().newWallpaperNavigationController else { return }
         
         guard let section = NewWallpaperSection(rawValue: indexPath.section) else { return }
         
@@ -222,12 +254,12 @@ extension NewWallpaperViewController: UITableViewDelegate, UITableViewDataSource
             
             let selectWallpaperViewController = SelectWallpaperViewController()
             selectWallpaperViewController.delegate = newWallpaperNavigationController
-            navigationController?.pushViewController(selectWallpaperViewController, animated: true)
+            newWallpaperNavigationController.pushViewController(selectWallpaperViewController, animated: true)
         case .ShareAction:
             
             let createShareActionViewController = CreateShareActionViewController()
             createShareActionViewController.delegate = newWallpaperNavigationController
-            navigationController?.pushViewController(createShareActionViewController, animated: true)
+            newWallpaperNavigationController.pushViewController(createShareActionViewController, animated: true)
         }
     }
 }

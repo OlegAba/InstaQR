@@ -13,17 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var newWallpaperNavigationController: NewWallpaperNavigationController?
-    var onBoardingViewController: OnBoardingViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow()
+        newWallpaperNavigationController = NewWallpaperNavigationController()
         
         if System.shared.isFirstTimeLaunching() {
-            onBoardingViewController = OnBoardingViewController()
+            let onBoardingViewController = OnBoardingViewController()
             window?.rootViewController = onBoardingViewController
         } else {
-            newWallpaperNavigationController = NewWallpaperNavigationController()
             window?.rootViewController = newWallpaperNavigationController
         }
         
