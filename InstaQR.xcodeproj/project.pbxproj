@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		7C5D280123AAF6430019111F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D280023AAF6430019111F /* ViewController.swift */; };
 		7C5D280623AAF6490019111F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280523AAF6490019111F /* Assets.xcassets */; };
 		7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280723AAF6490019111F /* LaunchScreen.storyboard */; };
+		7C5D281623AB010E0019111F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D281523AB010E0019111F /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7C5D280523AAF6490019111F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C5D280823AAF6490019111F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5D280A23AAF6490019111F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C5D281523AB010E0019111F /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				7C5D27FC23AAF6430019111F /* AppDelegate.swift */,
-				7C5D280023AAF6430019111F /* ViewController.swift */,
-				7C5D280A23AAF6490019111F /* Info.plist */,
+				7C5D281723AB02140019111F /* Controllers */,
+				7C5D281823AB02260019111F /* Views */,
+				7C5D281923AB024D0019111F /* Models */,
+				7C5D281A23AB029D0019111F /* ViewModels */,
+				7C5D281B23AB02AF0019111F /* Utility */,
+				7C5D281C23AB02D00019111F /* Extensions */,
 			);
 			path = InstaQR;
 			sourceTree = "<group>";
@@ -72,8 +78,53 @@
 			children = (
 				7C5D280523AAF6490019111F /* Assets.xcassets */,
 				7C5D280723AAF6490019111F /* LaunchScreen.storyboard */,
+				7C5D280A23AAF6490019111F /* Info.plist */,
+				7C5D281523AB010E0019111F /* Keys.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C5D281723AB02140019111F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D280023AAF6430019111F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7C5D281823AB02260019111F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C5D281923AB024D0019111F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C5D281A23AB029D0019111F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7C5D281B23AB02AF0019111F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7C5D281C23AB02D00019111F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
@@ -82,7 +133,6 @@
 				552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */,
 				1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5D281623AB010E0019111F /* Keys.plist in Resources */,
 				7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */,
 				7C5D280623AAF6490019111F /* Assets.xcassets in Resources */,
 			);
@@ -348,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M53C658XH;
-				INFOPLIST_FILE = InstaQR/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M53C658XH;
-				INFOPLIST_FILE = InstaQR/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,15 +12,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var newWallpaperNavigationController: NewWallpaperNavigationController?
+    var onBoardingViewController: OnBoardingViewController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow()
-        window?.rootViewController = ViewController()
+        
+        if System.shared.isFirstTimeLaunching() {
+            onBoardingViewController = OnBoardingViewController()
+            window?.rootViewController = onBoardingViewController
+        } else {
+            newWallpaperNavigationController = NewWallpaperNavigationController()
+            window?.rootViewController = newWallpaperNavigationController
+        }
+        
         window?.makeKeyAndVisible()
         
         return true
     }
-
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
 }
-
