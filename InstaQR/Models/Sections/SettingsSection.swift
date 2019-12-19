@@ -41,9 +41,9 @@ enum HelpItem: Int, CaseIterable, SettingsItemType {
     
     var logoImage: UIImage? {
         switch self {
-        case .faq: return UIImage(systemName: "questionmark.circle")
-        case .liveWallpaper: return UIImage(systemName: "info.circle")
-        case .onBoarding: return UIImage(systemName: "cube.box")
+        case .faq: return .questionMarkIcon
+        case .liveWallpaper: return .infoIcon
+        case .onBoarding: return .boxIcon
         }
     }
     
@@ -74,10 +74,10 @@ enum GeneralItem: Int, CaseIterable, SettingsItemType {
     
     var logoImage: UIImage? {
         switch self {
-        case .rate: return UIImage(systemName: "star.circle")
-        case .share: return UIImage(systemName: "square.and.arrow.up")
-        case .licenses: return UIImage(systemName: "c.circle")
-        case .privacyPolicy: return UIImage(systemName: "doc.plaintext")
+        case .rate: return .starIcon
+        case .share: return .shareIcon
+        case .licenses: return .letterCIcon
+        case .privacyPolicy: return .docIcon
         }
     }
     

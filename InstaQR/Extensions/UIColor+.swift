@@ -11,5 +11,5 @@ import UIKit
 extension UIColor {
     
     // Background color for tableViewCell when systemBackground color is changed for popover present
-    static var tableViewCellAdaptiveBackgroundColor = UIColor(named: "tableViewCellForAdaptiveBackground")
+    static let tableViewCellAdaptiveBackgroundColor = UIColor(named: "tableViewCellForAdaptiveBackground")
 }
