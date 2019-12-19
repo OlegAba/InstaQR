@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>unsplashSecretKey</key>
+	<string>872a280662dc3baf44af2300307795bdd2f4677a508f695306ea434e634c79ca</string>
+	<key>unsplashAccessKey</key>
+	<string>4b5fbabf18f4c08124daf553b56bc990cee74f37b30dbc4bebaf8ce587b617bb</string>
+</dict>
+</plist>
