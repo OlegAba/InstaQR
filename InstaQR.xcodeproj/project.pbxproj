@@ -16,6 +16,7 @@
 		7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */; };
 		7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282223AB04410019111F /* NewWallpaperViewController.swift */; };
 		7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282423AB047E0019111F /* SelectWallpaperViewController.swift */; };
+		7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWallpaperNavigationController.swift; sourceTree = "<group>"; };
 		7C5D282223AB04410019111F /* NewWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperViewController.swift; sourceTree = "<group>"; };
 		7C5D282423AB047E0019111F /* SelectWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectWallpaperViewController.swift; sourceTree = "<group>"; };
+		7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropWallpaperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */,
 				7C5D282223AB04410019111F /* NewWallpaperViewController.swift */,
 				7C5D282423AB047E0019111F /* SelectWallpaperViewController.swift */,
+				7C5D282623AB04BA0019111F /* CropWallpaperViewController.swift */,
 			);
 			path = NewWallpaper;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */,
+				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
