@@ -47,6 +47,38 @@
 		7C5D286523AB07F30019111F /* BlurredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285F23AB07F30019111F /* BlurredButton.swift */; };
 		7C5D286623AB07F30019111F /* PermissionHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286023AB07F30019111F /* PermissionHandlerView.swift */; };
 		7C5D286723AB07F30019111F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286123AB07F30019111F /* PrimaryButton.swift */; };
+		7C5D288D23AB08B90019111F /* SelectWallpaperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */; };
+		7C5D288E23AB08B90019111F /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286A23AB08B90019111F /* SettingsSection.swift */; };
+		7C5D288F23AB08B90019111F /* WallpaperGuideSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */; };
+		7C5D289023AB08B90019111F /* FAQSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286C23AB08B90019111F /* FAQSection.swift */; };
+		7C5D289123AB08B90019111F /* NewWallpaperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */; };
+		7C5D289223AB08B90019111F /* PageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286E23AB08B90019111F /* PageSection.swift */; };
+		7C5D289323AB08B90019111F /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287023AB08B90019111F /* Barcode.swift */; };
+		7C5D289423AB08B90019111F /* BarcodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287123AB08B90019111F /* BarcodeInput.swift */; };
+		7C5D289523AB08B90019111F /* BarcodeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287223AB08B90019111F /* BarcodeCategory.swift */; };
+		7C5D289623AB08B90019111F /* LinkedinBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287423AB08B90019111F /* LinkedinBarcode.swift */; };
+		7C5D289723AB08B90019111F /* SnapchatBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287523AB08B90019111F /* SnapchatBarcode.swift */; };
+		7C5D289823AB08B90019111F /* RedditBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287623AB08B90019111F /* RedditBarcode.swift */; };
+		7C5D289923AB08B90019111F /* PinterestBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287723AB08B90019111F /* PinterestBarcode.swift */; };
+		7C5D289A23AB08B90019111F /* TwitterBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287823AB08B90019111F /* TwitterBarcode.swift */; };
+		7C5D289B23AB08B90019111F /* YelpBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287923AB08B90019111F /* YelpBarcode.swift */; };
+		7C5D289C23AB08B90019111F /* YoutubeBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287A23AB08B90019111F /* YoutubeBarcode.swift */; };
+		7C5D289D23AB08B90019111F /* InstagramBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287B23AB08B90019111F /* InstagramBarcode.swift */; };
+		7C5D289E23AB08B90019111F /* FacebookBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287C23AB08B90019111F /* FacebookBarcode.swift */; };
+		7C5D289F23AB08B90019111F /* TumblrBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287D23AB08B90019111F /* TumblrBarcode.swift */; };
+		7C5D28A023AB08B90019111F /* EmailBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287F23AB08B90019111F /* EmailBarcode.swift */; };
+		7C5D28A123AB08B90019111F /* CustomBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288023AB08B90019111F /* CustomBarcode.swift */; };
+		7C5D28A223AB08B90019111F /* WebsiteBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288123AB08B90019111F /* WebsiteBarcode.swift */; };
+		7C5D28A323AB08B90019111F /* PaypalBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288323AB08B90019111F /* PaypalBarcode.swift */; };
+		7C5D28A423AB08B90019111F /* MoneroBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288423AB08B90019111F /* MoneroBarcode.swift */; };
+		7C5D28A523AB08B90019111F /* VenmoBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288523AB08B90019111F /* VenmoBarcode.swift */; };
+		7C5D28A623AB08B90019111F /* RippleBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288623AB08B90019111F /* RippleBarcode.swift */; };
+		7C5D28A723AB08B90019111F /* LitecoinBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288723AB08B90019111F /* LitecoinBarcode.swift */; };
+		7C5D28A823AB08B90019111F /* BitcoinBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288823AB08B90019111F /* BitcoinBarcode.swift */; };
+		7C5D28A923AB08B90019111F /* CashBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288923AB08B90019111F /* CashBarcode.swift */; };
+		7C5D28AA23AB08B90019111F /* EthereumBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288A23AB08B90019111F /* EthereumBarcode.swift */; };
+		7C5D28AB23AB08B90019111F /* BitcoinCashBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288B23AB08B90019111F /* BitcoinCashBarcode.swift */; };
+		7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D288C23AB08B90019111F /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +126,38 @@
 		7C5D285F23AB07F30019111F /* BlurredButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredButton.swift; sourceTree = "<group>"; };
 		7C5D286023AB07F30019111F /* PermissionHandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionHandlerView.swift; sourceTree = "<group>"; };
 		7C5D286123AB07F30019111F /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectWallpaperSection.swift; sourceTree = "<group>"; };
+		7C5D286A23AB08B90019111F /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGuideSection.swift; sourceTree = "<group>"; };
+		7C5D286C23AB08B90019111F /* FAQSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQSection.swift; sourceTree = "<group>"; };
+		7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperSection.swift; sourceTree = "<group>"; };
+		7C5D286E23AB08B90019111F /* PageSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageSection.swift; sourceTree = "<group>"; };
+		7C5D287023AB08B90019111F /* Barcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
+		7C5D287123AB08B90019111F /* BarcodeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeInput.swift; sourceTree = "<group>"; };
+		7C5D287223AB08B90019111F /* BarcodeCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeCategory.swift; sourceTree = "<group>"; };
+		7C5D287423AB08B90019111F /* LinkedinBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinBarcode.swift; sourceTree = "<group>"; };
+		7C5D287523AB08B90019111F /* SnapchatBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapchatBarcode.swift; sourceTree = "<group>"; };
+		7C5D287623AB08B90019111F /* RedditBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditBarcode.swift; sourceTree = "<group>"; };
+		7C5D287723AB08B90019111F /* PinterestBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestBarcode.swift; sourceTree = "<group>"; };
+		7C5D287823AB08B90019111F /* TwitterBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterBarcode.swift; sourceTree = "<group>"; };
+		7C5D287923AB08B90019111F /* YelpBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpBarcode.swift; sourceTree = "<group>"; };
+		7C5D287A23AB08B90019111F /* YoutubeBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeBarcode.swift; sourceTree = "<group>"; };
+		7C5D287B23AB08B90019111F /* InstagramBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramBarcode.swift; sourceTree = "<group>"; };
+		7C5D287C23AB08B90019111F /* FacebookBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookBarcode.swift; sourceTree = "<group>"; };
+		7C5D287D23AB08B90019111F /* TumblrBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TumblrBarcode.swift; sourceTree = "<group>"; };
+		7C5D287F23AB08B90019111F /* EmailBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailBarcode.swift; sourceTree = "<group>"; };
+		7C5D288023AB08B90019111F /* CustomBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarcode.swift; sourceTree = "<group>"; };
+		7C5D288123AB08B90019111F /* WebsiteBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteBarcode.swift; sourceTree = "<group>"; };
+		7C5D288323AB08B90019111F /* PaypalBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaypalBarcode.swift; sourceTree = "<group>"; };
+		7C5D288423AB08B90019111F /* MoneroBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneroBarcode.swift; sourceTree = "<group>"; };
+		7C5D288523AB08B90019111F /* VenmoBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenmoBarcode.swift; sourceTree = "<group>"; };
+		7C5D288623AB08B90019111F /* RippleBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleBarcode.swift; sourceTree = "<group>"; };
+		7C5D288723AB08B90019111F /* LitecoinBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LitecoinBarcode.swift; sourceTree = "<group>"; };
+		7C5D288823AB08B90019111F /* BitcoinBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinBarcode.swift; sourceTree = "<group>"; };
+		7C5D288923AB08B90019111F /* CashBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashBarcode.swift; sourceTree = "<group>"; };
+		7C5D288A23AB08B90019111F /* EthereumBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumBarcode.swift; sourceTree = "<group>"; };
+		7C5D288B23AB08B90019111F /* BitcoinCashBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashBarcode.swift; sourceTree = "<group>"; };
+		7C5D288C23AB08B90019111F /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +245,9 @@
 		7C5D281923AB024D0019111F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7C5D286F23AB08B90019111F /* Barcodes */,
+				7C5D286823AB08B90019111F /* Sections */,
+				7C5D288C23AB08B90019111F /* ImageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +334,75 @@
 				7C5D285723AB07DF0019111F /* TableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C5D286823AB08B90019111F /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */,
+				7C5D286A23AB08B90019111F /* SettingsSection.swift */,
+				7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */,
+				7C5D286C23AB08B90019111F /* FAQSection.swift */,
+				7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */,
+				7C5D286E23AB08B90019111F /* PageSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7C5D286F23AB08B90019111F /* Barcodes */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D287023AB08B90019111F /* Barcode.swift */,
+				7C5D287123AB08B90019111F /* BarcodeInput.swift */,
+				7C5D287223AB08B90019111F /* BarcodeCategory.swift */,
+				7C5D287323AB08B90019111F /* SocialMedia */,
+				7C5D287E23AB08B90019111F /* Standard */,
+				7C5D288223AB08B90019111F /* PaymentAddress */,
+			);
+			path = Barcodes;
+			sourceTree = "<group>";
+		};
+		7C5D287323AB08B90019111F /* SocialMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D287423AB08B90019111F /* LinkedinBarcode.swift */,
+				7C5D287523AB08B90019111F /* SnapchatBarcode.swift */,
+				7C5D287623AB08B90019111F /* RedditBarcode.swift */,
+				7C5D287723AB08B90019111F /* PinterestBarcode.swift */,
+				7C5D287823AB08B90019111F /* TwitterBarcode.swift */,
+				7C5D287923AB08B90019111F /* YelpBarcode.swift */,
+				7C5D287A23AB08B90019111F /* YoutubeBarcode.swift */,
+				7C5D287B23AB08B90019111F /* InstagramBarcode.swift */,
+				7C5D287C23AB08B90019111F /* FacebookBarcode.swift */,
+				7C5D287D23AB08B90019111F /* TumblrBarcode.swift */,
+			);
+			path = SocialMedia;
+			sourceTree = "<group>";
+		};
+		7C5D287E23AB08B90019111F /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D287F23AB08B90019111F /* EmailBarcode.swift */,
+				7C5D288023AB08B90019111F /* CustomBarcode.swift */,
+				7C5D288123AB08B90019111F /* WebsiteBarcode.swift */,
+			);
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		7C5D288223AB08B90019111F /* PaymentAddress */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D288323AB08B90019111F /* PaypalBarcode.swift */,
+				7C5D288423AB08B90019111F /* MoneroBarcode.swift */,
+				7C5D288523AB08B90019111F /* VenmoBarcode.swift */,
+				7C5D288623AB08B90019111F /* RippleBarcode.swift */,
+				7C5D288723AB08B90019111F /* LitecoinBarcode.swift */,
+				7C5D288823AB08B90019111F /* BitcoinBarcode.swift */,
+				7C5D288923AB08B90019111F /* CashBarcode.swift */,
+				7C5D288A23AB08B90019111F /* EthereumBarcode.swift */,
+				7C5D288B23AB08B90019111F /* BitcoinCashBarcode.swift */,
+			);
+			path = PaymentAddress;
 			sourceTree = "<group>";
 		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
@@ -401,20 +537,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5D28A523AB08B90019111F /* VenmoBarcode.swift in Sources */,
 				7C5D285823AB07DF0019111F /* OnBoardingCollectionViewCell.swift in Sources */,
 				7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */,
 				7C5D282D23AB053E0019111F /* UserInputViewController.swift in Sources */,
+				7C5D28A623AB08B90019111F /* RippleBarcode.swift in Sources */,
 				7C5D286423AB07F30019111F /* BarcodeScanGuideView.swift in Sources */,
 				7C5D284A23AB073C0019111F /* PopUpNotificationViewController.swift in Sources */,
+				7C5D289423AB08B90019111F /* BarcodeInput.swift in Sources */,
+				7C5D289623AB08B90019111F /* LinkedinBarcode.swift in Sources */,
 				7C5D286223AB07F30019111F /* DeviceWallpaperIconView.swift in Sources */,
+				7C5D289323AB08B90019111F /* Barcode.swift in Sources */,
 				7C5D286523AB07F30019111F /* BlurredButton.swift in Sources */,
+				7C5D289823AB08B90019111F /* RedditBarcode.swift in Sources */,
 				7C5D285923AB07DF0019111F /* BaseTableViewCell.swift in Sources */,
+				7C5D289C23AB08B90019111F /* YoutubeBarcode.swift in Sources */,
 				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
 				7C5D283E23AB06920019111F /* PageSectionViewController.swift in Sources */,
+				7C5D288E23AB08B90019111F /* SettingsSection.swift in Sources */,
+				7C5D289723AB08B90019111F /* SnapchatBarcode.swift in Sources */,
 				7C5D284723AB073C0019111F /* ButtonsPopUpNotificationViewController.swift in Sources */,
+				7C5D28A723AB08B90019111F /* LitecoinBarcode.swift in Sources */,
+				7C5D288F23AB08B90019111F /* WallpaperGuideSection.swift in Sources */,
 				7C5D284623AB073C0019111F /* LoadingNotificationViewController.swift in Sources */,
+				7C5D289E23AB08B90019111F /* FacebookBarcode.swift in Sources */,
+				7C5D289D23AB08B90019111F /* InstagramBarcode.swift in Sources */,
 				7C5D283C23AB06920019111F /* FAQViewController.swift in Sources */,
 				7C5D285223AB07D50019111F /* LabelHeaderView.swift in Sources */,
+				7C5D28A923AB08B90019111F /* CashBarcode.swift in Sources */,
 				7C5D285023AB07D50019111F /* SubtitleLabelHeaderView.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
 				7C5D284B23AB073C0019111F /* NotificationAnimationController.swift in Sources */,
@@ -422,20 +572,38 @@
 				7C5D286723AB07F30019111F /* PrimaryButton.swift in Sources */,
 				7C5D285B23AB07DF0019111F /* TableViewCell.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
+				7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
+				7C5D28A323AB08B90019111F /* PaypalBarcode.swift in Sources */,
+				7C5D289023AB08B90019111F /* FAQSection.swift in Sources */,
 				7C5D283D23AB06920019111F /* AnswersViewController.swift in Sources */,
+				7C5D28AA23AB08B90019111F /* EthereumBarcode.swift in Sources */,
 				7C5D281E23AB03580019111F /* TableViewController.swift in Sources */,
+				7C5D28A823AB08B90019111F /* BitcoinBarcode.swift in Sources */,
 				7C5D285123AB07D50019111F /* SectionTitleLabelHeaderView.swift in Sources */,
 				7C5D286323AB07F30019111F /* FlashButton.swift in Sources */,
 				7C5D285A23AB07DF0019111F /* NewWallpaperTableViewCell.swift in Sources */,
+				7C5D28A223AB08B90019111F /* WebsiteBarcode.swift in Sources */,
 				7C5D282B23AB05010019111F /* BarcodeScannerViewController.swift in Sources */,
+				7C5D289A23AB08B90019111F /* TwitterBarcode.swift in Sources */,
 				7C5D283B23AB06920019111F /* OnBoardingViewController.swift in Sources */,
 				7C5D286623AB07F30019111F /* PermissionHandlerView.swift in Sources */,
 				7C5D284823AB073C0019111F /* AlertPopUpNotificationViewController.swift in Sources */,
+				7C5D288D23AB08B90019111F /* SelectWallpaperSection.swift in Sources */,
 				7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */,
+				7C5D289523AB08B90019111F /* BarcodeCategory.swift in Sources */,
+				7C5D289123AB08B90019111F /* NewWallpaperSection.swift in Sources */,
 				7C5D284923AB073C0019111F /* NotificationViewController.swift in Sources */,
+				7C5D28A423AB08B90019111F /* MoneroBarcode.swift in Sources */,
 				7C5D282923AB04DF0019111F /* CreateShareActionViewController.swift in Sources */,
+				7C5D289B23AB08B90019111F /* YelpBarcode.swift in Sources */,
+				7C5D28AB23AB08B90019111F /* BitcoinCashBarcode.swift in Sources */,
+				7C5D289923AB08B90019111F /* PinterestBarcode.swift in Sources */,
 				7C5D283423AB064A0019111F /* SettingsViewController.swift in Sources */,
+				7C5D289223AB08B90019111F /* PageSection.swift in Sources */,
+				7C5D28A023AB08B90019111F /* EmailBarcode.swift in Sources */,
+				7C5D289F23AB08B90019111F /* TumblrBarcode.swift in Sources */,
+				7C5D28A123AB08B90019111F /* CustomBarcode.swift in Sources */,
 				7C5D283623AB067E0019111F /* ContainerPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
