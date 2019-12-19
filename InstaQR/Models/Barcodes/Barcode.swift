@@ -13,7 +13,7 @@ class Barcode: NSObject {
     
     let barcodeType: BarcodeType!
     let title: String!
-    let logo: UIImage!
+    let icon: UIImage!
     let backgroundImage: UIImage!
     var primaryColor: UIColor!
     
@@ -52,7 +52,7 @@ class Barcode: NSObject {
     init(barcodeType: BarcodeType) {
         self.barcodeType = barcodeType
         title = Barcode.titleFor(barcodeType: barcodeType)
-        logo = Barcode.logoImageFor(barcodeType: barcodeType)
+        icon = Barcode.iconImageFor(barcodeType: barcodeType)
         primaryColor = Barcode.primaryColorFor(barcodeType: barcodeType)
         backgroundImage = Barcode.backgroundImageFor(barcodeType: barcodeType)
     }
@@ -70,9 +70,9 @@ class Barcode: NSObject {
         return barcodeTypeName
     }
     
-    static func logoImageFor(barcodeType: BarcodeType) -> UIImage? {
+    static func iconImageFor(barcodeType: BarcodeType) -> UIImage? {
         let barcodeTypeName = barcodeType.rawValue
-        let logoImageName =  barcodeTypeName.lowercased().replacingOccurrences(of: " ", with: "") + "_logo"
+        let logoImageName =  barcodeTypeName.lowercased().replacingOccurrences(of: " ", with: "") + "_icon"
         
         return UIImage(named: logoImageName)
     }

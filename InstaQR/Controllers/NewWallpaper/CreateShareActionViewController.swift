@@ -89,7 +89,7 @@ extension CreateShareActionViewController: UITableViewDelegate, UITableViewDataS
         cell.iconImage = UIImage(systemName: "chevron.right")
         
         DispatchQueue.global(qos: .background).async {
-            guard let logo = Barcode.logoImageFor(barcodeType: barcodeType) else { return }
+            guard let logo = Barcode.iconImageFor(barcodeType: barcodeType) else { return }
             
             DispatchQueue.main.async {
                 cell.logoImage = logo

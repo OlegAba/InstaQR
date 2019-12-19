@@ -35,5 +35,5 @@ enum ShareActionItem: Int, CaseIterable, NewWallpaperItemType {
     
     var completedDescription: String { return "Share Action" }
     
-    var overlayImage: UIImage? { return UIImage(named: "custom_logo") }
+    var overlayImage: UIImage? { return UIImage(named: "custom_icon") }
 }

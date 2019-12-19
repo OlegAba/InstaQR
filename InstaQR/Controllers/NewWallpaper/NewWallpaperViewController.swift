@@ -204,7 +204,7 @@ extension NewWallpaperViewController: UITableViewDelegate, UITableViewDataSource
             guard let shareActionItem = ShareActionItem(rawValue: indexPath.row) else { return cell }
             let shareActionViewModel = NewWallpaperViewModel(newWallpaperItem: shareActionItem)
             shareActionViewModel.wallpaperImage = wallpaperImage
-            shareActionViewModel.barcodeImage = barcode?.logo
+            shareActionViewModel.barcodeImage = barcode?.icon
             shareActionViewModel.subtitle = barcodeLink
             shareActionViewModel.isComplete = (barcode != nil)
             cell.set(viewModel: shareActionViewModel)

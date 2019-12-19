@@ -38,7 +38,7 @@ enum SourceItem: Int, CaseIterable, SelectWallpaperItemType {
     var logoImage: UIImage? {
         switch self {
         case .photoLibrary: return UIImage(named: "photoLibrary_icon") ?? UIImage()
-        case .unsplashGallery: return UIImage(named: "unsplash_logo") ?? UIImage()
+        case .unsplashGallery: return UIImage(named: "unsplash_icon") ?? UIImage()
         }
     }
     
