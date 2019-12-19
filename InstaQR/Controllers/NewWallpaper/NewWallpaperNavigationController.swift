@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LPLivePhotoGenerator
 
 class NewWallpaperNavigationController: UINavigationController {
     
