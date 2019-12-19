@@ -23,7 +23,6 @@ class SettingsViewController: TableViewController {
     }
     
     fileprivate func setupTableView() {
-        tableView.backgroundColor = .black
         tableView.rowHeight = 50.0
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self
@@ -78,7 +77,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
-        //cell.backgroundColor = .tableViewCellBackgroundColor
+        cell.backgroundColor = .tableViewCellBackgroundColor
         cell.iconImage = UIImage(systemName: "chevron.right")
         cell.logoImageView.tintColor = .systemBlue
         
