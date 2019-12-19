@@ -14,6 +14,7 @@
 		7C5D281623AB010E0019111F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D281523AB010E0019111F /* Keys.plist */; };
 		7C5D281E23AB03580019111F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D281D23AB03580019111F /* TableViewController.swift */; };
 		7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */; };
+		7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282223AB04410019111F /* NewWallpaperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7C5D281523AB010E0019111F /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		7C5D281D23AB03580019111F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWallpaperNavigationController.swift; sourceTree = "<group>"; };
+		7C5D282223AB04410019111F /* NewWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */,
+				7C5D282223AB04410019111F /* NewWallpaperViewController.swift */,
 			);
 			path = NewWallpaper;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
 				7C5D281E23AB03580019111F /* TableViewController.swift in Sources */,
