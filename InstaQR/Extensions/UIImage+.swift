@@ -11,6 +11,22 @@ import Accelerate
 
 extension UIImage {
     
+    // System Icons
+    static let trashIcon = UIImage(systemName: "trash.circle.fill") ?? UIImage()
+    static let chevronUpIcon = UIImage(systemName: "chevron.up") ?? UIImage()
+    static let chevronRightIcon = UIImage(systemName: "chevron.right") ?? UIImage()
+    static let questionMarkIcon = UIImage(systemName: "questionmark.circle") ?? UIImage()
+    static let infoIcon = UIImage(systemName: "info.circle") ?? UIImage()
+    static let boxIcon = UIImage(systemName: "cube.box") ?? UIImage()
+    static let starIcon = UIImage(systemName: "star.circle") ?? UIImage()
+    static let shareIcon = UIImage(systemName: "square.and.arrow.up") ?? UIImage()
+    static let letterCIcon = UIImage(systemName: "c.circle") ?? UIImage()
+    static let docIcon = UIImage(systemName: "doc.plaintext") ?? UIImage()
+    static let checkmarkIcon = UIImage(systemName: "checkmark.circle.fill") ?? UIImage()
+    static let scanQRIcon = UIImage(systemName: "qrcode.viewfinder") ?? UIImage()
+    static let flashIcon = UIImage(systemName: "bolt.fill") ?? UIImage()
+    
+    
     public convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)

@@ -29,7 +29,7 @@ class NewWallpaperViewModel {
     
     var isComplete = false {
         didSet {
-            iconImage = isComplete ? UIImage(systemName: "checkmark.circle.fill")! : UIImage(systemName: "chevron.right")!
+            iconImage = isComplete ? .checkmarkIcon : .chevronRightIcon
             iconColor = isComplete ? UIColor.systemGreen : UIColor.placeholderText
             title = isComplete ? newWallpaperItem.completedDescription : newWallpaperItem.description
         }
@@ -37,7 +37,7 @@ class NewWallpaperViewModel {
     
     var title: String
     var subtitle: String?
-    var iconImage: UIImage = UIImage(systemName: "chevron.right")!
+    var iconImage: UIImage = .chevronRightIcon
     var iconColor: UIColor = UIColor.placeholderText
     
     fileprivate let newWallpaperItem: NewWallpaperItemType

@@ -119,8 +119,7 @@ class UserInputViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         if barcodeInput.barcodeScanEnabled {
-            let qrScanIconImage = UIImage(systemName: "qrcode.viewfinder")
-            let qrScanBarButtonItem = UIBarButtonItem(image: qrScanIconImage, style: .plain, target: self, action: #selector(qrScanButtonWasTapped))
+            let qrScanBarButtonItem = UIBarButtonItem(image: .scanQRIcon, style: .plain, target: self, action: #selector(qrScanButtonWasTapped))
             navigationItem.rightBarButtonItem = qrScanBarButtonItem
         }
         

@@ -40,7 +40,7 @@ class FlashButton: UIButton {
     
     fileprivate lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "bolt.fill")?.withRenderingMode(.alwaysTemplate)
+        imageView.image = UIImage.flashIcon.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled = false
@@ -68,7 +68,6 @@ class FlashButton: UIButton {
         backgroundColor = .systemBlue
         layer.cornerRadius = length / 2.0
         translatesAutoresizingMaskIntoConstraints = false
-        //addSubview(blurEffectView)
         addSubview(iconImageView)
     }
     
