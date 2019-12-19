@@ -27,6 +27,7 @@ class InsetGroupedTableViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.backgroundColor = .systemBackground
         tableView.tableHeaderView = containerView
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +56,6 @@ class InsetGroupedTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         containerView.addSubview(subtitleLabel)
     }
