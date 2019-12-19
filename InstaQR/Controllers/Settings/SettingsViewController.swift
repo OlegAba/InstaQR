@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: TableViewController {
+class SettingsViewController: InsetGroupedTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

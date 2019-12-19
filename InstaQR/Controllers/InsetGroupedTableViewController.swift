@@ -8,28 +8,26 @@
 
 import UIKit
 
-// TODO: Change name to InsetGroupedTableViewController
-
-class TableViewController: UIViewController {
+class InsetGroupedTableViewController: UIViewController {
     
     // MARK: - Internal Properties
     
     var subtitle: String? {
-        didSet {
-            subtitleLabelHeaderView.text = subtitle
-        }
+        didSet { subtitleLabel.text = subtitle }
     }
     
-    var tableHeaderViewBottomInset: CGFloat {
-        get { return 16.0 }
+    var tableHeaderViewFont: UIFont =
+        UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .semibold) {
+        didSet { subtitleLabel.font = tableHeaderViewFont }
     }
+    
+    var tableHeaderViewBottomInset: CGFloat = 16.0
     
     let tableViewCellID = "TableViewCellReuseIdentifier"
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.tableHeaderView = subtitleLabelHeaderView
-        tableView.backgroundColor = view.backgroundColor
+        tableView.tableHeaderView = containerView
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -37,11 +35,20 @@ class TableViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    fileprivate lazy var subtitleLabelHeaderView: SubtitleLabelHeaderView = {
-        let subtitleLabelHeaderView = SubtitleLabelHeaderView()
-        subtitleLabelHeaderView.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .semibold)
-        subtitleLabelHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        return subtitleLabelHeaderView
+    fileprivate lazy var containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    fileprivate lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = tableHeaderViewFont
+        label.textColor = .label
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     // MARK: - View Life Cycle
@@ -50,6 +57,7 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
+        containerView.addSubview(subtitleLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,7 +70,7 @@ class TableViewController: UIViewController {
     fileprivate func layoutViews() {
         
         let headerViewWidth = view.frame.width - (view.layoutMargins.left + view.layoutMargins.right)
-        let headerViewHeight = subtitleLabelHeaderView.heightForView(text: subtitle ?? "", width: headerViewWidth)
+        let headerViewHeight = heightForView(text: subtitle ?? "", width: headerViewWidth)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -70,10 +78,14 @@ class TableViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            subtitleLabelHeaderView.topAnchor.constraint(equalTo: tableView.topAnchor),
-            subtitleLabelHeaderView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            subtitleLabelHeaderView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            subtitleLabelHeaderView.heightAnchor.constraint(equalToConstant: headerViewHeight + tableHeaderViewBottomInset)
+            containerView.topAnchor.constraint(equalTo: tableView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: headerViewHeight + tableHeaderViewBottomInset),
+            
+            subtitleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            subtitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
         ])
         
         sizeHeaderToFit(tableView: tableView)
@@ -81,6 +93,17 @@ class TableViewController: UIViewController {
     
     
     // MARK: - Private Methods
+    
+    fileprivate func heightForView(text: String, width: CGFloat) -> CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = tableHeaderViewFont
+        label.text = text
+        label.sizeToFit()
+
+        return label.frame.height
+    }
     
     fileprivate func sizeHeaderToFit(tableView: UITableView) {
         if let headerView = tableView.tableHeaderView {
@@ -119,4 +142,3 @@ class TableViewController: UIViewController {
         tableView.reloadRows(at: indexPaths, with: .fade)
     }
 }
-

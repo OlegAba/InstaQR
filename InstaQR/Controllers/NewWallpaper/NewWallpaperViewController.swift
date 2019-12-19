@@ -9,16 +9,12 @@
 import UIKit
 import LPLivePhotoGenerator
 
-class NewWallpaperViewController: TableViewController {
+class NewWallpaperViewController: InsetGroupedTableViewController {
     
     var wallpaperImage: UIImage?
     var wallpaperSource: String?
     var barcode: Barcode?
     var barcodeLink: String?
-    
-    override var tableHeaderViewBottomInset: CGFloat {
-        get { return 32.0 }
-    }
     
     fileprivate lazy var createPrimaryButton: PrimaryButton = {
         let button = PrimaryButton()
@@ -61,6 +57,7 @@ class NewWallpaperViewController: TableViewController {
     
     fileprivate func setupTableView() {
         subtitle = "Create a new share action live wallpaper to use on your lockscreen."
+        tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: newWallpaperTableViewCellID)

@@ -13,15 +13,11 @@ protocol SelectWallpaperDelegate {
     func selectWallpaper(_ selectWallpaperViewController: SelectWallpaperViewController, didSelectWallpaper wallpaper: UIImage, from source: String)
 }
 
-class SelectWallpaperViewController: TableViewController {
+class SelectWallpaperViewController: InsetGroupedTableViewController {
     
     // MARK: - Internal Properties
     
     var delegate: SelectWallpaperDelegate!
-    
-    override var tableHeaderViewBottomInset: CGFloat {
-        get { return 32.0 }
-    }
     
     // MARK: - Private Properties
     
@@ -41,6 +37,7 @@ class SelectWallpaperViewController: TableViewController {
     
     fileprivate func setupTableView() {
         subtitle = "Select your favorite wallpaper and crop it to your screen size."
+        tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
