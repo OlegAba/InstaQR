@@ -63,7 +63,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc fileprivate func getStartedButtonWasTapped() {
-        let newWallpaperNavigationController = NewWallpaperNavigationController()
+        guard let newWallpaperNavigationController = System.shared.appDelegate().newWallpaperNavigationController else { return }
         newWallpaperNavigationController.modalPresentationStyle = .overFullScreen
         present(newWallpaperNavigationController, animated: true, completion: nil)
     }
