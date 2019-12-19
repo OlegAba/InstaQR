@@ -36,6 +36,7 @@
 		7C5D27F023AAF6430019111F = {
 			isa = PBXGroup;
 			children = (
+				7C5D281023AAFB790019111F /* Resources */,
 				7C5D27FB23AAF6430019111F /* InstaQR */,
 				7C5D27FA23AAF6430019111F /* Products */,
 			);
@@ -54,11 +55,18 @@
 			children = (
 				7C5D27FC23AAF6430019111F /* AppDelegate.swift */,
 				7C5D280023AAF6430019111F /* ViewController.swift */,
-				7C5D280523AAF6490019111F /* Assets.xcassets */,
-				7C5D280723AAF6490019111F /* LaunchScreen.storyboard */,
 				7C5D280A23AAF6490019111F /* Info.plist */,
 			);
 			path = InstaQR;
+			sourceTree = "<group>";
+		};
+		7C5D281023AAFB790019111F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D280523AAF6490019111F /* Assets.xcassets */,
+				7C5D280723AAF6490019111F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
