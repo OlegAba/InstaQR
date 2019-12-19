@@ -9,7 +9,7 @@ target 'InstaQR' do
   pod 'UnsplashPhotoPicker'
   pod 'CropViewController'
   pod 'LPLivePhotoGenerator'
-  pod 'EFQRCode',
+  pod 'EFQRCode'
   pod 'SwiftyGif'
 
 end

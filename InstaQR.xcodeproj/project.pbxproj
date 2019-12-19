@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27ADC3710C0C132F499195E1 /* Pods_InstaQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */; };
 		7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D27FC23AAF6430019111F /* AppDelegate.swift */; };
 		7C5D280123AAF6430019111F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D280023AAF6430019111F /* ViewController.swift */; };
 		7C5D280623AAF6490019111F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280523AAF6490019111F /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.release.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.release.xcconfig"; sourceTree = "<group>"; };
+		552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.debug.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.debug.xcconfig"; sourceTree = "<group>"; };
+		5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaQR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5D27F923AAF6430019111F /* InstaQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5D27FC23AAF6430019111F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5D280023AAF6430019111F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ADC3710C0C132F499195E1 /* Pods_InstaQR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +44,8 @@
 				7C5D281023AAFB790019111F /* Resources */,
 				7C5D27FB23AAF6430019111F /* InstaQR */,
 				7C5D27FA23AAF6430019111F /* Products */,
+				81AD8C121B9D1456A742F35E /* Pods */,
+				88012F0AA9297FB799DD4555 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +76,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		81AD8C121B9D1456A742F35E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */,
+				1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		88012F0AA9297FB799DD4555 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C5D280D23AAF6490019111F /* Build configuration list for PBXNativeTarget "InstaQR" */;
 			buildPhases = (
+				4A69721FD3B29389FD80DBC1 /* [CP] Check Pods Manifest.lock */,
 				7C5D27F523AAF6430019111F /* Sources */,
 				7C5D27F623AAF6430019111F /* Frameworks */,
 				7C5D27F723AAF6430019111F /* Resources */,
+				BCE6CBDEA807A64C781941FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A69721FD3B29389FD80DBC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaQR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCE6CBDEA807A64C781941FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaQR/Pods-InstaQR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaQR/Pods-InstaQR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaQR/Pods-InstaQR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C5D27F523AAF6430019111F /* Sources */ = {
@@ -274,6 +343,7 @@
 		};
 		7C5D280E23AAF6490019111F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -293,6 +363,7 @@
 		};
 		7C5D280F23AAF6490019111F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
