@@ -8,11 +8,7 @@
 
 import UIKit
 
-class FAQViewController: TableViewController {
-    
-    override var tableHeaderViewBottomInset: CGFloat {
-        get { return super.tableHeaderViewBottomInset * 2.0 }
-    }
+class FAQViewController: InsetGroupedTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +22,7 @@ class FAQViewController: TableViewController {
     }
     
     fileprivate func setupTableView() {
+        tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.rowHeight = 75.0
         tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self

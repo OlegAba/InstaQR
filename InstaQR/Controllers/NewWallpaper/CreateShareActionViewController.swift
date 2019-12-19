@@ -12,15 +12,11 @@ protocol CreateShareActionDelegate {
     func createShareAction(_ createShareActionViewController: CreateShareActionViewController, didSelectBarcodeType barcodeType: Barcode.BarcodeType, withPrefilledInput prefilledInput: String?)
 }
 
-class CreateShareActionViewController: TableViewController {
+class CreateShareActionViewController: InsetGroupedTableViewController {
     
     // MARK: - Internal Properties
     
     var delegate: CreateShareActionDelegate!
-    
-    override var tableHeaderViewBottomInset: CGFloat {
-        get { return 32.0 }
-    }
     
     // MARK: - Private Properties
     
@@ -50,6 +46,7 @@ class CreateShareActionViewController: TableViewController {
     
     fileprivate func setupTableView() {
         subtitle = "Set up a share action that will be triggered when your wallpaper is scanned."
+        tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.rowHeight = 50.0
         tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self
