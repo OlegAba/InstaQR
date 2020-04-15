@@ -32,7 +32,7 @@ class PhotoAlbumViewController: UIViewController {
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
-        tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: albumTableViewCellID)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: albumTableViewCellID)
         tableView.separatorStyle = .none
         tableView.rowHeight = 100.0
         tableView.delegate = self
@@ -135,13 +135,12 @@ extension PhotoAlbumViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: albumTableViewCellID, for: indexPath) as? NewWallpaperTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: albumTableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         let photoAlbum = photoAlbums[indexPath.row]
         
         cell.isLast = true
         cell.backgroundColor = .clear
-        cell.deviceWallpaperIconView.isHidden = true
         cell.title = photoAlbum.name
         cell.subtitle = String(photoAlbum.assets.count)
         cell.logoImageView.contentMode = .scaleAspectFill
@@ -153,7 +152,7 @@ extension PhotoAlbumViewController: UITableViewDelegate, UITableViewDataSource {
             photoAlbum.grabThumbnail(imageSize: imageSize) { (thumbnail: UIImage?) in
                 
                 DispatchQueue.main.async {
-                    cell.logoImage = thumbnail
+                    cell.logoImage = thumbnail ?? UIImage(color: .systemGray5)
                 }
             }
         }

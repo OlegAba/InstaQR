@@ -31,4 +31,40 @@ extension UIView {
         self.removeConstraints(self.constraints)
         self.translatesAutoresizingMaskIntoConstraints = true
     }
+    
+    var topConstaint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .top && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
+
+    var bottomConstaint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .bottom && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
+    
+    var leadingConstaint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .leading && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
+    
+    var trailingConstaint: NSLayoutConstraint? {
+        get {
+            return constraints.first(where: {
+                $0.firstAttribute == .trailing && $0.relation == .equal
+            })
+        }
+        set { setNeedsLayout() }
+    }
 }

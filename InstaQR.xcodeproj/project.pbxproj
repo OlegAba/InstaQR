@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27ADC3710C0C132F499195E1 /* Pods_InstaQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */; };
+		7C44B4C624456D3200C660D2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C44B4C524456D3200C660D2 /* TableViewCell.swift */; };
 		7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D27FC23AAF6430019111F /* AppDelegate.swift */; };
 		7C5D280623AAF6490019111F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280523AAF6490019111F /* Assets.xcassets */; };
 		7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280723AAF6490019111F /* LaunchScreen.storyboard */; };
@@ -37,9 +38,6 @@
 		7C5D285123AB07D50019111F /* SectionTitleLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284E23AB07D50019111F /* SectionTitleLabelHeaderView.swift */; };
 		7C5D285223AB07D50019111F /* LabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284F23AB07D50019111F /* LabelHeaderView.swift */; };
 		7C5D285823AB07DF0019111F /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285423AB07DF0019111F /* OnBoardingCollectionViewCell.swift */; };
-		7C5D285923AB07DF0019111F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285523AB07DF0019111F /* BaseTableViewCell.swift */; };
-		7C5D285A23AB07DF0019111F /* NewWallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285623AB07DF0019111F /* NewWallpaperTableViewCell.swift */; };
-		7C5D285B23AB07DF0019111F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285723AB07DF0019111F /* TableViewCell.swift */; };
 		7C5D286223AB07F30019111F /* DeviceWallpaperIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285C23AB07F30019111F /* DeviceWallpaperIconView.swift */; };
 		7C5D286323AB07F30019111F /* FlashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285D23AB07F30019111F /* FlashButton.swift */; };
 		7C5D286423AB07F30019111F /* BarcodeScanGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D285E23AB07F30019111F /* BarcodeScanGuideView.swift */; };
@@ -88,12 +86,14 @@
 		7C5D28BE23AB0E4B0019111F /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28B923AB0E4B0019111F /* UIImage+.swift */; };
 		7C5D28BF23AB0E4B0019111F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28BA23AB0E4B0019111F /* UIColor+.swift */; };
 		7C5D28C023AB0E4B0019111F /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */; };
+		7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.release.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.release.xcconfig"; sourceTree = "<group>"; };
 		552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.debug.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.debug.xcconfig"; sourceTree = "<group>"; };
 		5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaQR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C44B4C524456D3200C660D2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7C5D27F923AAF6430019111F /* InstaQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5D27FC23AAF6430019111F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5D280523AAF6490019111F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,9 +125,6 @@
 		7C5D284E23AB07D50019111F /* SectionTitleLabelHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleLabelHeaderView.swift; sourceTree = "<group>"; };
 		7C5D284F23AB07D50019111F /* LabelHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelHeaderView.swift; sourceTree = "<group>"; };
 		7C5D285423AB07DF0019111F /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		7C5D285523AB07DF0019111F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		7C5D285623AB07DF0019111F /* NewWallpaperTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperTableViewCell.swift; sourceTree = "<group>"; };
-		7C5D285723AB07DF0019111F /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7C5D285C23AB07F30019111F /* DeviceWallpaperIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceWallpaperIconView.swift; sourceTree = "<group>"; };
 		7C5D285D23AB07F30019111F /* FlashButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashButton.swift; sourceTree = "<group>"; };
 		7C5D285E23AB07F30019111F /* BarcodeScanGuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScanGuideView.swift; sourceTree = "<group>"; };
@@ -176,6 +173,7 @@
 		7C5D28B923AB0E4B0019111F /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		7C5D28BA23AB0E4B0019111F /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
+		7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,9 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				7C5D285423AB07DF0019111F /* OnBoardingCollectionViewCell.swift */,
-				7C5D285523AB07DF0019111F /* BaseTableViewCell.swift */,
-				7C5D285623AB07DF0019111F /* NewWallpaperTableViewCell.swift */,
-				7C5D285723AB07DF0019111F /* TableViewCell.swift */,
+				7C44B4C524456D3200C660D2 /* TableViewCell.swift */,
+				7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -579,7 +576,6 @@
 				7C5D289323AB08B90019111F /* Barcode.swift in Sources */,
 				7C5D286523AB07F30019111F /* BlurredButton.swift in Sources */,
 				7C5D289823AB08B90019111F /* RedditBarcode.swift in Sources */,
-				7C5D285923AB07DF0019111F /* BaseTableViewCell.swift in Sources */,
 				7C5D289C23AB08B90019111F /* YoutubeBarcode.swift in Sources */,
 				7C5D282723AB04BA0019111F /* CropWallpaperViewController.swift in Sources */,
 				7C5D28B523AB0DE40019111F /* VideoFromImages.swift in Sources */,
@@ -602,7 +598,6 @@
 				7C5D282F23AB055E0019111F /* PreviewWallpaperViewController.swift in Sources */,
 				7C5D286723AB07F30019111F /* PrimaryButton.swift in Sources */,
 				7C5D28BE23AB0E4B0019111F /* UIImage+.swift in Sources */,
-				7C5D285B23AB07DF0019111F /* TableViewCell.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
 				7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
@@ -616,7 +611,6 @@
 				7C5D28A823AB08B90019111F /* BitcoinBarcode.swift in Sources */,
 				7C5D285123AB07D50019111F /* SectionTitleLabelHeaderView.swift in Sources */,
 				7C5D286323AB07F30019111F /* FlashButton.swift in Sources */,
-				7C5D285A23AB07DF0019111F /* NewWallpaperTableViewCell.swift in Sources */,
 				7C5D28A223AB08B90019111F /* WebsiteBarcode.swift in Sources */,
 				7C5D282B23AB05010019111F /* BarcodeScannerViewController.swift in Sources */,
 				7C5D289A23AB08B90019111F /* TwitterBarcode.swift in Sources */,
@@ -627,6 +621,7 @@
 				7C5D283123AB05860019111F /* PhotoAlbumSelectionViewController.swift in Sources */,
 				7C5D289523AB08B90019111F /* BarcodeCategory.swift in Sources */,
 				7C5D28B423AB0DE40019111F /* UnsplashEndpointRequest.swift in Sources */,
+				7C44B4C624456D3200C660D2 /* TableViewCell.swift in Sources */,
 				7C5D289123AB08B90019111F /* NewWallpaperSection.swift in Sources */,
 				7C5D28AE23AB0DCA0019111F /* NewWallpaperViewModel.swift in Sources */,
 				7C5D284923AB073C0019111F /* NotificationViewController.swift in Sources */,
@@ -639,6 +634,7 @@
 				7C5D289223AB08B90019111F /* PageSection.swift in Sources */,
 				7C5D28A023AB08B90019111F /* EmailBarcode.swift in Sources */,
 				7C5D289F23AB08B90019111F /* TumblrBarcode.swift in Sources */,
+				7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */,
 				7C5D28A123AB08B90019111F /* CustomBarcode.swift in Sources */,
 				7C5D283623AB067E0019111F /* ContainerPageViewController.swift in Sources */,
 			);

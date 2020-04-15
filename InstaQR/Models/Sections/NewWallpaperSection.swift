@@ -21,9 +21,11 @@ enum NewWallpaperSection: Int, CaseIterable {
 enum WallpaperItem: Int, CaseIterable, NewWallpaperItemType {
     case selectWallpaper
     
-    var description: String { return "Select Wallpaper" }
+    // TODO:- Change to Select Wallpaper / Wallpaper
     
-    var completedDescription: String { return "Wallpaper" }
+    var description: String { return "Select Image" }
+    
+    var completedDescription: String { return "Image" }
     
     var overlayImage: UIImage? { return nil }
 }
