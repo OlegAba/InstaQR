@@ -11,6 +11,8 @@ import SwiftyGif
 
 class OnBoardingCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Internal Properties
+    
     var sectionTitle: String? {
         didSet { sectionTitleLabel.text = sectionTitle }
     }
@@ -36,12 +38,6 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    fileprivate lazy var labelsContainerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -50,7 +46,7 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    fileprivate lazy var sectionTitleLabel: UILabel = {
+    lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         label.numberOfLines = 1
@@ -59,7 +55,7 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    fileprivate lazy var sectionSubtitleLabel: UILabel = {
+    lazy var sectionSubtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
         label.numberOfLines = 0
@@ -69,12 +65,19 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Private Properties
+    
+    fileprivate lazy var labelsContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // MARK: - Lifetime
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(imageView)
-        addSubview(labelsContainerView)
-        labelsContainerView.addSubview(sectionTitleLabel)
-        labelsContainerView.addSubview(sectionSubtitleLabel)
+        setupViews()
         layoutViews()
     }
     
@@ -82,7 +85,18 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func layoutViews() {
+    // MARK: - Setup
+    
+    func setupViews() {
+        addSubview(imageView)
+        addSubview(labelsContainerView)
+        labelsContainerView.addSubview(sectionTitleLabel)
+        labelsContainerView.addSubview(sectionSubtitleLabel)
+    }
+    
+    // MARK: - Layout
+    
+    func layoutViews() {
         let inset: CGFloat = 10.0
         
         NSLayoutConstraint.activate([
@@ -105,6 +119,8 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
             sectionSubtitleLabel.topAnchor.constraint(equalTo: sectionTitleLabel.bottomAnchor, constant: inset / 2.0),
         ])
     }
+    
+    // MARK: - Internal Methods
     
     func startGif() {
         imageView.startAnimatingGif()
