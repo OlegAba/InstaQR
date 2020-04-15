@@ -32,9 +32,7 @@ class PrimaryButton: UIButton {
     }
     
     override var isEnabled: Bool {
-        didSet {
-            backgroundColor = isEnabled ? .systemBlue : .systemGray5
-        }
+        didSet { backgroundColor = isEnabled ? .systemBlue : .systemGray5 }
     }
     
     // MARK: - Private Properties
@@ -63,7 +61,7 @@ class PrimaryButton: UIButton {
     
     // MARK: - Setup
     
-    fileprivate func setupViews() {
+    func setupViews() {
         layer.cornerRadius = 10.0
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         backgroundColor = .systemBlue
@@ -73,7 +71,7 @@ class PrimaryButton: UIButton {
     }
     
     // MARK: - Layout
-    fileprivate func layoutViews() {
+    func layoutViews() {
         
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 50.0),

@@ -248,12 +248,12 @@
 			children = (
 				7C5D284C23AB07D50019111F /* TableHeaderView */,
 				7C5D285323AB07DF0019111F /* Cells */,
+				7C5D286123AB07F30019111F /* PrimaryButton.swift */,
+				7C5D285C23AB07F30019111F /* DeviceWallpaperIconView.swift */,
 				7C5D285E23AB07F30019111F /* BarcodeScanGuideView.swift */,
 				7C5D285F23AB07F30019111F /* BlurredButton.swift */,
-				7C5D285C23AB07F30019111F /* DeviceWallpaperIconView.swift */,
 				7C5D285D23AB07F30019111F /* FlashButton.swift */,
 				7C5D286023AB07F30019111F /* PermissionHandlerView.swift */,
-				7C5D286123AB07F30019111F /* PrimaryButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
