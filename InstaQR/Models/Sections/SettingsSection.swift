@@ -49,9 +49,9 @@ enum HelpItem: Int, CaseIterable, SettingsItemType {
     
     var logoBackgroundColor: UIColor {
         switch self {
-        case .faq: return UIColor(red: 216 / 255.0, green: 109 / 255.0, blue: 78 / 255.0, alpha: 1.0)
-        case .liveWallpaper: return UIColor(red: 42 / 255.0, green: 190 / 183.0, blue: 105 / 255.0, alpha: 1.0)
-        case .onBoarding: return UIColor(red: 77 / 255.0, green: 186 / 255.0, blue: 230 / 255.0, alpha: 1.0)
+        case .faq: return .systemOrange
+        case .liveWallpaper: return .systemGreen
+        case .onBoarding: return .systemTeal
         }
     }
 }
@@ -83,10 +83,10 @@ enum GeneralItem: Int, CaseIterable, SettingsItemType {
     
     var logoBackgroundColor: UIColor {
         switch self {
-        case .rate: return UIColor(red: 254 / 255.0, green: 204 / 255.0, blue: 39 / 255.0, alpha: 1.0)
-        case .share: return UIColor(red: 0 / 255.0, green: 112 / 183.0, blue: 183 / 255.0, alpha: 1.0)
-        case .licenses: return UIColor(red: 189 / 255.0, green: 189 / 255.0, blue: 189 / 255.0, alpha: 1.0)
-        case .privacyPolicy: return UIColor(red: 59.0 / 255.0, green: 68.0 / 255.0, blue: 75 / 255.0, alpha: 1.0)
+        case .rate: return .systemYellow
+        case .share: return .systemBlue
+        case .licenses: return .systemGray
+        case .privacyPolicy: return .systemPink
         }
     }
 }

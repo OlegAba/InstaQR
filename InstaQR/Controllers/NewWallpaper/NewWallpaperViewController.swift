@@ -66,11 +66,12 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     }
     
     fileprivate func setupTableView() {
-        subtitle = "Create a new share action live wallpaper to use on your lockscreen."
+        subtitle = "Create a new share action live wallpaper to use on your lock screen."
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
+        //tableView.register(NewWallpaperTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
+        tableView.register(WallpaperTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.rowHeight = 100.0
         tableView.isScrollEnabled = false
     }
@@ -95,14 +96,14 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
             let row = WallpaperItem.selectWallpaper.rawValue
             let section = NewWallpaperSection.Wallpaper.rawValue
             let indexPath = IndexPath(row: row, section: section)
-            (tableView.cellForRow(at: indexPath) as? NewWallpaperTableViewCell)?.animateRequiredBorder()
+            (tableView.cellForRow(at: indexPath) as? WallpaperTableViewCell)?.animateRequiredBorder()
         }
         
         if barcode == nil {
             let row = ShareActionItem.shareAction.rawValue
             let section = NewWallpaperSection.ShareAction.rawValue
             let indexPath = IndexPath(row: row, section: section)
-            (tableView.cellForRow(at: indexPath) as? NewWallpaperTableViewCell)?.animateRequiredBorder()
+            (tableView.cellForRow(at: indexPath) as? WallpaperTableViewCell)?.animateRequiredBorder()
         }
         
         createLiveWallpaper()
@@ -211,7 +212,30 @@ extension NewWallpaperViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        /*
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? NewWallpaperTableViewCell else { return UITableViewCell() }
+        
+        cell.isLast = rowIsLast(for: indexPath)
+        
+        guard let section = NewWallpaperSection(rawValue: indexPath.section) else { return cell }
+        
+        switch section {
+        case .Wallpaper:
+            
+            guard let wallpaperItem = WallpaperItem(rawValue: indexPath.row) else { return cell }
+            let wallpaperViewModel = NewWallpaperViewModel(newWallpaperItem: wallpaperItem)
+            setup(viewModel: wallpaperViewModel, for: section)
+            cell.set(viewModel: wallpaperViewModel)
+        case .ShareAction:
+            
+            guard let shareActionItem = ShareActionItem(rawValue: indexPath.row) else { return cell }
+            let shareActionViewModel = NewWallpaperViewModel(newWallpaperItem: shareActionItem)
+            setup(viewModel: shareActionViewModel, for: section)
+            cell.set(viewModel: shareActionViewModel)
+        }
+        */
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? WallpaperTableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         

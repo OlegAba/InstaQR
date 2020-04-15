@@ -24,7 +24,7 @@ class SettingsViewController: InsetGroupedTableViewController {
     
     fileprivate func setupTableView() {
         tableView.rowHeight = 50.0
-        tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -74,25 +74,29 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
         cell.iconImage = UIImage(systemName: "chevron.right")
-        cell.logoImageView.tintColor = .systemBlue
+        cell.logoImageView.tintColor = .white
+        cell.logoImageInset = UIEdgeInsets(top: -4, left: 0, bottom: -4, right: 0)
         
         guard let section = SettingsSection(rawValue: indexPath.section) else { return cell }
         
         switch section {
         case .Help:
+            
             guard let helpItem = HelpItem(rawValue: indexPath.row) else { return cell }
             cell.title = helpItem.description
             cell.logoImage = helpItem.logoImage
+            cell.logoImageBackgroundColor = helpItem.logoBackgroundColor
         case .General:
             
             guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return cell }
             cell.title = generalItem.description
             cell.logoImage = generalItem.logoImage
+            cell.logoImageBackgroundColor = generalItem.logoBackgroundColor
         }
         
         return cell

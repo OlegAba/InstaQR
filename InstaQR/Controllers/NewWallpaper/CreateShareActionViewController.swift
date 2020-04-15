@@ -6,6 +6,8 @@
 //  Copyright © 2019 Oleg Abalonski. All rights reserved.
 //
 
+//SUBTITLE:- Set up a share action that will be triggered when your walllpaper is scanned
+
 import UIKit
 
 protocol CreateShareActionDelegate {
@@ -44,10 +46,10 @@ class CreateShareActionViewController: InsetGroupedTableViewController {
     }
     
     fileprivate func setupTableView() {
-        subtitle = "Set up a share action that will be triggered when your wallpaper is scanned."
+        subtitle = "Set up a share action that will be triggered when your image is scanned."
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.rowHeight = 50.0
-        tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -75,7 +77,7 @@ extension CreateShareActionViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         

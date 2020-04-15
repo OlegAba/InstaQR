@@ -40,7 +40,7 @@ class SelectWallpaperViewController: InsetGroupedTableViewController {
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: tableViewCellID)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.rowHeight = 70.0
         tableView.isScrollEnabled = false
     }
@@ -92,7 +92,7 @@ extension SelectWallpaperViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         
