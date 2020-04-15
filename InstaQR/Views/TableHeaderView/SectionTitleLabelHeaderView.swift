@@ -23,7 +23,7 @@ class SectionTitleLabelHeaderView: LabelHeaderView {
     
     // MARK: - Layout
     
-    private func layoutViews() {
+    func layoutViews() {
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: topAnchor),
             label.bottomAnchor.constraint(equalTo: bottomAnchor),

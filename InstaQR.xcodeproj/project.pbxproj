@@ -344,8 +344,8 @@
 		7C5D284C23AB07D50019111F /* TableHeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				7C5D284E23AB07D50019111F /* SectionTitleLabelHeaderView.swift */,
 				7C5D284F23AB07D50019111F /* LabelHeaderView.swift */,
+				7C5D284E23AB07D50019111F /* SectionTitleLabelHeaderView.swift */,
 			);
 			path = TableHeaderView;
 			sourceTree = "<group>";

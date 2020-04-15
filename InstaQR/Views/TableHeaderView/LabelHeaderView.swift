@@ -13,18 +13,12 @@ class LabelHeaderView: UIView {
     // MARK: - Internal Properties
     
     var text: String? {
-        didSet {
-            label.text = text
-        }
+        didSet { label.text = text }
     }
     
     var font: UIFont? {
-        didSet {
-            label.font = font
-        }
+        didSet { label.font = font }
     }
-    
-    // MARK: - Private Properties
     
     lazy var label: UILabel = {
         let label = UILabel()
