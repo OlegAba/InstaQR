@@ -31,9 +31,7 @@ class FlashButton: UIButton {
     }
     
     override var isHighlighted: Bool {
-        didSet {
-            iconImageView.alpha = isHighlighted ? 0.5 : 1.0
-        }
+        didSet { iconImageView.alpha = isHighlighted ? 0.5 : 1.0 }
     }
     
     // MARK: - Private Properties
@@ -64,7 +62,7 @@ class FlashButton: UIButton {
     
     // MARK: - Setup
     
-    fileprivate func setupViews() {
+    func setupViews() {
         backgroundColor = .systemBlue
         layer.cornerRadius = length / 2.0
         translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +70,7 @@ class FlashButton: UIButton {
     }
     
     // MARK: - Layout
-    fileprivate func layoutViews() {
+    func layoutViews() {
         
         let inset: CGFloat = 12.5
         
