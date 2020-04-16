@@ -77,7 +77,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     
     // MARK: - Actions
     
-    @objc fileprivate func settingsButtonWasTapped() {
+    @objc func settingsButtonWasTapped() {
         let settingsViewController = UINavigationController(rootViewController: SettingsViewController())
         present(settingsViewController, animated: true, completion: nil)
     }
@@ -250,5 +250,4 @@ extension NewWallpaperViewController: UITableViewDataSource {
             viewModel.isComplete = (barcode != nil)
         }
     }
-    
 }
