@@ -10,6 +10,8 @@ import UIKit
  
 class OnBoardingViewController: UIViewController {
     
+    // MARK: - Private Properties
+    
     fileprivate lazy var containerPageViewController: ContainerPageViewController = {
         let containerPageViewController = ContainerPageViewController()
         containerPageViewController.pageSections = onBoardingPageSections
@@ -61,6 +63,8 @@ class OnBoardingViewController: UIViewController {
             containerPageViewController.view.bottomAnchor.constraint(equalTo: getStartedPrimaryButton.topAnchor, constant: -view.layoutMargins.left),
         ])
     }
+    
+    // MARK: - Actions
     
     @objc fileprivate func getStartedButtonWasTapped() {
         guard let newWallpaperNavigationController = System.shared.appDelegate().newWallpaperNavigationController else { return }
