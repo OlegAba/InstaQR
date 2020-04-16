@@ -10,11 +10,15 @@ import UIKit
 
 class BlurredButton: UIButton {
     
+    // MARK: - Internal Properties
+    
     override var isHighlighted: Bool {
         didSet {
             blurEffectView.alpha = isHighlighted ? 0.8 : 1.0
         }
     }
+    
+    // MARK: - Private Properties
     
     fileprivate lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemMaterial)
@@ -28,6 +32,17 @@ class BlurredButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+        layoutViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setup
+    
+    func setupViews() {
         
         setTitleColor(.label, for: .normal)
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -37,16 +52,11 @@ class BlurredButton: UIButton {
         clipsToBounds = true
         
         insertSubview(blurEffectView, at: 0)
-        
-        layoutViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Layout
-    fileprivate func layoutViews() {
+    
+    func layoutViews() {
         
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 35.0),
