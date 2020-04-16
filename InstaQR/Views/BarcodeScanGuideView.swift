@@ -8,8 +8,6 @@
 
 import UIKit
 
-// TODO: Use AutoLayout
-
 class BarcodeScanGuideView: UIView {
     
     // MARK: - Internal Properties
@@ -88,7 +86,7 @@ class BarcodeScanGuideView: UIView {
     
     // MARK: - Setup
     
-    fileprivate func setupViews() {
+    func setupViews() {
         backgroundColor = UIColor.black.withAlphaComponent(0.7)
         clipsToBounds = true
         layer.mask = roundedRectShapeLayer

@@ -67,7 +67,7 @@ class DeviceWallpaperIconView: UIView {
     
     // MARK: - Setup
     
-    fileprivate func setupViews() {
+    func setupViews() {
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.5
         layer.cornerRadius = 5.0
@@ -80,7 +80,7 @@ class DeviceWallpaperIconView: UIView {
     
     // MARK: - Layout
     
-    fileprivate func layoutViews() {
+    func layoutViews() {
         
         NSLayoutConstraint.activate([
             
