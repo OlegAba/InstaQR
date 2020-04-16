@@ -10,11 +10,15 @@ import UIKit
 
 class SettingsViewController: InsetGroupedTableViewController {
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
     }
+    
+    // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
         navigationItem.title = "Settings"
@@ -29,16 +33,65 @@ class SettingsViewController: InsetGroupedTableViewController {
         tableView.dataSource = self
     }
     
+    // MARK: - Actions
+    
     @objc fileprivate func cancelButtonWasTapped() {
         dismiss(animated: true, completion: nil)
     }
     
 }
 
-// TODO: Seperate Delegate and Datasource extensions
+// MARK: - UITableViewDelegate
+extension SettingsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deselectTableViewRow()
+        
+        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+        var selectedController: UIViewController?
+        
+        switch section {
+        case .Help:
+            guard let helpItem = HelpItem(rawValue: indexPath.row) else { return }
+            
+            switch helpItem {
+            case .faq:
+                selectedController = FAQViewController()
+            case .liveWallpaper:
+                let containerPageViewController = ContainerPageViewController()
+                containerPageViewController.pageSections = wallpaperGuidePageSections
+                selectedController = containerPageViewController
+            case .onBoarding:
+                let containerPageViewController = ContainerPageViewController()
+                containerPageViewController.pageSections = onBoardingPageSections
+                selectedController = containerPageViewController
+            }
+            
+            selectedController?.title = helpItem.description
+            
+        case .General:
+            guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return }
+            
+            switch generalItem {
+            case .rate:
+                print("NOT IMPLEMENTED")
+            case .share:
+                print("NOT IMPLEMENTED")
+            case .licenses:
+                print("NOT IMPLEMENTED")
+            case .privacyPolicy:
+                print("NOT IMPLEMENTED")
+            }
+        }
+        
+        if let viewController = selectedController {
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+}
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return SettingsSection.allCases.count
@@ -100,50 +153,5 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deselectTableViewRow()
-        
-        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
-        var selectedController: UIViewController?
-        
-        switch section {
-        case .Help:
-            guard let helpItem = HelpItem(rawValue: indexPath.row) else { return }
-            
-            switch helpItem {
-            case .faq:
-                selectedController = FAQViewController()
-            case .liveWallpaper:
-                let containerPageViewController = ContainerPageViewController()
-                containerPageViewController.pageSections = wallpaperGuidePageSections
-                selectedController = containerPageViewController
-            case .onBoarding:
-                let containerPageViewController = ContainerPageViewController()
-                containerPageViewController.pageSections = onBoardingPageSections
-                selectedController = containerPageViewController
-            }
-            
-            selectedController?.title = helpItem.description
-            
-        case .General:
-            guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return }
-            
-            switch generalItem {
-            case .rate:
-                print("NOT IMPLEMENTED")
-            case .share:
-                print("NOT IMPLEMENTED")
-            case .licenses:
-                print("NOT IMPLEMENTED")
-            case .privacyPolicy:
-                print("NOT IMPLEMENTED")
-            }
-        }
-        
-        if let viewController = selectedController {
-            navigationController?.pushViewController(viewController, animated: true)
-        }
     }
 }
