@@ -23,7 +23,7 @@ class CropWallpaperViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private lazy var cropViewController: CropViewController = {
+    fileprivate lazy var cropViewController: CropViewController = {
         let cropViewController = CropViewController(image: imageToCrop)
         cropViewController.delegate = self
         cropViewController.aspectRatioLockEnabled = true
@@ -46,15 +46,14 @@ class CropWallpaperViewController: UIViewController {
         return cropViewController
     }()
     
-    // TODO: Cut box in the middle of CropViewController.CropView.frame
-    private lazy var blurEffectView: UIVisualEffectView = {
+    fileprivate lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.translatesAutoresizingMaskIntoConstraints = false
         return blurEffectView
     }()
     
-    private lazy var blurredOverlayImageView: UIImageView = {
+    fileprivate lazy var blurredOverlayImageView: UIImageView = {
         let imageView = UIImageView(frame: UIScreen.main.bounds)
         imageView.image = imageToCrop
         imageView.contentMode = .scaleToFill
@@ -74,7 +73,7 @@ class CropWallpaperViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        // NOTE: Prevent memeory leak bug
+        // NOTE: Prevent memory leak bug
         cropViewController.delegate = nil
     }
     
@@ -104,14 +103,14 @@ class CropWallpaperViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupNavigationBar() {
+    fileprivate func setupNavigationBar() {
         navigationItem.title = "Crop to Screen Size"
         navigationItem.largeTitleDisplayMode = .never
         let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonWasTapped))
         navigationItem.rightBarButtonItem = doneBarButtonItem
     }
     
-    private func setupViews() {
+    fileprivate func setupViews() {
         view.backgroundColor = .systemBackground
         addChild(cropViewController)
         view.addSubview(cropViewController.view)
@@ -130,7 +129,7 @@ class CropWallpaperViewController: UIViewController {
             cropViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             cropViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: cropViewControllerToolbarHeight),
             
-            blurredOverlayImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            blurredOverlayImageView.topAnchor.constraint(equalTo: view.topAnchor),
             blurredOverlayImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             blurredOverlayImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             blurredOverlayImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
