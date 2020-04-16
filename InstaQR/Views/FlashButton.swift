@@ -70,6 +70,7 @@ class FlashButton: UIButton {
     }
     
     // MARK: - Layout
+    
     func layoutViews() {
         
         let inset: CGFloat = 12.5
