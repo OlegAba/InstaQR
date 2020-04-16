@@ -103,14 +103,14 @@ class PermissionHandlerView: UIView {
     
     // MARK: - Setup
     
-    fileprivate func setupViews() {
+    func setupViews() {
         addSubview(labelContainerView)
         addSubview(primaryButton)
     }
     
     // MARK: - Layout
     
-    fileprivate func layoutViews() {
+    func layoutViews() {
         
         NSLayoutConstraint.activate([
             primaryButton.leadingAnchor.constraint(equalTo: leadingAnchor),
