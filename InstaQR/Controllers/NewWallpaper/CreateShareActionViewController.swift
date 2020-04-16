@@ -6,8 +6,6 @@
 //  Copyright © 2019 Oleg Abalonski. All rights reserved.
 //
 
-//SUBTITLE:- Set up a share action that will be triggered when your walllpaper is scanned
-
 import UIKit
 
 protocol CreateShareActionDelegate {
@@ -46,7 +44,7 @@ class CreateShareActionViewController: InsetGroupedTableViewController {
     }
     
     fileprivate func setupTableView() {
-        subtitle = "Set up a share action that will be triggered when your image is scanned."
+        subtitle = "Set up a share action that will be triggered when your wallpaper is scanned."
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.rowHeight = 50.0
         tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
@@ -63,10 +61,19 @@ class CreateShareActionViewController: InsetGroupedTableViewController {
     }
 }
 
-// TODO: Seperate Delegate and Datasource extensions
+// MARK: - UITableViewDelegate
+extension CreateShareActionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deselectTableViewRow()
+        
+        let barcodeType = barcodeCategoryTypes[indexPath.section][indexPath.row]
+        delegate.createShareAction(self, didSelectBarcodeType: barcodeType, withPrefilledInput: nil)
+    }
+}
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension CreateShareActionViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension CreateShareActionViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return barcodeCategoryTypes.count
@@ -95,13 +102,6 @@ extension CreateShareActionViewController: UITableViewDelegate, UITableViewDataS
         }
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deselectTableViewRow()
-        
-        let barcodeType = barcodeCategoryTypes[indexPath.section][indexPath.row]
-        delegate.createShareAction(self, didSelectBarcodeType: barcodeType, withPrefilledInput: nil)
     }
 }
 
