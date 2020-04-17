@@ -16,6 +16,8 @@ class LoadingNotificationViewController: NotificationViewController {
         didSet { titleLabel.text = message }
     }
     
+    // MARK: - Private Properties
+    
     fileprivate lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.color = .label
@@ -23,8 +25,6 @@ class LoadingNotificationViewController: NotificationViewController {
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicatorView
     }()
-    
-    // MARK: - Private Properties
     
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
