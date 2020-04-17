@@ -16,6 +16,8 @@ protocol PhotoAlbumDelegate {
 
 class PhotoAlbumViewController: UIViewController {
     
+    // MARK: - Internal Properties
+    
     var livePhoto: LPLivePhoto!
     var delegate: PhotoAlbumDelegate!
     
@@ -44,12 +46,11 @@ class PhotoAlbumViewController: UIViewController {
     fileprivate let albumTableViewCellID = "AlbumTableViewCellReuseIdentifier"
     
     fileprivate var photoAlbums = [PhotoAlbum]()
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
-        navigationItem.rightBarButtonItem = cancelBarButtonItem
         setupViews()
         setupRequisiteViews(for: PHPhotoLibrary.authorizationStatus())
     }
@@ -59,7 +60,13 @@ class PhotoAlbumViewController: UIViewController {
         layoutViews()
     }
     
+    // MARK: - Setup
+    
     fileprivate func setupViews() {
+        
+        let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
+        navigationItem.rightBarButtonItem = cancelBarButtonItem
+        
         view.backgroundColor = .clear
         view.addSubview(tableView)
         view.addSubview(photoLibraryPermissionHandlerView)
@@ -102,6 +109,8 @@ class PhotoAlbumViewController: UIViewController {
         ])
     }
     
+    // MARK: - Actions
+    
     @objc fileprivate func cancelButtonWasTapped() {
         dismiss(animated: true, completion: nil)
     }
@@ -121,6 +130,8 @@ class PhotoAlbumViewController: UIViewController {
         }
     }
     
+    // MARK: - Private Methods
+    
     fileprivate func loadPhotoAlbums() {
         photoAlbums = ImageManager.shared.grabAllPhotosAlbum() + ImageManager.shared.grabUserCreatedAlbums(nonEmpty: false)
         tableView.reloadData()
@@ -128,7 +139,17 @@ class PhotoAlbumViewController: UIViewController {
     }
 }
 
-extension PhotoAlbumViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate
+extension PhotoAlbumViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photoAlbum = photoAlbums[indexPath.row]
+        delegate.photoAlbum(self, didSelect: photoAlbum)
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension PhotoAlbumViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photoAlbums.count
@@ -158,10 +179,5 @@ extension PhotoAlbumViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let photoAlbum = photoAlbums[indexPath.row]
-        delegate.photoAlbum(self, didSelect: photoAlbum)
     }
 }

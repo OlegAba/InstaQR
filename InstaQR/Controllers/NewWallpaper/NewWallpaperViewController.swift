@@ -77,12 +77,12 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     
     // MARK: - Actions
     
-    @objc func settingsButtonWasTapped() {
+    @objc fileprivate func settingsButtonWasTapped() {
         let settingsViewController = UINavigationController(rootViewController: SettingsViewController())
         present(settingsViewController, animated: true, completion: nil)
     }
     
-    @objc func deleteButtonWasTapped() {
+    @objc fileprivate func deleteButtonWasTapped() {
         let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
         buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
         buttonsPopUpNotificationViewController.messageText = "Are you sure you want to delete the current wallpaper?"
@@ -90,7 +90,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         present(buttonsPopUpNotificationViewController, animated: true, completion: nil)
     }
     
-    @objc func createButtonWasTapped() {
+    @objc fileprivate func createButtonWasTapped() {
         if wallpaperImage == nil {
             let row = WallpaperItem.selectWallpaper.rawValue
             let section = NewWallpaperSection.Wallpaper.rawValue

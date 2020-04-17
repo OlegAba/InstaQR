@@ -10,20 +10,10 @@ import UIKit
 
 class AnswersViewController: UIViewController {
     
+    // MARK: - Internal Properties
+    
     var question: String?
     var answer: String?
-    
-    fileprivate lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-    
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     lazy var questionLabel: UILabel = {
         let label = UILabel()
@@ -47,6 +37,22 @@ class AnswersViewController: UIViewController {
         return label
     }()
     
+    // MARK: - Private Properties
+    
+    fileprivate lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    fileprivate lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -57,6 +63,8 @@ class AnswersViewController: UIViewController {
         super.viewDidLayoutSubviews()
         layoutViews()
     }
+    
+    // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
         let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
@@ -70,6 +78,8 @@ class AnswersViewController: UIViewController {
         contentView.addSubview(questionLabel)
         contentView.addSubview(answerLabel)
     }
+    
+    // MARK: - Layout
     
     fileprivate func layoutViews() {
         
@@ -95,6 +105,8 @@ class AnswersViewController: UIViewController {
             answerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
     }
+    
+    // MARK: - Actions
     
     @objc fileprivate func cancelButtonWasTapped() {
         dismiss(animated: true, completion: nil)

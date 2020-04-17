@@ -12,7 +12,11 @@ import LPLivePhotoGenerator
 
 class PreviewWallpaperViewController: UIViewController {
     
+    // MARK: - Internal Properties
+    
     var livePhoto: LPLivePhoto!
+    
+    // MARK: - Private Properties
     
     fileprivate lazy var livePhotoPreviewView: PHLivePhotoView = {
         let phLivePhotoView = PHLivePhotoView()
@@ -41,6 +45,8 @@ class PreviewWallpaperViewController: UIViewController {
         blurredButton.addTarget(self, action: #selector(livePhotoButtonWasTapped), for: .touchUpInside)
         return blurredButton
     }()
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +91,8 @@ class PreviewWallpaperViewController: UIViewController {
         ])
     }
     
+    // MARK: - Actions
+    
     @objc fileprivate func doneButtonWasTapped() {
         dismiss(animated: true, completion: nil)
     }
@@ -102,6 +110,7 @@ class PreviewWallpaperViewController: UIViewController {
     
 }
 
+// MARK: - PhotoAlbumDelegate
 extension PreviewWallpaperViewController: PhotoAlbumDelegate {
     
     func photoAlbum(_ photoAlbumViewController: PhotoAlbumViewController, didSelect album: PhotoAlbum) {

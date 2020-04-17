@@ -11,6 +11,7 @@ import UIKit
 class NewWallpaperNavigationController: UINavigationController {
     
     // MARK: - Internal Properties
+    
     var newWallpaperViewController: NewWallpaperViewController!
     var wallpaperSource: String!
     
