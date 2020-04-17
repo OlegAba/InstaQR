@@ -14,7 +14,11 @@ protocol ButtonsPopUpNotificationDelegate {
 
 class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
     
+    // MARK: - Internal Properties
+    
     var delegate: ButtonsPopUpNotificationDelegate!
+    
+    // MARK: - Private Properties
     
     fileprivate lazy var backgroundTapGesture: UITapGestureRecognizer = {
         return UITapGestureRecognizer(target: self, action: #selector(secondaryButtonWasTapped))
@@ -37,16 +41,30 @@ class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
         return primaryButton
     }()
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layoutViews()
+    }
+    
+    // MARK: - Setup
+    
+    fileprivate func setupViews() {
         titleText = "Warning"
         view.addGestureRecognizer(backgroundTapGesture)
         buttonContainerView.addSubview(primaryButton)
         buttonContainerView.addSubview(secondaryButton)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    // MARK: - Layout
+    
+    fileprivate func layoutViews() {
         
         NSLayoutConstraint.activate([
             secondaryButton.topAnchor.constraint(equalTo: buttonContainerView.topAnchor),
@@ -59,7 +77,6 @@ class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
             primaryButton.trailingAnchor.constraint(equalTo: buttonContainerView.trailingAnchor),
             primaryButton.leadingAnchor.constraint(equalTo: buttonContainerView.centerXAnchor, constant: (inset / 2.0))
         ])
-        
     }
     
     // MARK: - Actions
