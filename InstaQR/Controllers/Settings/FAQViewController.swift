@@ -10,11 +10,15 @@ import UIKit
 
 class FAQViewController: InsetGroupedTableViewController {
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
     }
+    
+    // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
         let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
@@ -29,15 +33,28 @@ class FAQViewController: InsetGroupedTableViewController {
         tableView.dataSource = self
     }
     
+    // MARK: - Actions
+    
     @objc fileprivate func cancelButtonWasTapped() {
         dismiss(animated: true, completion: nil)
     }
 }
 
-// TODO: Seperate Delegate and Datasource extensions
+// MARK: - UITableViewDelegate
+extension FAQViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deselectTableViewRow()
+        let selectedFAQ = FAQSection[indexPath.row]
+        let answerViewController = AnswersViewController()
+        answerViewController.question = selectedFAQ.question
+        answerViewController.answer = selectedFAQ.answer
+        navigationController?.pushViewController(answerViewController, animated: true)
+    }
+}
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension FAQViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension FAQViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -58,14 +75,5 @@ extension FAQViewController: UITableViewDelegate, UITableViewDataSource {
         cell.title = currentFAQ.question
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deselectTableViewRow()
-        let selectedFAQ = FAQSection[indexPath.row]
-        let answerViewController = AnswersViewController()
-        answerViewController.question = selectedFAQ.question
-        answerViewController.answer = selectedFAQ.answer
-        navigationController?.pushViewController(answerViewController, animated: true)
     }
 }
