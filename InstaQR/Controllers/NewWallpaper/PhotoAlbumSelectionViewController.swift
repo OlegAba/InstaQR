@@ -14,7 +14,7 @@ protocol PhotoAlbumDelegate {
     func photoAlbum(_ photoAlbumViewController: PhotoAlbumViewController, didSelect album: PhotoAlbum)
 }
 
-class PhotoAlbumViewController: UIViewController {
+class PhotoAlbumViewController: ViewController {
     
     // MARK: - Internal Properties
     

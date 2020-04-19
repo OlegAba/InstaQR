@@ -10,7 +10,7 @@ import UIKit
 import PhotosUI
 import LPLivePhotoGenerator
 
-class PreviewWallpaperViewController: UIViewController {
+class PreviewWallpaperViewController: ViewController {
     
     // MARK: - Internal Properties
     
