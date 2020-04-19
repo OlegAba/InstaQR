@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InsetGroupedTableViewController: UIViewController {
+class InsetGroupedTableViewController: ViewController {
     
     // MARK: - Internal Properties
     

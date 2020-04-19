@@ -12,7 +12,7 @@ protocol UserInputDelegate {
     func userInput(_ userInputViewController: UserInputViewController, didCreateBarcode barcode: Barcode, withBarcodeInput barcodeInput: BarcodeInput)
 }
 
-class UserInputViewController: UIViewController {
+class UserInputViewController: ViewController {
     
     // MARK: - Internal Properties
     
@@ -85,7 +85,7 @@ class UserInputViewController: UIViewController {
     }()
     
     fileprivate lazy var shownKeyboardStackViewConstraint: NSLayoutConstraint = {
-        return stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -keyboardHeight)
+        return stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(keyboardHeight + System.shared.globalInset))
     }()
     
     // MARK: - View Life Cycle
@@ -159,7 +159,7 @@ class UserInputViewController: UIViewController {
             
             createPrimaryButton.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor),
             createPrimaryButton.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor),
-            createPrimaryButton.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor, constant: -view.layoutMargins.left)
+            createPrimaryButton.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor)
         ])
     }
     

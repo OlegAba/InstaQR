@@ -14,7 +14,7 @@ protocol BarcodeScannerDelegate {
     func barcodeScannerCodeFound(_ barcodeScannerViewController: BarcodeScannerViewController, codeData: String)
 }
 
-class BarcodeScannerViewController: UIViewController {
+class BarcodeScannerViewController: ViewController {
     
     // MARK: - Internal Properties
     
@@ -162,7 +162,7 @@ class BarcodeScannerViewController: UIViewController {
             captureVideoPermissionHandlerView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
             captureVideoPermissionHandlerView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             captureVideoPermissionHandlerView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            captureVideoPermissionHandlerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -view.layoutMargins.left),
+            captureVideoPermissionHandlerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             barcodeScanGuideView.topAnchor.constraint(equalTo: view.topAnchor),
             barcodeScanGuideView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

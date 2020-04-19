@@ -8,7 +8,7 @@
 
 import UIKit
  
-class OnBoardingViewController: UIViewController {
+class OnBoardingViewController: ViewController {
     
     // MARK: - Private Properties
     
