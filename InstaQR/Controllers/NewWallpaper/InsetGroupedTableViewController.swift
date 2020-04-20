@@ -34,15 +34,13 @@ class InsetGroupedTableViewController: ViewController {
         return tableView
     }()
     
-    // MARK: - Private Properties
-    
-    fileprivate lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    fileprivate lazy var subtitleLabel: UILabel = {
+    lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = tableHeaderViewFont
         label.textColor = .label
