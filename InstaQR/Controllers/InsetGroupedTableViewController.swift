@@ -27,9 +27,9 @@ class InsetGroupedTableViewController: ViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.backgroundColor = .systemBackground
         tableView.tableHeaderView = containerView
         tableView.separatorStyle = .none
+        tableView.backgroundColor = view.backgroundColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()

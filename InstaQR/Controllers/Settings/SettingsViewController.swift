@@ -131,8 +131,8 @@ extension SettingsViewController: UITableViewDataSource {
         
         cell.isLast = rowIsLast(for: indexPath)
         cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
-        cell.iconImage = UIImage(systemName: "chevron.right")
-        cell.logoImageView.tintColor = .white
+        cell.iconImage = UIImage.chevronRightIcon
+        cell.logoImageView.tintColor = .label
         cell.logoImageInset = UIEdgeInsets(top: -4, left: 0, bottom: -4, right: 0)
         
         guard let section = SettingsSection(rawValue: indexPath.section) else { return cell }
