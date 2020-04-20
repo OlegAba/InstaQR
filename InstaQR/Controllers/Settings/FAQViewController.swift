@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FAQViewController: InsetGroupedTableViewController {
+class FAQViewController: GroupedTableViewController {
     
     // MARK: - View Life Cycle
     

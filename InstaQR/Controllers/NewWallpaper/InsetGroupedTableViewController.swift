@@ -27,22 +27,20 @@ class InsetGroupedTableViewController: ViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.backgroundColor = .systemBackground
         tableView.tableHeaderView = containerView
         tableView.separatorStyle = .none
+        tableView.backgroundColor = view.backgroundColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    // MARK: - Private Properties
-    
-    fileprivate lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    fileprivate lazy var subtitleLabel: UILabel = {
+    lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = tableHeaderViewFont
         label.textColor = .label

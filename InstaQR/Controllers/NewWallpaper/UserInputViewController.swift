@@ -129,7 +129,6 @@ class UserInputViewController: ViewController {
     }
     
     fileprivate func setupViews() {
-        view.backgroundColor = .systemBackground
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         hiddenKeyboardStackViewConstraint.isActive = true
