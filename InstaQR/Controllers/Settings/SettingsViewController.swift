@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: GroupedTableViewController {
+class SettingsViewController: InsetGroupedTableViewController {
     
     // MARK: - View Life Cycle
     
