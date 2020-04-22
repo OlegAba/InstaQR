@@ -11,7 +11,7 @@ import UIKit
 class VenmoBarcode: Barcode {
     
     init() {
-        super.init(barcodeType: .twitter)
+        super.init(barcodeType: .venmo)
         
         userInputs[.venmoUsername] = ""
     }

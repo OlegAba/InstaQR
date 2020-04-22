@@ -26,7 +26,6 @@ class Barcode: NSObject {
         case instagram = "Instagram"
         case snapchat = "Snapchat"
         case linkedin = "LinkedIn"
-        case yelp = "Yelp"
         case tumblr = "Tumblr"
         case reddit = "Reddit"
         case pinterest = "Pinterest"
@@ -39,7 +38,6 @@ class Barcode: NSObject {
         case litecoin = "Litecoin"
         case bitcoinCash = "Bitcoin Cash"
         case ripple = "Ripple"
-        case paypal = "Paypal"
         case venmo = "Venmo"
         case cash = "Cash"
         
@@ -133,8 +131,6 @@ class Barcode: NSObject {
             return SnapchatBarcode()
         case .linkedin:
             return LinkedinBarcode()
-        case .yelp:
-            return YelpBarcode()
         case .tumblr:
             return TumblrBarcode()
         case .reddit:
@@ -155,8 +151,6 @@ class Barcode: NSObject {
             return BitcoinCashBarcode()
         case .ripple:
             return RippleBarcode()
-        case .paypal:
-            return PaypalBarcode()
         case .venmo:
             return VenmoBarcode()
         case .cash:

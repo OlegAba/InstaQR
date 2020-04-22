@@ -25,11 +25,7 @@ class EmailBarcode: Barcode {
             return (false, "This field cannot be empty")
         }
         
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let isEmail = emailTest.evaluate(with: data)
-        
-        if !isEmail {
+        if !isValid(email: sanitizedData) {
             return (false, "The specified \(title) is invalid")
         }
         
@@ -39,5 +35,12 @@ class EmailBarcode: Barcode {
     override func generateDataFromInputs() -> String? {
         guard let data = userInputs[.genericEmail], !data.isEmpty else { return nil }
         return data
+    }
+    
+    fileprivate func isValid(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: email)
+        return result
     }
 }

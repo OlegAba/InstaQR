@@ -17,6 +17,7 @@ class BitcoinCashBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // cryptofacilities.zendesk.com/hc/en-us/articles/360006469814-BCH-CashAddr-Format
         
         let title = self.title!
@@ -34,8 +35,9 @@ class BitcoinCashBarcode: Barcode {
             return (false, "\(title) address cannot be longer than 35 characters")
         }
         
-        if sanitizedData.first != "1" || sanitizedData.first != "q" {
-            return (false, "\(title) address must begin with character \"1\" or \"q\"")
+        if !(sanitizedData.first == "1" || sanitizedData.first == "q" || sanitizedData.first == "3" || sanitizedData.first == "p") {
+            
+            return (false, "\(title) address must begin with character \"1\", \"q\", \"3\", or \"p\"")
         }
         
         for char in sanitizedData {

@@ -28,17 +28,16 @@ class BarcodeCategory: NSObject {
             
             return [Barcode.BarcodeType.twitter, Barcode.BarcodeType.facebook,
                     Barcode.BarcodeType.instagram, Barcode.BarcodeType.snapchat,
-                    Barcode.BarcodeType.linkedin, Barcode.BarcodeType.yelp,
-                    Barcode.BarcodeType.tumblr, Barcode.BarcodeType.reddit,
-                    Barcode.BarcodeType.pinterest, Barcode.BarcodeType.youtube]
+                    Barcode.BarcodeType.linkedin, Barcode.BarcodeType.tumblr,
+                    Barcode.BarcodeType.reddit, Barcode.BarcodeType.pinterest,
+                    Barcode.BarcodeType.youtube]
             
         case .payment:
             
             return [Barcode.BarcodeType.bitcoin, Barcode.BarcodeType.ethereum,
                     Barcode.BarcodeType.monero, Barcode.BarcodeType.litecoin,
                     Barcode.BarcodeType.bitcoinCash, Barcode.BarcodeType.ripple,
-                    Barcode.BarcodeType.paypal, Barcode.BarcodeType.venmo,
-                    Barcode.BarcodeType.cash]
+                    Barcode.BarcodeType.venmo, Barcode.BarcodeType.cash]
             
         case .standard:
             
