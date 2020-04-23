@@ -17,10 +17,11 @@ class RedditBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // reddit.com/r/help/comments/2oa8cs/do_you_know_which_characters_are_allowed_in_a/
         // reddit.com/r/swtor/comments/lz4mx/what_are_the_minmax_character_limits_for_names/
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

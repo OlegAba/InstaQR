@@ -18,7 +18,7 @@ class WebsiteBarcode: Barcode {
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {

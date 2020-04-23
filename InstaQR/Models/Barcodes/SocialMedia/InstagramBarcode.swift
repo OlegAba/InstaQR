@@ -17,9 +17,10 @@ class InstagramBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // stackoverflow.com/questions/15470180/character-limit-on-instagram-usernames
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

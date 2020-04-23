@@ -105,8 +105,8 @@ class Barcode: NSObject {
         return nil
     }
     
-    internal func truncateCryptoIdentifier(cryptoBarcodeTitle: String, data: String) -> String {
-        let identifier = cryptoBarcodeTitle.lowercased() + ":"
+    internal func truncateCryptoIdentifier(data: String) -> String {
+        let identifier = title.lowercased().replacingOccurrences(of: "\\s", with: "", options: .regularExpression) + ":"
         guard let index = data.indexDistance(of: identifier) else { return data }
         
         if index != 0 {

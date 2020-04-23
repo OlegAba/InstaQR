@@ -17,9 +17,10 @@ class FacebookBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // facebook.com/help/409473442437047
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

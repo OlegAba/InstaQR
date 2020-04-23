@@ -20,8 +20,8 @@ class BitcoinCashBarcode: Barcode {
         
         // cryptofacilities.zendesk.com/hc/en-us/articles/360006469814-BCH-CashAddr-Format
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -31,8 +31,8 @@ class BitcoinCashBarcode: Barcode {
             return (false, "\(title) address must be at least 26 characters long")
         }
         
-        if sanitizedData.count > 35 {
-            return (false, "\(title) address cannot be longer than 35 characters")
+        if sanitizedData.count > 90 {
+            return (false, "\(title) address cannot be longer than 90 characters")
         }
         
         if !(sanitizedData.first == "1" || sanitizedData.first == "q" || sanitizedData.first == "3" || sanitizedData.first == "p") {
@@ -46,6 +46,7 @@ class BitcoinCashBarcode: Barcode {
             }
             
             return (false, "\(title) address can only contain alphanumeric characters (letters A-Z, numbers 0-9)")
+            
         }
         
         return (true, nil)
@@ -53,7 +54,8 @@ class BitcoinCashBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.bitcoinCashAddress], !address.isEmpty else { return nil }
-        let data = "bitcoincash:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "bitcoincash:\(sanitizedAddress)"
         
         return data
     }

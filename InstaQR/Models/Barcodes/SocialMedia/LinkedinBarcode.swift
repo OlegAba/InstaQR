@@ -17,9 +17,10 @@ class LinkedinBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // linkedin.com/help/linkedin/answer/87/customizing-your-public-profile-url?lang=en
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

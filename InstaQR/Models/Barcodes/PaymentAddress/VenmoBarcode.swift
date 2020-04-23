@@ -17,9 +17,10 @@ class VenmoBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // help.venmo.com/hc/en-us/articles/235432448-Check-or-Edit-Your-Username
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {

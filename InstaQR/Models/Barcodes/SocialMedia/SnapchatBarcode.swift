@@ -17,9 +17,10 @@ class SnapchatBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // stackoverflow.com/questions/39819830/what-are-the-allowed-character-in-snapchat-username
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

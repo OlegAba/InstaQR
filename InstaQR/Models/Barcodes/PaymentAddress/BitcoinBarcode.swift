@@ -17,10 +17,11 @@ class BitcoinBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // en.bitcoin.it/wiki/Address
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -53,7 +54,8 @@ class BitcoinBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.bitcoinAddress], !address.isEmpty else { return nil }
-        let data = "bitcoin:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "bitcoin:\(sanitizedAddress)"
         
         return data
     }

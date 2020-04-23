@@ -17,10 +17,11 @@ class RippleBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // developers.ripple.com/accounts.html
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -50,8 +51,8 @@ class RippleBarcode: Barcode {
             return (false, "\(title) address cannot contain the character \"I\"")
         }
         
-        if sanitizedData.contains("1") {
-            return (false, "\(title) address cannot contain the character \"1\"")
+        if sanitizedData.contains("l") {
+            return (false, "\(title) address cannot contain the character \"l\"")
         }
         
         for char in sanitizedData {
@@ -67,7 +68,8 @@ class RippleBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.rippleAddress], !address.isEmpty else { return nil }
-        let data = "ripple:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "ripple:\(sanitizedAddress)"
         
         return data
     }
