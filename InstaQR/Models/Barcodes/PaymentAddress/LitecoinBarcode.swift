@@ -17,10 +17,11 @@ class LitecoinBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // cryptonomist.ch/en/2018/09/29/bitcoin-and-litecoin/
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -30,8 +31,8 @@ class LitecoinBarcode: Barcode {
             return (false, "\(title) address must be at least 26 characters long")
         }
         
-        if sanitizedData.count > 35 {
-            return (false, "\(title) address cannot be longer than 35 characters")
+        if sanitizedData.count > 90 {
+            return (false, "\(title) address cannot be longer than 90 characters")
         }
         
         // Checking if the address matches any of the 3 litecoin address formats (P2PKH, P2SH, Bech32)
@@ -54,7 +55,8 @@ class LitecoinBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.litecoinAddress], !address.isEmpty else { return nil }
-        let data = "litecoin:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "litecoin:\(sanitizedAddress)"
         
         return data
     }

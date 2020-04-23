@@ -22,7 +22,6 @@ class BarcodeInput: NSObject {
         case instagramHandle
         case snapchatHandle
         case linkedinHandle
-        case yelpUserID
         case tumblrName
         case redditHandle
         case pinterestHandle
@@ -35,7 +34,6 @@ class BarcodeInput: NSObject {
         case litecoinAddress
         case bitcoinCashAddress
         case rippleAddress
-        case paypalMerchantID
         case venmoUsername
         case cashTag
         
@@ -61,7 +59,6 @@ class BarcodeInput: NSObject {
         KeyType.instagramHandle : (instructions: "Enter Your Instagram Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
         KeyType.snapchatHandle : (instructions: "Enter Your Snapchat Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
         KeyType.linkedinHandle : (instructions: "Enter Your LinkedIn Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.yelpUserID : (instructions: "Enter Your Yelp User Identifier", placeholder: "MR1HQbbPqyR0ymBi1rNbdg", barcodeScanEnabled: false),
         KeyType.tumblrName : (instructions: "Enter Your Tumblr Name", placeholder: "Dedalvs", barcodeScanEnabled: false),
         KeyType.redditHandle : (instructions: "Enter Your Reddit Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
         KeyType.pinterestHandle : (instructions: "Enter Your Pinterest Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
@@ -74,7 +71,6 @@ class BarcodeInput: NSObject {
         KeyType.litecoinAddress : (instructions: "Enter Your Litecoin (LTC) Address", placeholder: "3CDJNfdWX8m2NwuGUV3nhXHXEeLygMXoAj", barcodeScanEnabled: true),
         KeyType.bitcoinCashAddress : (instructions: "Enter Your Bitcoin Cash (BCH) Address", placeholder: "pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g", barcodeScanEnabled: true),
         KeyType.rippleAddress : (instructions: "Enter Your Ripple (XRP) Address", placeholder: "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn", barcodeScanEnabled: true),
-        KeyType.paypalMerchantID : (instructions: "Enter Your Paypal Merchant ID", placeholder: "ID4MED2H3WDH3U1", barcodeScanEnabled: false),
         KeyType.venmoUsername : (instructions: "Enter Your Venmo Username", placeholder: "@xo_leg", barcodeScanEnabled: false),
         KeyType.cashTag : (instructions: "Enter Your CashTag", placeholder: "$xo_leg", barcodeScanEnabled: false),
         

@@ -17,9 +17,10 @@ class CashBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // cash.app/help/gb/en-gb/5504-cashtag-requirements
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {

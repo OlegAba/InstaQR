@@ -17,10 +17,11 @@ class BitcoinBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // en.bitcoin.it/wiki/Address
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -30,11 +31,11 @@ class BitcoinBarcode: Barcode {
             return (false, "\(title) address must be at least 26 characters long")
         }
         
-        if sanitizedData.count > 35 {
-            return (false, "\(title) address cannot be longer than 35 characters")
+        if sanitizedData.count > 90 {
+            return (false, "\(title) address cannot be longer than 90 characters")
         }
         
-        // Checking if the address matches any of the 3 bitcoin address formats (P2PKH, P2SH, Bech32)
+        // Check if the address matches any of the 3 bitcoin address formats (P2PKH, P2SH, Bech32)
         let bech32Index = sanitizedData.index(sanitizedData.startIndex, offsetBy: 3)
         if !((sanitizedData.first == "1") || (sanitizedData.first == "3") || (sanitizedData[..<bech32Index] == "bc1")) {
             return (false, "\(title) address must begin with character/s \"1\", \"3\", or \"bc1\"")
@@ -53,7 +54,8 @@ class BitcoinBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.bitcoinAddress], !address.isEmpty else { return nil }
-        let data = "bitcoin:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "bitcoin:\(sanitizedAddress)"
         
         return data
     }

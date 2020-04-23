@@ -21,8 +21,8 @@ class EthereumBarcode: Barcode {
         // en.wikipedia.org/wiki/Ethereum#Addresses
         // reddit.com/r/ethereum/comments/6l3da1/how_long_are_ethereum_addresses/
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -42,7 +42,8 @@ class EthereumBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.ethereumAddress], !address.isEmpty else { return nil }
-        let data = "ethereum:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "ethereum:\(sanitizedAddress)"
         
         return data
     }

@@ -20,7 +20,7 @@ class TwitterBarcode: Barcode {
         
         // help.twitter.com/en/managing-your-account/twitter-username-rules
         
-        let title = self.title!
+        let title = self.title ?? ""
         let sanitizedData = data.trimmingCharacters(in: .whitespaces).lowercased()
         
         if sanitizedData.isEmpty {

@@ -17,10 +17,11 @@ class MoneroBarcode: Barcode {
     }
     
     override func userInputValidationFor(data: String, inputKeyType: BarcodeInput.KeyType) -> (isValid: Bool, errorMessage: String?) {
+        
         // monero.fandom.com/wiki/Address_validation
         
-        let title = self.title!
-        let sanitizedData = truncateCryptoIdentifier(cryptoBarcodeTitle: title, data: data).trimmingCharacters(in: .whitespaces)
+        let title = self.title ?? ""
+        let sanitizedData = truncateCryptoIdentifier(data: data).trimmingCharacters(in: .whitespaces)
         
         if sanitizedData.isEmpty {
             return (false, "This field cannot be empty")
@@ -28,7 +29,7 @@ class MoneroBarcode: Barcode {
         
         if sanitizedData.count == 95 {
             let firstChar = sanitizedData.first
-            let secondIndex = sanitizedData.index(sanitizedData.startIndex, offsetBy: 2)
+            let secondIndex = sanitizedData.index(sanitizedData.startIndex, offsetBy: 1)
             let secondChar = sanitizedData[secondIndex]
             
             if firstChar != "4" {
@@ -50,7 +51,8 @@ class MoneroBarcode: Barcode {
     
     override func generateDataFromInputs() -> String? {
         guard let address = userInputs[.moneroAddress], !address.isEmpty else { return nil }
-        let data = "monero:\(address)"
+        let sanitizedAddress = truncateCryptoIdentifier(data: address)
+        let data = "monero:\(sanitizedAddress)"
         
         return data
     }
