@@ -26,7 +26,6 @@
 		7C5D283423AB064A0019111F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283323AB064A0019111F /* SettingsViewController.swift */; };
 		7C5D283623AB067E0019111F /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283523AB067E0019111F /* ContainerPageViewController.swift */; };
 		7C5D283B23AB06920019111F /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283723AB06920019111F /* OnBoardingViewController.swift */; };
-		7C5D283C23AB06920019111F /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283823AB06920019111F /* FAQViewController.swift */; };
 		7C5D283D23AB06920019111F /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283923AB06920019111F /* AnswersViewController.swift */; };
 		7C5D283E23AB06920019111F /* PageSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D283A23AB06920019111F /* PageSectionViewController.swift */; };
 		7C5D284623AB073C0019111F /* LoadingNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D284023AB073C0019111F /* LoadingNotificationViewController.swift */; };
@@ -111,7 +110,6 @@
 		7C5D283323AB064A0019111F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7C5D283523AB067E0019111F /* ContainerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
 		7C5D283723AB06920019111F /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
-		7C5D283823AB06920019111F /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		7C5D283923AB06920019111F /* AnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
 		7C5D283A23AB06920019111F /* PageSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageSectionViewController.swift; sourceTree = "<group>"; };
 		7C5D284023AB073C0019111F /* LoadingNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingNotificationViewController.swift; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 				7C5D283523AB067E0019111F /* ContainerPageViewController.swift */,
 				7C5D283A23AB06920019111F /* PageSectionViewController.swift */,
 				7C5D283723AB06920019111F /* OnBoardingViewController.swift */,
-				7C5D283823AB06920019111F /* FAQViewController.swift */,
 				7C5D283923AB06920019111F /* AnswersViewController.swift */,
 			);
 			path = Settings;
@@ -584,7 +581,6 @@
 				7C5D28C023AB0E4B0019111F /* UIVIew+.swift in Sources */,
 				7C5D289E23AB08B90019111F /* FacebookBarcode.swift in Sources */,
 				7C5D289D23AB08B90019111F /* InstagramBarcode.swift in Sources */,
-				7C5D283C23AB06920019111F /* FAQViewController.swift in Sources */,
 				7C5D285223AB07D50019111F /* LabelHeaderView.swift in Sources */,
 				7C5D28A923AB08B90019111F /* CashBarcode.swift in Sources */,
 				7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */,

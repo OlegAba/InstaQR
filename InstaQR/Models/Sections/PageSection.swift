@@ -17,8 +17,12 @@ struct PageSection {
 
 let onBoardingPageSections: [PageSection] = [
 
-    PageSection(title: "Instantly Share",
-                subtitle: "Eaisly share your contact info straight from the lock screen",
+    PageSection(title: "Live Wallpaper",
+                subtitle: """
+                \(System.shared.appName) generates a live wallpaper by combining an image of your choice with a
+                scannable QR code. The QR code stores your share action and stays hidden until the live wallpaper
+                is activated by pressing into the screen.
+                """,
                 gifFileName: "tutorial.gif",
                 placeholderImageFileName: "preview"),
     PageSection(title: "Scannable",
