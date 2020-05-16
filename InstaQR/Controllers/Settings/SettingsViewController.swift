@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SettingsViewController: InsetGroupedTableViewController {
     
@@ -56,7 +57,13 @@ extension SettingsViewController: UITableViewDelegate {
             
             switch helpItem {
             case .faq:
-                selectedController = FAQViewController()
+                //selectedController = FAQViewController()
+                let faqString = "https://olegaba.github.io/InstaQR-landing-page/#/faq"
+                if let faqURL = URL(string: faqString) {
+                    let vc = SFSafariViewController(url: faqURL)
+                    present(vc, animated: true, completion: nil)
+                }
+                
             case .liveWallpaper:
                 let containerPageViewController = ContainerPageViewController()
                 containerPageViewController.pageSections = wallpaperGuidePageSections
@@ -132,7 +139,7 @@ extension SettingsViewController: UITableViewDataSource {
         cell.isLast = rowIsLast(for: indexPath)
         cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
         cell.iconImage = UIImage.chevronRightIcon
-        cell.logoImageView.tintColor = .label
+        cell.logoImageView.tintColor = .systemBlue
         cell.logoImageInset = UIEdgeInsets(top: -4, left: 0, bottom: -4, right: 0)
         
         guard let section = SettingsSection(rawValue: indexPath.section) else { return cell }

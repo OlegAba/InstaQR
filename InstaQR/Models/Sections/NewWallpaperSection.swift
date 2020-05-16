@@ -21,8 +21,6 @@ enum NewWallpaperSection: Int, CaseIterable {
 enum WallpaperItem: Int, CaseIterable, NewWallpaperItemType {
     case selectWallpaper
     
-    // TODO:- Change to Select Wallpaper / Wallpaper
-    
     var description: String { return "Select Wallpaper" }
     
     var completedDescription: String { return "Wallpaper" }

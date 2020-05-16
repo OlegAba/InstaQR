@@ -47,7 +47,6 @@
 		7C5D288D23AB08B90019111F /* SelectWallpaperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */; };
 		7C5D288E23AB08B90019111F /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286A23AB08B90019111F /* SettingsSection.swift */; };
 		7C5D288F23AB08B90019111F /* WallpaperGuideSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */; };
-		7C5D289023AB08B90019111F /* FAQSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286C23AB08B90019111F /* FAQSection.swift */; };
 		7C5D289123AB08B90019111F /* NewWallpaperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */; };
 		7C5D289223AB08B90019111F /* PageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D286E23AB08B90019111F /* PageSection.swift */; };
 		7C5D289323AB08B90019111F /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D287023AB08B90019111F /* Barcode.swift */; };
@@ -133,7 +132,6 @@
 		7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectWallpaperSection.swift; sourceTree = "<group>"; };
 		7C5D286A23AB08B90019111F /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGuideSection.swift; sourceTree = "<group>"; };
-		7C5D286C23AB08B90019111F /* FAQSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQSection.swift; sourceTree = "<group>"; };
 		7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperSection.swift; sourceTree = "<group>"; };
 		7C5D286E23AB08B90019111F /* PageSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageSection.swift; sourceTree = "<group>"; };
 		7C5D287023AB08B90019111F /* Barcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
@@ -365,7 +363,6 @@
 				7C5D286923AB08B90019111F /* SelectWallpaperSection.swift */,
 				7C5D286A23AB08B90019111F /* SettingsSection.swift */,
 				7C5D286B23AB08B90019111F /* WallpaperGuideSection.swift */,
-				7C5D286C23AB08B90019111F /* FAQSection.swift */,
 				7C5D286D23AB08B90019111F /* NewWallpaperSection.swift */,
 				7C5D286E23AB08B90019111F /* PageSection.swift */,
 			);
@@ -599,7 +596,6 @@
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
 				7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */,
 				7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */,
-				7C5D289023AB08B90019111F /* FAQSection.swift in Sources */,
 				7C5D28BC23AB0E4B0019111F /* String+.swift in Sources */,
 				7C5D283D23AB06920019111F /* AnswersViewController.swift in Sources */,
 				7C5D28AA23AB08B90019111F /* EthereumBarcode.swift in Sources */,
