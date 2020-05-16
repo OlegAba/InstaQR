@@ -22,8 +22,8 @@ let onBoardingPageSections: [PageSection] = [
                 \(System.shared.appName) generates a live wallpaper by combining an image of your \
                 choice with a scannable QR code.
                 """,
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
+                gifFileName: "live-wallpaper-gif.gif",
+                placeholderImageFileName: "live-wallpaper-placeholder"),
     PageSection(title: "Scannable",
                 subtitle: """
                 Most smartphones natively support the scanning of QR codes which allows you to share \

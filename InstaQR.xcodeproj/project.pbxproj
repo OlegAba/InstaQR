@@ -83,6 +83,7 @@
 		7C5D28C023AB0E4B0019111F /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */; };
 		7C6D6F24244BE59A00C258CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D6F23244BE59A00C258CE /* ViewController.swift */; };
 		7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */; };
+		7CAA05762470623500BD35CE /* live-wallpaper-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,7 @@
 		7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
 		7C6D6F23244BE59A00C258CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
+		7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "live-wallpaper-gif.gif"; path = "Design/Gif/OnBoarding/LiveWallpaper/live-wallpaper-gif.gif"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 		7C5D281023AAFB790019111F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EF2CE246FC517008D3AE8 /* Gifs */,
 				7C5D280523AAF6490019111F /* Assets.xcassets */,
 				7C5D280723AAF6490019111F /* LaunchScreen.storyboard */,
 				7C5D280A23AAF6490019111F /* Info.plist */,
@@ -417,6 +420,22 @@
 			path = PaymentAddress;
 			sourceTree = "<group>";
 		};
+		7C8EF2CE246FC517008D3AE8 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				7CAA05772470628200BD35CE /* OnBoarding */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		7CAA05772470628200BD35CE /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAA05762470623500BD35CE /* live-wallpaper-gif.gif in Resources */,
 				7C5D281623AB010E0019111F /* Keys.plist in Resources */,
 				7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */,
 				7C5D280623AAF6490019111F /* Assets.xcassets in Resources */,
