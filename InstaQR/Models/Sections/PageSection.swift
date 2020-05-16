@@ -11,24 +11,32 @@ import UIKit
 struct PageSection {
     let title: String
     let subtitle: String
-    let gifFileName: String
+    let gifFileName: String?
     let placeholderImageFileName: String
 }
 
 let onBoardingPageSections: [PageSection] = [
 
-    PageSection(title: "Instantly Share",
-                subtitle: "Eaisly share your contact info straight from the lock screen",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
+    PageSection(title: "Live Wallpaper",
+                subtitle: """
+                \(System.shared.appName) generates a live wallpaper by combining an image of your \
+                choice with a scannable QR code.
+                """,
+                gifFileName: "live-wallpaper-gif.gif",
+                placeholderImageFileName: "live-wallpaper-placeholder"),
     PageSection(title: "Scannable",
-                subtitle: "Works with any iPhone camera and any QR reader",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
-    PageSection(title: "PLACEHOLDER",
-                subtitle: "TEMP",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview")
+                subtitle: """
+                Most smartphones natively support the scanning of QR codes which allows you to share \
+                anything, all without leaving your lock screen.
+                """,
+                gifFileName: "scannable-gif.gif",
+                placeholderImageFileName: "scannable-placeholder"),
+    PageSection(title: "Share Action",
+                subtitle: """
+                Use one of our share action templates or create a custom link.
+                """,
+                gifFileName: nil,
+                placeholderImageFileName: "share-action-placeholder")
 ]
 
 let wallpaperGuidePageSections: [PageSection] = [

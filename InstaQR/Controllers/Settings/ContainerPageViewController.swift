@@ -80,7 +80,7 @@ class ContainerPageViewController: UIViewController {
             
             pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            pageViewController.view.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 45.0),
+            pageViewController.view.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 20.0),
             pageViewController.view.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -view.layoutMargins.left),
         ])
     }
