@@ -84,6 +84,7 @@
 		7C6D6F24244BE59A00C258CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D6F23244BE59A00C258CE /* ViewController.swift */; };
 		7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */; };
 		7CAA05762470623500BD35CE /* live-wallpaper-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */; };
+		7CAA057924706BFA00BD35CE /* scannable-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA057824706BFA00BD35CE /* scannable-gif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,7 @@
 		7C6D6F23244BE59A00C258CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
 		7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "live-wallpaper-gif.gif"; path = "Design/Gif/OnBoarding/LiveWallpaper/live-wallpaper-gif.gif"; sourceTree = SOURCE_ROOT; };
+		7CAA057824706BFA00BD35CE /* scannable-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "scannable-gif.gif"; path = "Design/Gif/OnBoarding/Scannable/scannable-gif.gif"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				7CAA05752470623500BD35CE /* live-wallpaper-gif.gif */,
+				7CAA057824706BFA00BD35CE /* scannable-gif.gif */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAA057924706BFA00BD35CE /* scannable-gif.gif in Resources */,
 				7CAA05762470623500BD35CE /* live-wallpaper-gif.gif in Resources */,
 				7C5D281623AB010E0019111F /* Keys.plist in Resources */,
 				7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */,

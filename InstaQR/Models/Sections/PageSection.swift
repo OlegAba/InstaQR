@@ -11,7 +11,7 @@ import UIKit
 struct PageSection {
     let title: String
     let subtitle: String
-    let gifFileName: String
+    let gifFileName: String?
     let placeholderImageFileName: String
 }
 
@@ -29,14 +29,14 @@ let onBoardingPageSections: [PageSection] = [
                 Most smartphones natively support the scanning of QR codes which allows you to share \
                 anything, all without leaving your lock screen.
                 """,
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
+                gifFileName: "scannable-gif.gif",
+                placeholderImageFileName: "scannable-placeholder"),
     PageSection(title: "Share Action",
                 subtitle: """
                 Use one of our share action templates or create a custom link.
                 """,
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview")
+                gifFileName: nil,
+                placeholderImageFileName: "share-action-placeholder")
 ]
 
 let wallpaperGuidePageSections: [PageSection] = [

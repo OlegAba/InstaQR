@@ -15,7 +15,7 @@ class PageSectionViewController: UIViewController {
     
     var pageIndex: Int = 0
     var inset: CGFloat = 0
-    var gifName = ""
+    var gifName: String? = nil
     
     var placeholderImage: UIImage? {
         didSet { placeholderImageView.image = placeholderImage }
@@ -139,9 +139,11 @@ class PageSectionViewController: UIViewController {
     
     fileprivate func setupGifImage() {
         
+        guard let gifName = gifName else { return }
+        
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                let gif = try UIImage(gifName: self.gifName)
+                let gif = try UIImage(gifName: gifName)
                 
                 DispatchQueue.main.async {
                     self.gifImageView.setGifImage(gif)
