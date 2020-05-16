@@ -19,18 +19,22 @@ let onBoardingPageSections: [PageSection] = [
 
     PageSection(title: "Live Wallpaper",
                 subtitle: """
-                \(System.shared.appName) generates a live wallpaper by combining an image of your choice with a
-                scannable QR code. The QR code stores your share action and stays hidden until the live wallpaper
-                is activated by pressing into the screen.
+                \(System.shared.appName) generates a live wallpaper by combining an image of your \
+                choice with a scannable QR code.
                 """,
                 gifFileName: "tutorial.gif",
                 placeholderImageFileName: "preview"),
     PageSection(title: "Scannable",
-                subtitle: "Works with any iPhone camera and any QR reader",
+                subtitle: """
+                Most smartphones natively support the scanning of QR codes which allows you to share \
+                anything, all without leaving your lock screen.
+                """,
                 gifFileName: "tutorial.gif",
                 placeholderImageFileName: "preview"),
-    PageSection(title: "PLACEHOLDER",
-                subtitle: "TEMP",
+    PageSection(title: "Share Action",
+                subtitle: """
+                Use one of our share action templates or create a custom link.
+                """,
                 gifFileName: "tutorial.gif",
                 placeholderImageFileName: "preview")
 ]
