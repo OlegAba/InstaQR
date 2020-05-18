@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyGif
+import MediaPlayer
 
 class PageSectionViewController: UIViewController {
     
@@ -113,12 +114,12 @@ class PageSectionViewController: UIViewController {
             gifImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gifImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gifImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            gifImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/3),
+            gifImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 3/4),
             
             placeholderImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             placeholderImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             placeholderImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            placeholderImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/3),
+            placeholderImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 3/4),
             
             labelsContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset),
             labelsContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset),
