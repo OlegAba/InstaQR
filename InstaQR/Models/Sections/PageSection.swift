@@ -19,7 +19,7 @@ let onBoardingPageSections: [PageSection] = [
 
     PageSection(title: "Live Wallpaper",
                 subtitle: """
-                \(System.shared.appName) generates a live wallpaper by combining an image of your \
+                Generate a live wallpaper by combining an image of your \
                 choice with a scannable QR code.
                 """,
                 gifFileName: "live-wallpaper-gif.gif",
