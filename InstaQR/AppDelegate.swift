@@ -35,19 +35,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIInterfaceOrientationMask.portrait
     }
     
-    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+    func setRootViewController(_ viewController: UIViewController, animated: Bool = true) {
+        
         guard animated, let window = self.window else {
-            self.window?.rootViewController = vc
+            self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
             return
         }
+        
+        let transition = CATransition()
+        transition.type = .push
+        transition.subtype = .fromRight
+        transition.duration = CFTimeInterval(0.25)
+        
+        let key = CAMediaTimingFunctionName.linear.rawValue
+        let timingFunctionName = CAMediaTimingFunctionName(rawValue: key)
+        transition.timingFunction = CAMediaTimingFunction(name: timingFunctionName)
 
-        window.rootViewController = vc
+        window.layer.add(transition, forKey: kCATransition)
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
-        UIView.transition(with: window,
-                          duration: 0.3,
-                          options: .transitionCrossDissolve,
-                          animations: nil,
-                          completion: nil)
     }
 }
