@@ -169,8 +169,10 @@ extension PreviewWallpaperViewController: ButtonsPopUpNotificationDelegate {
     }
     
     func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        
         buttonsPopUpNotificationViewController.dismiss(animated: true) {
-            print("Present Wallpaper Guide")
+            let wallpaperGuideViewController = WallpaperGuideViewController()
+            self.present(wallpaperGuideViewController, animated: true, completion: nil)
         }
     }
 }
