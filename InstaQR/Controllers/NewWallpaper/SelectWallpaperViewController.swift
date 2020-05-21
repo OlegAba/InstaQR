@@ -67,7 +67,8 @@ class SelectWallpaperViewController: InsetGroupedTableViewController {
     }
     
     fileprivate func presentUnsplashPhotoPicker() {
-        // TODO: Fork pod file UnplashPhotoPickerController move cancel button is on rightBarButtonItem
+        // TODO: Fork pod file UnplashPhotoPickerController move cancel button on rightBarButtonItem
+        // UnsplashPhotoPickerViewController -> setupNavigationBar
         let config = UnsplashPhotoPickerConfiguration(accessKey: unsplashAccessKey, secretKey: unsplashSecretKey, allowsMultipleSelection: false)
         let unsplashPhotoPicker = UnsplashPhotoPicker(configuration: config)
         unsplashPhotoPicker.photoPickerDelegate = self
