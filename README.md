@@ -18,7 +18,8 @@ Make sure to open the Xcode workspace!
 [LPLivePhotoGenerator](https://github.com/OlegAba/LPLivePhotoGenerator) - A Swift library for creating and saving Live Photos\
 [UnsplashPhotoPicker](https://github.com/unsplash/unsplash-photopicker-ios) - iOS UI component that allows you to quickly search the Unsplash library\
 [CropViewController](https://github.com/TimOliver/TOCropViewController) - UIViewController subclass to crop out sections of UIImage objects, as well as perform basic rotations\
-[SwiftyGif](https://github.com/kirualex/SwiftyGif) - High performance and easy to use Gif engine
+[SwiftyGif](https://github.com/kirualex/SwiftyGif) - High performance and easy to use Gif engine\
+[EFQRCode](https://github.com/EFPrefix/EFQRCode) - A lightweight, pure-Swift library for generating pretty QRCode image with input watermark or icon and recognizing QRCode from image
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/OlegAba/InstaQR/blob/master/LICENSE) file for details
