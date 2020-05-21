@@ -41,16 +41,24 @@ let onBoardingPageSections: [PageSection] = [
 
 let wallpaperGuidePageSections: [PageSection] = [
     
-    PageSection(title: "1.",
-                subtitle: "Open settings application located somewhere on your home screen.",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
-    PageSection(title: "Tap Wallpaper",
-                subtitle: "Search for or scroll down to the wallpaper row and tap on it.",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview"),
-    PageSection(title: "Tap Choose a New Wallpaper",
-                subtitle: "Select the album you saved your wallpaper to and tap on the wallpaper",
-                gifFileName: "tutorial.gif",
-                placeholderImageFileName: "preview")
+    PageSection(title: "1. Open Settings",
+                subtitle: "Go to Settings, tap Wallpaper, then tap Choose a New Wallpaper",
+                gifFileName: nil,
+                placeholderImageFileName: "open-settings"),
+    PageSection(title: "2. Find the Live Wallpaper",
+                subtitle: "Tap on the album where you saved your live wallpaper, then tap on the image.",
+                gifFileName: nil,
+                placeholderImageFileName: "find-live-wallpaper"),
+    PageSection(title: "3. Move the wallpaper",
+                subtitle: "Drag and/or pinch to zoom in and out, so the wallpaper fits the screen.",
+                gifFileName: nil,
+                placeholderImageFileName: "move-the-wallpaper"),
+    PageSection(title: "4. Toggle Live Photo",
+                subtitle: "Make sure Live Photo is on. The button to toggle this option is located at the bottom-center of the screen (second from the left).",
+                gifFileName: nil,
+                placeholderImageFileName: "toggle-live-photo"),
+    PageSection(title: "5. Set the wallpaper",
+                subtitle: "Tap Set, then set the wallpaper as your Lock screen, or both.",
+                gifFileName: nil,
+                placeholderImageFileName: "set-wallpaper")
 ]

@@ -129,23 +129,50 @@ extension PreviewWallpaperViewController: PhotoAlbumDelegate {
                         
                         loadingNotificationViewController.dismiss(animated: true) {
                             
-                            let alertPopUpNotificationViewController = AlertPopUpNotificationViewController()
-                            alertPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
                             let albumName = album.name == "All Photos" ? "your Photo Library" : album.name
-                            
-                            if saved {
-                                alertPopUpNotificationViewController.alertType = .success
-                                alertPopUpNotificationViewController.messageText = "The image was successfully saved to \(albumName). Please remember to set the image as your lock screen wallpaper in the general settings"
-                            } else {
-                                alertPopUpNotificationViewController.alertType = .error
-                                alertPopUpNotificationViewController.messageText = "There was an error saving the image to \(albumName). Please try again"
-                            }
-                            
-                            self.present(alertPopUpNotificationViewController, animated: true, completion: nil)
+                            self.presentPopUpNotificationViewController(for: saved, albumName: albumName)
                         }
                     }
                 }
             }
+        }
+    }
+    
+    func presentPopUpNotificationViewController(for didSave: Bool, albumName: String) -> Void {
+        
+        if didSave {
+            let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
+            buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
+            buttonsPopUpNotificationViewController.titleText = "Success"
+            buttonsPopUpNotificationViewController.messageText = "The image was successfully saved to \(albumName). Please remember to set the image as your lock screen wallpaper"
+            buttonsPopUpNotificationViewController.primaryButton.setTitle("Ok", for: .normal)
+            buttonsPopUpNotificationViewController.primaryButton.backgroundColor = .systemGreen
+            buttonsPopUpNotificationViewController.secondaryButton.setTitle("Help?", for: .normal)
+            buttonsPopUpNotificationViewController.secondaryButton.setTitleColor(.systemGreen, for: .normal)
+            buttonsPopUpNotificationViewController.delegate = self
+            present(buttonsPopUpNotificationViewController, animated: true, completion: nil)
+        } else {
+            let alertPopUpNotificationViewController = AlertPopUpNotificationViewController()
+            alertPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
+            alertPopUpNotificationViewController.alertType = .error
+            alertPopUpNotificationViewController.messageText = "There was an error saving the image to \(albumName). Please try again"
+            present(alertPopUpNotificationViewController, animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - ButtonsPopUpNotificationDelegate
+extension PreviewWallpaperViewController: ButtonsPopUpNotificationDelegate {
+    
+    func primaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        buttonsPopUpNotificationViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        
+        buttonsPopUpNotificationViewController.dismiss(animated: true) {
+            let wallpaperGuideViewController = WallpaperGuideViewController()
+            self.present(wallpaperGuideViewController, animated: true, completion: nil)
         }
     }
 }

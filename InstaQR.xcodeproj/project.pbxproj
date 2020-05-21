@@ -83,6 +83,7 @@
 		7C5D28C023AB0E4B0019111F /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */; };
 		7C6D6F24244BE59A00C258CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D6F23244BE59A00C258CE /* ViewController.swift */; };
 		7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */; };
+		7CA62320247646AD00B72D0F /* WallpaperGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA6231F247646AD00B72D0F /* WallpaperGuideViewController.swift */; };
 		7CDE1B4424724BFE003244F4 /* scannable-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CDE1B4324724BFE003244F4 /* scannable-gif.gif */; };
 		7CDE1B4624724DD1003244F4 /* live-wallpaper-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CDE1B4524724DD1003244F4 /* live-wallpaper-gif.gif */; };
 /* End PBXBuildFile section */
@@ -168,6 +169,7 @@
 		7C5D28BB23AB0E4B0019111F /* UIVIew+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
 		7C6D6F23244BE59A00C258CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
+		7CA6231F247646AD00B72D0F /* WallpaperGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperGuideViewController.swift; sourceTree = "<group>"; };
 		7CDE1B4324724BFE003244F4 /* scannable-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "scannable-gif.gif"; path = "Design/Gif/OnBoarding/Scannable/scannable-gif.gif"; sourceTree = SOURCE_ROOT; };
 		7CDE1B4524724DD1003244F4 /* live-wallpaper-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "live-wallpaper-gif.gif"; path = "Design/Gif/OnBoarding/LiveWallpaper/live-wallpaper-gif.gif"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -320,6 +322,7 @@
 				7C5D283523AB067E0019111F /* ContainerPageViewController.swift */,
 				7C5D283A23AB06920019111F /* PageSectionViewController.swift */,
 				7C5D283723AB06920019111F /* OnBoardingViewController.swift */,
+				7CA6231F247646AD00B72D0F /* WallpaperGuideViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				7C5D28B623AB0DE40019111F /* System.swift in Sources */,
 				7C5D282F23AB055E0019111F /* PreviewWallpaperViewController.swift in Sources */,
 				7C5D286723AB07F30019111F /* PrimaryButton.swift in Sources */,
+				7CA62320247646AD00B72D0F /* WallpaperGuideViewController.swift in Sources */,
 				7C5D28BE23AB0E4B0019111F /* UIImage+.swift in Sources */,
 				7C5D282523AB047E0019111F /* SelectWallpaperViewController.swift in Sources */,
 				7C5D28AC23AB08B90019111F /* ImageManager.swift in Sources */,

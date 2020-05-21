@@ -34,4 +34,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }
+    
+    func setRootViewController(_ viewController: UIViewController, animated: Bool = true) {
+        
+        // medium.com/@danielemargutti/animate-uiwindows-rootviewcontroller-transitions-2887ccf3fecc
+        
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        let transition = CATransition()
+        transition.type = .push
+        transition.subtype = .fromRight
+        transition.duration = CFTimeInterval(0.25)
+        
+        let key = CAMediaTimingFunctionName.linear.rawValue
+        let timingFunctionName = CAMediaTimingFunctionName(rawValue: key)
+        transition.timingFunction = CAMediaTimingFunction(name: timingFunctionName)
+
+        window.layer.add(transition, forKey: kCATransition)
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+    }
 }
