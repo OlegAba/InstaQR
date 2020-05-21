@@ -85,7 +85,12 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     @objc fileprivate func deleteButtonWasTapped() {
         let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
         buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
+        buttonsPopUpNotificationViewController.titleText = "Warning"
         buttonsPopUpNotificationViewController.messageText = "Are you sure you want to delete the current wallpaper?"
+        buttonsPopUpNotificationViewController.primaryButton.setTitle("Delete", for: .normal)
+        buttonsPopUpNotificationViewController.primaryButton.backgroundColor = .systemRed
+        buttonsPopUpNotificationViewController.secondaryButton.setTitle("Cancel", for: .normal)
+        buttonsPopUpNotificationViewController.secondaryButton.setTitleColor(.systemRed, for: .normal)
         buttonsPopUpNotificationViewController.delegate = self
         present(buttonsPopUpNotificationViewController, animated: true, completion: nil)
     }
@@ -178,6 +183,10 @@ extension NewWallpaperViewController: ButtonsPopUpNotificationDelegate {
             
             self.animateReloadAllRows()
         }
+    }
+    
+    func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        buttonsPopUpNotificationViewController.dismiss(animated: true, completion: nil)
     }
 }
 

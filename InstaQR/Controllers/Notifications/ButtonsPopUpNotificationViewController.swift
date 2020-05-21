@@ -10,35 +10,34 @@ import UIKit
 
 protocol ButtonsPopUpNotificationDelegate {
     func primaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController)
+    func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController)
 }
 
 class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
     
     // MARK: - Internal Properties
     
+    // MARK: - Internal Properties
+    
     var delegate: ButtonsPopUpNotificationDelegate!
+    
+    lazy var primaryButton: PrimaryButton = {
+        let primaryButton = PrimaryButton()
+        primaryButton.addTarget(self, action: #selector(primaryButtonWasTapped), for: .touchUpInside)
+        return primaryButton
+    }()
+    
+    lazy var secondaryButton: PrimaryButton = {
+        let primaryButton = PrimaryButton()
+        primaryButton.backgroundColor = nil
+        primaryButton.addTarget(self, action: #selector(secondaryButtonWasTapped), for: .touchUpInside)
+        return primaryButton
+    }()
     
     // MARK: - Private Properties
     
     fileprivate lazy var backgroundTapGesture: UITapGestureRecognizer = {
         return UITapGestureRecognizer(target: self, action: #selector(secondaryButtonWasTapped))
-    }()
-        
-    fileprivate lazy var primaryButton: PrimaryButton = {
-        let primaryButton = PrimaryButton()
-        primaryButton.setTitle("Delete", for: .normal)
-        primaryButton.backgroundColor = .systemRed
-        primaryButton.addTarget(self, action: #selector(primaryButtonWasTapped), for: .touchUpInside)
-        return primaryButton
-    }()
-    
-    fileprivate lazy var secondaryButton: PrimaryButton = {
-        let primaryButton = PrimaryButton()
-        primaryButton.backgroundColor = nil
-        primaryButton.setTitleColor(.systemRed, for: .normal)
-        primaryButton.setTitle("Cancel", for: .normal)
-        primaryButton.addTarget(self, action: #selector(secondaryButtonWasTapped), for: .touchUpInside)
-        return primaryButton
     }()
     
     // MARK: - View Life Cycle
@@ -56,7 +55,6 @@ class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
     // MARK: - Setup
     
     fileprivate func setupViews() {
-        titleText = "Warning"
         view.addGestureRecognizer(backgroundTapGesture)
         buttonContainerView.addSubview(primaryButton)
         buttonContainerView.addSubview(secondaryButton)
@@ -82,7 +80,7 @@ class ButtonsPopUpNotificationViewController: PopUpNotificationViewController {
     // MARK: - Actions
     
     @objc private func secondaryButtonWasTapped() {
-        dismiss(animated: true, completion: nil)
+        delegate.secondaryButtonWasTapped(for: self)
     }
     
     @objc private func primaryButtonWasTapped() {
