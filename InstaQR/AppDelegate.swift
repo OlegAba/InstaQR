@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setRootViewController(_ viewController: UIViewController, animated: Bool = true) {
         
+        // medium.com/@danielemargutti/animate-uiwindows-rootviewcontroller-transitions-2887ccf3fecc
+        
         guard animated, let window = self.window else {
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
