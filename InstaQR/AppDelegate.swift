@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let transition = CATransition()
         transition.type = .push
         transition.subtype = .fromRight
-        transition.duration = CFTimeInterval(0.25)
-        
+        transition.duration = 0.25
+
         let key = CAMediaTimingFunctionName.linear.rawValue
         let timingFunctionName = CAMediaTimingFunctionName(rawValue: key)
         transition.timingFunction = CAMediaTimingFunction(name: timingFunctionName)

@@ -57,18 +57,19 @@ extension SettingsViewController: UITableViewDelegate {
             
             switch helpItem {
             case .faq:
-                //selectedController = FAQViewController()
-                let faqString = "https://olegaba.github.io/InstaQR-landing-page/#/faq"
-                if let faqURL = URL(string: faqString) {
-                    let vc = SFSafariViewController(url: faqURL)
-                    present(vc, animated: true, completion: nil)
-                }
                 
+                let faqURLString = "https://olegaba.github.io/InstaQR-landing-page/#/faq"
+                if let faqURL = URL(string: faqURLString) {
+                    let safariViewController = SFSafariViewController(url: faqURL)
+                    present(safariViewController, animated: true, completion: nil)
+                }
             case .liveWallpaper:
+                
                 let containerPageViewController = ContainerPageViewController()
                 containerPageViewController.pageSections = wallpaperGuidePageSections
                 selectedController = containerPageViewController
             case .onBoarding:
+                
                 let containerPageViewController = ContainerPageViewController()
                 containerPageViewController.pageSections = onBoardingPageSections
                 selectedController = containerPageViewController
@@ -80,14 +81,26 @@ extension SettingsViewController: UITableViewDelegate {
             guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return }
             
             switch generalItem {
+            /*
             case .rate:
                 print("NOT IMPLEMENTED")
             case .share:
                 print("NOT IMPLEMENTED")
+            */
             case .licenses:
-                print("NOT IMPLEMENTED")
+                
+                let licenseURLString = "https://github.com/OlegAba/InstaQR/blob/master/LICENSE"
+                if let licenseURL = URL(string: licenseURLString) {
+                    let safariViewController = SFSafariViewController(url: licenseURL)
+                    present(safariViewController, animated: true, completion: nil)
+                }
             case .privacyPolicy:
-                print("NOT IMPLEMENTED")
+                
+                let licenseURLString = "https://olegaba.github.io/InstaQR-landing-page/#/privacy"
+                if let licenseURL = URL(string: licenseURLString) {
+                    let safariViewController = SFSafariViewController(url: licenseURL)
+                    present(safariViewController, animated: true, completion: nil)
+                }
             }
         }
         

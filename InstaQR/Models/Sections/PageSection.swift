@@ -18,23 +18,15 @@ struct PageSection {
 let onBoardingPageSections: [PageSection] = [
 
     PageSection(title: "Live Wallpaper",
-                subtitle: """
-                Generate a live wallpaper by combining an image of your \
-                choice with a scannable QR code.
-                """,
+                subtitle: "Generate a Live Photo by combining an image and a share action QR code.",
                 gifFileName: "live-wallpaper-gif.gif",
                 placeholderImageFileName: "live-wallpaper-placeholder"),
     PageSection(title: "Scannable",
-                subtitle: """
-                Most smartphones natively support the scanning of QR codes which allows you to share \
-                anything, all without leaving your lock screen.
-                """,
+                subtitle: "Share anything, all without leaving your lock screen.",
                 gifFileName: "scannable-gif.gif",
                 placeholderImageFileName: "scannable-placeholder"),
     PageSection(title: "Share Action",
-                subtitle: """
-                Use one of our share action templates or create a custom link.
-                """,
+                subtitle: "Use one of our share action templates or create your own.",
                 gifFileName: nil,
                 placeholderImageFileName: "share-action-placeholder")
 ]
@@ -54,7 +46,7 @@ let wallpaperGuidePageSections: [PageSection] = [
                 gifFileName: nil,
                 placeholderImageFileName: "move-the-wallpaper"),
     PageSection(title: "4. Toggle Live Photo",
-                subtitle: "Make sure Live Photo is on. The button to toggle this option is located at the bottom-center of the screen (second from the left).",
+                subtitle: "The Live Photo button is located at the bottom of the screen (second from the left).",
                 gifFileName: nil,
                 placeholderImageFileName: "toggle-live-photo"),
     PageSection(title: "5. Set the wallpaper",
