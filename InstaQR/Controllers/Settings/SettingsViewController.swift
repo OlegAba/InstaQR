@@ -95,7 +95,12 @@ extension SettingsViewController: UITableViewDelegate {
                     present(safariViewController, animated: true, completion: nil)
                 }
             case .privacyPolicy:
-                print("NOT IMPLEMENTED")
+                
+                let licenseURLString = "https://olegaba.github.io/InstaQR-landing-page/#/privacy"
+                if let licenseURL = URL(string: licenseURLString) {
+                    let safariViewController = SFSafariViewController(url: licenseURL)
+                    present(safariViewController, animated: true, completion: nil)
+                }
             }
         }
         
