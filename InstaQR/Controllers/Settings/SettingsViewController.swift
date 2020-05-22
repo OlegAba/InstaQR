@@ -81,10 +81,12 @@ extension SettingsViewController: UITableViewDelegate {
             guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return }
             
             switch generalItem {
+            /*
             case .rate:
                 print("NOT IMPLEMENTED")
             case .share:
                 print("NOT IMPLEMENTED")
+            */
             case .licenses:
                 
                 let licenseURLString = "https://github.com/OlegAba/InstaQR/blob/master/LICENSE"
