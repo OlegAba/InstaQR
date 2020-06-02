@@ -27,7 +27,7 @@ class PermissionHandlerView: UIView {
             switch permissionType {
             case .cameraUsage:
                 titleLabel.text = "Capture Videos"
-                descriptionLabel.text = "Allow \(System.shared.appName) access to your camera to scan barcodes"
+                descriptionLabel.text = "Allow \(System.shared.appName) access to your camera to scan and copy QR codes"
             case .photoLibraryUsage:
                 titleLabel.text = "Save Live Wallpaper"
                 descriptionLabel.text = "Allow \(System.shared.appName) access to your photo library to save your live wallpaper"

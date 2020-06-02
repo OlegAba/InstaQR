@@ -61,6 +61,7 @@ class GenerateLiveWallpaperWithBarcode {
         let barcodeImage = barcode.generateQRImageWith(data: barcodeData, size: barcodeImageSize)
         
         return barcodeImage
+        //return UIImage(color: .clear)
     }
     
     fileprivate func interpolateFrames(wallpaperImage: UIImage, barcodeImage: UIImage) -> [UIImage]? {
