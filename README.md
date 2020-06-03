@@ -4,6 +4,8 @@
 
 <br />
 
+<p align="center"><a href="https://apps.apple.com/us/app/instaqr-live-wallpaper-maker/id1514732973?ign-mpt=uo%3D4"><img src="https://raw.githubusercontent.com/GitHawkApp/GitHawk/master/images/app-store-badge.png" width="250" /></a></p>
+
 InstaQR generates a live wallpaper by combining an image of your choice with a scannable QR code. The QR code stores your share action (any link such as a social media profile) and stays hidden until the live wallpaper is activated by pressing into the screen. Simply ask the person you would like to share your action with to open their camera app and point it at the QR code.
 
 ## Preview
