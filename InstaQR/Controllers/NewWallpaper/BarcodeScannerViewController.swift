@@ -59,7 +59,7 @@ class BarcodeScannerViewController: ViewController {
     }()
     
     fileprivate lazy var barcodeScanGuideView: BarcodeScanGuideView = {
-        let scanGuideView = BarcodeScanGuideView(frame: view.frame)
+        let scanGuideView = BarcodeScanGuideView()
         scanGuideView.text = instructionText
         scanGuideView.isHidden = true
         scanGuideView.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +118,7 @@ class BarcodeScannerViewController: ViewController {
     // MARK: - Setup
     
     fileprivate func setupViews() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         view.addSubview(captureVideoPermissionHandlerView)
         view.addSubview(barcodeScanGuideView)
         view.addSubview(flashButton)
