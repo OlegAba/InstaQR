@@ -1,4 +1,8 @@
+<img align="left" width="80" height="80" src="https://github.com/OlegAba/InstaQR/blob/master/Design/Logo/InstaQRLogo.jpg" alt="app icon">
+
 # InstaQR - Share Action Live Wallpaper Maker
+
+<br />
 
 InstaQR generates a live wallpaper by combining an image of your choice with a scannable QR code. The QR code stores your share action (any link such as a social media profile) and stays hidden until the live wallpaper is activated by pressing into the screen. Most smartphones nowadays natively support the scanning of QR codes which allows you to share anything, all without leaving your lock screen. Simply ask the person you would like to share your action with to open their camera app and point it at the QR code.
 
