@@ -56,17 +56,14 @@ enum HelpItem: Int, CaseIterable, SettingsItemType {
     }
 }
 
-// TODO: Add credits section
 enum GeneralItem: Int, CaseIterable, SettingsItemType {
-    //case rate
-    //case share
+    case rate
     case licenses
     case privacyPolicy
     
     var description: String {
         switch self {
-        //case .rate: return "Rate on the App Store"
-        //case .share: return "Tell a Friend"
+        case .rate: return "Rate on the App Store"
         case .licenses: return "Licenses"
         case .privacyPolicy: return "Privacy Policy"
         }
@@ -74,8 +71,7 @@ enum GeneralItem: Int, CaseIterable, SettingsItemType {
     
     var logoImage: UIImage? {
         switch self {
-        //case .rate: return .starIcon
-        //case .share: return .shareIcon
+        case .rate: return .starIcon
         case .licenses: return .letterCIcon
         case .privacyPolicy: return .docIcon
         }
@@ -83,8 +79,7 @@ enum GeneralItem: Int, CaseIterable, SettingsItemType {
     
     var logoBackgroundColor: UIColor {
         switch self {
-        //case .rate: return .clear
-        //case .share: return .clear
+        case .rate: return .clear
         case .licenses: return .clear
         case .privacyPolicy: return .clear
         }

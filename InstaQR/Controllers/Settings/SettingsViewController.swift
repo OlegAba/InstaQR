@@ -81,12 +81,10 @@ extension SettingsViewController: UITableViewDelegate {
             guard let generalItem = GeneralItem(rawValue: indexPath.row) else { return }
             
             switch generalItem {
-            /*
             case .rate:
-                print("NOT IMPLEMENTED")
-            case .share:
-                print("NOT IMPLEMENTED")
-            */
+                
+                guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1514732973?action=write-review") else { return }
+                UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
             case .licenses:
                 
                 let licenseURLString = "https://github.com/OlegAba/InstaQR/blob/master/LICENSE"
