@@ -26,25 +26,16 @@ class BarcodeScanGuideView: UIView {
     // MARK: - Private Properties
     
     fileprivate lazy var roundedRectShapeLayer: CAShapeLayer = {
-        let path = CGMutablePath()
-        path.addRoundedRect(in: CGRect(x: x, y: y, width: length, height: length), cornerWidth: cornerRadius, cornerHeight: cornerRadius)
-        path.addRect(CGRect(origin: .zero, size: frame.size))
         let shapeLayer = CAShapeLayer()
-        shapeLayer.backgroundColor = UIColor.black.cgColor
-        shapeLayer.path = path
         shapeLayer.fillRule = .evenOdd
         return shapeLayer
     }()
     
     fileprivate lazy var roundedRectOutlineShapeLayer: CAShapeLayer = {
-        let path = CGMutablePath()
-        path.addRoundedRect(in: CGRect(x: x, y: y, width: length, height: length), cornerWidth: cornerRadius, cornerHeight: cornerRadius)
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path
         shapeLayer.lineWidth = 5
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.frame = self.bounds
         return shapeLayer
     }()
     
@@ -59,11 +50,6 @@ class BarcodeScanGuideView: UIView {
         return label
     }()
     
-    fileprivate lazy var length: CGFloat = frame.width * 0.7
-    fileprivate lazy var x: CGFloat = (frame.width * 0.3) / 2.0
-    fileprivate lazy var y: CGFloat = (frame.height - length - 57) / 2.0
-    fileprivate let cornerRadius = System.shared.globalCornerRadius
-    
     // MARK: - Lifetime
     
     override init(frame: CGRect) {
@@ -77,11 +63,7 @@ class BarcodeScanGuideView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let inset = System.shared.globalInset
-        instructionsLabel.frame.size.width = length - (inset * 2.0)
-        instructionsLabel.sizeToFit()
-        instructionsLabel.center.x = center.x
-        instructionsLabel.frame.origin.y = y - (inset * 3.0)
+        layoutViews()
     }
     
     // MARK: - Setup
@@ -92,5 +74,34 @@ class BarcodeScanGuideView: UIView {
         layer.mask = roundedRectShapeLayer
         layer.addSublayer(roundedRectOutlineShapeLayer)
         addSubview(instructionsLabel)
+    }
+    
+    // MARK: - Layout
+    
+    func layoutViews() {
+        if bounds.size == .zero { return }
+        
+        roundedRectShapeLayer.frame = bounds
+        roundedRectOutlineShapeLayer.frame = bounds
+        
+        let length: CGFloat = bounds.width * 0.7
+        let x: CGFloat = (bounds.width * 0.3) / 2.0
+        let y: CGFloat = (bounds.height - length) / 2.0
+        let cornerRadius = System.shared.globalCornerRadius
+        
+        let rectPath = CGMutablePath()
+        rectPath.addRoundedRect(in: CGRect(x: x, y: y, width: length, height: length), cornerWidth: cornerRadius, cornerHeight: cornerRadius)
+        rectPath.addRect(CGRect(origin: .zero, size: bounds.size))
+        roundedRectShapeLayer.path = rectPath
+        
+        let rectOutlinePath = CGMutablePath()
+        rectOutlinePath.addRoundedRect(in: CGRect(x: x, y: y, width: length, height: length), cornerWidth: cornerRadius, cornerHeight: cornerRadius)
+        roundedRectOutlineShapeLayer.path = rectOutlinePath
+        
+        let inset = System.shared.globalInset
+        instructionsLabel.frame.size.width = length - (inset * 2.0)
+        instructionsLabel.sizeToFit()
+        instructionsLabel.center.x = center.x
+        instructionsLabel.frame.origin.y = y - (inset * 3.0)
     }
 }
