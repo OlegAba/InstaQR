@@ -25,6 +25,7 @@ extension UIImage {
     static let checkmarkIcon = UIImage(systemName: "checkmark.circle.fill") ?? UIImage()
     static let scanQRIcon = UIImage(systemName: "qrcode.viewfinder") ?? UIImage()
     static let flashIcon = UIImage(systemName: "bolt.fill") ?? UIImage()
+    static let rotateIcon = UIImage(systemName: "rotate.right") ?? UIImage()
     
     
     public convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
