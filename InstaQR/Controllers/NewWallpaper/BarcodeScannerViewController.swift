@@ -118,7 +118,7 @@ class BarcodeScannerViewController: ViewController {
     // MARK: - Setup
     
     fileprivate func setupViews() {
-        view.backgroundColor = .black
+        view.backgroundColor = .systemBackground
         view.addSubview(captureVideoPermissionHandlerView)
         view.addSubview(barcodeScanGuideView)
         view.addSubview(flashButton)
@@ -130,6 +130,7 @@ class BarcodeScannerViewController: ViewController {
         switch authorizationStatus {
             
         case .authorized:
+            view.backgroundColor = .black
             view.layer.addSublayer(previewLayer)
             barcodeScanGuideView.isHidden = false
             view.bringSubviewToFront(barcodeScanGuideView)
