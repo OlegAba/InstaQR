@@ -10,7 +10,9 @@ InstaQR generates a live wallpaper by combining an image of your choice with a s
 
 ## Preview
 <p align="center">
-  <img src="https://github.com/OlegAba/InstaQR/blob/master/Design/Gif/OnBoarding/Scannable/scannable-gif.gif"  width=400 />
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/6b/be/44/6bbe447b-6bad-2571-9828-24493c3eeced/pr_source.jpg/230x0w.jpg"  width=240 />
+<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/d0/e1/bb/d0e1bb44-abe2-d45c-97e4-1c89ad925c19/pr_source.jpg/230x0w.jpg" width=240 />
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/14/69/4b/14694bf7-53da-834f-3c27-08d8a81ff844/pr_source.jpg/230x0w.jpg" width=240 />  
 </p>
 
 ## Installation
