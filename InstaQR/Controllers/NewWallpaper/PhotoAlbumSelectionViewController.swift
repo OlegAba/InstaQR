@@ -166,6 +166,7 @@ extension PhotoAlbumViewController: UITableViewDataSource {
         cell.subtitle = String(photoAlbum.assets.count)
         cell.logoImageView.contentMode = .scaleAspectFill
         cell.logoImageView.clipsToBounds = true
+        cell.logoImage = UIImage(color: .systemGray5)
         
         let imageSize = CGSize(width: 250.0, height: 250.0)
         
