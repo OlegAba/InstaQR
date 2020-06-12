@@ -15,6 +15,7 @@ class System {
     let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     let globalInset: CGFloat = 15.0
     let globalCornerRadius: CGFloat = 15.0
+    let globalOpacity: CGFloat = 0.5
     
     fileprivate let defaults = UserDefaults.standard
     fileprivate let firstTimeKey = "isFirstTime"

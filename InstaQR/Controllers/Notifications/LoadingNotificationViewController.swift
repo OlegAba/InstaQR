@@ -42,7 +42,7 @@ class LoadingNotificationViewController: NotificationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.black.withAlphaComponent(System.shared.globalOpacity)
         setupContentView()
     }
     
