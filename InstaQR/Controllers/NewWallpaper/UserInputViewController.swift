@@ -51,7 +51,7 @@ class UserInputViewController: ViewController {
     
     fileprivate lazy var bottomContainerView: UIView = {
         let view = UIView()
-        view.addSubview(createPrimaryButton)
+        view.addSubview(donePrimaryButton)
         return view
     }()
     
@@ -71,10 +71,10 @@ class UserInputViewController: ViewController {
         return textField
     }()
     
-    fileprivate lazy var createPrimaryButton: PrimaryButton = {
+    fileprivate lazy var donePrimaryButton: PrimaryButton = {
         let button = PrimaryButton()
-        button.setTitle("Create", for: .normal)
-        button.addTarget(self, action: #selector(createButtonWasTapped), for: .touchUpInside)
+        button.setTitle("Done", for: .normal)
+        button.addTarget(self, action: #selector(doneButtonWasTapped), for: .touchUpInside)
         return button
     }()
     
@@ -156,9 +156,9 @@ class UserInputViewController: ViewController {
             inputTextField.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor),
             inputTextField.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor),
             
-            createPrimaryButton.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor),
-            createPrimaryButton.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor),
-            createPrimaryButton.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor)
+            donePrimaryButton.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor),
+            donePrimaryButton.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor),
+            donePrimaryButton.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor)
         ])
     }
     
@@ -176,7 +176,7 @@ class UserInputViewController: ViewController {
         self.keyboardControl(notification, isShowing: false)
     }
     
-    @objc fileprivate func createButtonWasTapped() {
+    @objc fileprivate func doneButtonWasTapped() {
         guard let inputText = inputTextField.text else { return }
         let (isValid, errorMessage) = barcode.userInputValidationFor(data: inputText, inputKeyType: barcodeInput.key)
         
@@ -194,7 +194,7 @@ class UserInputViewController: ViewController {
     
     fileprivate func presentBarcodeScannerViewController() {
         let barcodeScannerViewController = BarcodeScannerViewController()
-        barcodeScannerViewController.instructionText = "Scan \(barcode.title ?? "") Barcode"
+        barcodeScannerViewController.instructionText = "Scan \(barcode.title ?? "") QR code"
         barcodeScannerViewController.delegate = self
         present(barcodeScannerViewController, animated: true, completion: nil)
     }

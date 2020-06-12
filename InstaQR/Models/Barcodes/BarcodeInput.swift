@@ -50,34 +50,34 @@ class BarcodeInput: NSObject {
         self.barcodeScanEnabled = bacodeScanEnabled
     }
     
-    // TODO: FINALIZE INSTRUCTIONS, PLACEHOLDER, AND BARCODESCANENABLED
     static let KeyTranslationDict: [KeyType: (instructions: String, placeholder: String, barcodeScanEnabled: Bool)] = [
         
         // Social Media
-        KeyType.twitterHandle : (instructions: "Enter Your Twitter Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.facebookHandle : (instructions: "Enter Your Facebook Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.instagramHandle : (instructions: "Enter Your Instagram Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.snapchatHandle : (instructions: "Enter Your Snapchat Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.linkedinHandle : (instructions: "Enter Your LinkedIn Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.tumblrName : (instructions: "Enter Your Tumblr Name", placeholder: "Dedalvs", barcodeScanEnabled: false),
-        KeyType.redditHandle : (instructions: "Enter Your Reddit Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.pinterestHandle : (instructions: "Enter Your Pinterest Handle", placeholder: "xo_leg", barcodeScanEnabled: false),
-        KeyType.youtubeChannelName : (instructions: "Enter Your Youtube Channel Name", placeholder: "PowerfulJRE", barcodeScanEnabled: false),
+        KeyType.twitterHandle : (instructions: "Share Twitter Profile", placeholder: "Enter your Twitter handle", barcodeScanEnabled: false),
+        KeyType.facebookHandle : (instructions: "Share Facebook Profile", placeholder: "Enter your Facebook handle", barcodeScanEnabled: false),
+        KeyType.instagramHandle : (instructions: "Share Instagram Profile", placeholder: "Enter your Instagram handle", barcodeScanEnabled: false),
+        KeyType.snapchatHandle : (instructions: "Share Snapchat Profile", placeholder: "Enter your Snapchat handle", barcodeScanEnabled: false),
+        KeyType.linkedinHandle : (instructions: "Share LinkedIn Profile", placeholder: "Enter your LinkedIn handle", barcodeScanEnabled: false),
+        KeyType.tumblrName : (instructions: "Share Tumblr Profile", placeholder: "Enter your Tumblr handle", barcodeScanEnabled: false),
+        KeyType.redditHandle : (instructions: "Share Reddit Profile", placeholder: "Enter your Reddit handle", barcodeScanEnabled: false),
+        KeyType.pinterestHandle : (instructions: "Share Pinterest Profile", placeholder: "Enter your Pinterest handle", barcodeScanEnabled: false),
+        KeyType.youtubeChannelName : (instructions: "Share Youtube Channel", placeholder: "Enter your Youtube channel name", barcodeScanEnabled: false),
         
         // Payment Address
-        KeyType.bitcoinAddress : (instructions: "Enter Your Bitcoin (BTC) Address", placeholder: "3P3QsMVK89JBNqZQv5zMAKG8FK3kJM4rjt", barcodeScanEnabled: true),
-        KeyType.ethereumAddress : (instructions: "Enter Your Ethereum (ETH) Address", placeholder: "0x2E272DE22DEd37A971794E0eC3b32Ac3907a7c05", barcodeScanEnabled: true),
-        KeyType.moneroAddress : (instructions: "Enter Your Monero (XMR) Address", placeholder: "45KPbNGAZ9pTcZi9AJwgufSYBuhVHoyATdhU9sjGtGqn1UkW99Dcj3gLGRH5t1KsRSN157SvbWZGZJNRd8VKV9Cz3ZbPCxL", barcodeScanEnabled: true),
-        KeyType.litecoinAddress : (instructions: "Enter Your Litecoin (LTC) Address", placeholder: "3CDJNfdWX8m2NwuGUV3nhXHXEeLygMXoAj", barcodeScanEnabled: true),
-        KeyType.bitcoinCashAddress : (instructions: "Enter Your Bitcoin Cash (BCH) Address", placeholder: "pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g", barcodeScanEnabled: true),
-        KeyType.rippleAddress : (instructions: "Enter Your Ripple (XRP) Address", placeholder: "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn", barcodeScanEnabled: true),
-        KeyType.venmoUsername : (instructions: "Enter Your Venmo Username", placeholder: "@xo_leg", barcodeScanEnabled: false),
-        KeyType.cashTag : (instructions: "Enter Your CashTag", placeholder: "$xo_leg", barcodeScanEnabled: false),
+        
+        KeyType.bitcoinAddress : (instructions: "Share Bitcoin (BTC) Address", placeholder: "3P3QsMVK89JBNqZQv5zMAKG8FK3kJM4rjt", barcodeScanEnabled: true),
+        KeyType.ethereumAddress : (instructions: "Share Ethereum (ETH) Address", placeholder: "0x2E272DE22DEd37A971794E0eC3b32Ac3907a7c05", barcodeScanEnabled: true),
+        KeyType.moneroAddress : (instructions: "Share Monero (XMR) Address", placeholder: "45KPbNGAZ9pTcZi9AJwgufSYBuhVHoyATdhU9sjGtGqn1UkW99Dcj3gLGRH5t1KsRSN157SvbWZGZJNRd8VKV9Cz3ZbPCxL", barcodeScanEnabled: true),
+        KeyType.litecoinAddress : (instructions: "Share Litecoin (LTC) Address", placeholder: "3CDJNfdWX8m2NwuGUV3nhXHXEeLygMXoAj", barcodeScanEnabled: true),
+        KeyType.bitcoinCashAddress : (instructions: "Share Bitcoin Cash (BCH) Address", placeholder: "pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g", barcodeScanEnabled: true),
+        KeyType.rippleAddress : (instructions: "Share Ripple (XRP) Address", placeholder: "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn", barcodeScanEnabled: true),
+        KeyType.venmoUsername : (instructions: "Share Venmo Username", placeholder: "Enter your Venmo username", barcodeScanEnabled: false),
+        KeyType.cashTag : (instructions: "Share CashTag", placeholder: "Enter Your CashTag", barcodeScanEnabled: false),
         
         // Generics
-        KeyType.genericUrl : (instructions: "Enter the URL to Your Website", placeholder: "SuperQR.com", barcodeScanEnabled: false),
-        KeyType.genericEmail : (instructions: "Enter Your Email Address", placeholder: "SuperQR@gmail.com", barcodeScanEnabled: false),
-        KeyType.genericNote : (instructions: "Enter Custom Link or Message", placeholder: "Hello...", barcodeScanEnabled: false),
+        KeyType.genericUrl : (instructions: "Share Website", placeholder: "\(System.shared.appName).com", barcodeScanEnabled: false),
+        KeyType.genericEmail : (instructions: "Share Email Address", placeholder: "\(System.shared.appName).com", barcodeScanEnabled: false),
+        KeyType.genericNote : (instructions: "Share Custom Link or Message", placeholder: "Hello...", barcodeScanEnabled: false),
     ]
     
     static func inputsTranslationFor(barcode: Barcode) -> [BarcodeInput]? {

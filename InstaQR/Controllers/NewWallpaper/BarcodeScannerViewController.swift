@@ -19,7 +19,7 @@ class BarcodeScannerViewController: ViewController {
     // MARK: - Internal Properties
     
     var delegate: BarcodeScannerDelegate!
-    var instructionText = "Scan QR Barcode"
+    var instructionText = "Scan QR code"
     
     // MARK: - Private Properties
     

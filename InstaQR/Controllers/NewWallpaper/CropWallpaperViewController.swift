@@ -160,10 +160,7 @@ class CropWallpaperViewController: UIViewController {
     }
     
     @objc fileprivate func doneButtonWasTapped() {
-        donePrimaryButton.isLoading = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.cropViewController.toolbar.doneTextButton.sendActions(for: .touchUpInside)
-        }
+        cropViewController.toolbar.doneTextButton.sendActions(for: .touchUpInside)
     }
 }
 
