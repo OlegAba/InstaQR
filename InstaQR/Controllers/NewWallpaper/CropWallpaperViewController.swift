@@ -62,6 +62,13 @@ class CropWallpaperViewController: UIViewController {
         return imageView
     }()
     
+    fileprivate lazy var donePrimaryButton: PrimaryButton = {
+        let button = PrimaryButton()
+        button.setTitle("Done", for: .normal)
+        button.addTarget(self, action: #selector(doneButtonWasTapped), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -106,8 +113,8 @@ class CropWallpaperViewController: UIViewController {
     fileprivate func setupNavigationBar() {
         navigationItem.title = "Crop to Screen Size"
         navigationItem.largeTitleDisplayMode = .never
-        let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonWasTapped))
-        navigationItem.rightBarButtonItem = doneBarButtonItem
+        let rotateBarButtonItem = UIBarButtonItem(image: .rotateIcon, style: .plain, target: self, action: #selector(rotateButtonWasTapped))
+        navigationItem.rightBarButtonItem = rotateBarButtonItem
     }
     
     fileprivate func setupViews() {
@@ -115,6 +122,7 @@ class CropWallpaperViewController: UIViewController {
         addChild(cropViewController)
         view.addSubview(cropViewController.view)
         cropViewController.didMove(toParent: self)
+        view.addSubview(donePrimaryButton)
     }
     
     // MARK: - Layout
@@ -124,10 +132,14 @@ class CropWallpaperViewController: UIViewController {
         let cropViewControllerToolbarHeight: CGFloat = cropViewController.toolbar.frame.height
         
         NSLayoutConstraint.activate([
+            donePrimaryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            donePrimaryButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            donePrimaryButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            
             cropViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             cropViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             cropViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            cropViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: cropViewControllerToolbarHeight),
+            cropViewController.view.bottomAnchor.constraint(equalTo: donePrimaryButton.topAnchor, constant: cropViewControllerToolbarHeight),
             
             blurredOverlayImageView.topAnchor.constraint(equalTo: view.topAnchor),
             blurredOverlayImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -143,7 +155,11 @@ class CropWallpaperViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc func doneButtonWasTapped() {
+    @objc fileprivate func rotateButtonWasTapped() {
+        cropViewController.toolbar.rotateClockwiseButton?.sendActions(for: .touchUpInside)
+    }
+    
+    @objc fileprivate func doneButtonWasTapped() {
         cropViewController.toolbar.doneTextButton.sendActions(for: .touchUpInside)
     }
 }

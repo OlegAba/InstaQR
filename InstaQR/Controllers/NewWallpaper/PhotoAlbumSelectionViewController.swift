@@ -133,7 +133,8 @@ class PhotoAlbumViewController: ViewController {
     // MARK: - Private Methods
     
     fileprivate func loadPhotoAlbums() {
-        photoAlbums = ImageManager.shared.grabAllPhotosAlbum() + ImageManager.shared.grabUserCreatedAlbums(nonEmpty: false)
+        let albums = ImageManager.shared.grabAllPhotosAlbum() + ImageManager.shared.grabUserCreatedAlbums(nonEmpty: false)
+        photoAlbums = albums.sorted(by: { $0.assets.count > $1.assets.count })
         tableView.reloadData()
         navigationItem.title = "Select Album"
     }
@@ -166,6 +167,7 @@ extension PhotoAlbumViewController: UITableViewDataSource {
         cell.subtitle = String(photoAlbum.assets.count)
         cell.logoImageView.contentMode = .scaleAspectFill
         cell.logoImageView.clipsToBounds = true
+        cell.logoImage = UIImage(color: .systemGray5)
         
         let imageSize = CGSize(width: 250.0, height: 250.0)
         

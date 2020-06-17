@@ -69,7 +69,7 @@ class BarcodeScanGuideView: UIView {
     // MARK: - Setup
     
     func setupViews() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        backgroundColor = UIColor.black.withAlphaComponent(System.shared.globalOpacity)
         clipsToBounds = true
         layer.mask = roundedRectShapeLayer
         layer.addSublayer(roundedRectOutlineShapeLayer)
