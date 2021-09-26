@@ -54,7 +54,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
-        navigationItem.title = "New Wallpaper"
+        navigationItem.title = "Live Wallpaper"
         
         let deleteBarButtonItem = UIBarButtonItem(image: .trashIcon, style: .plain, target: self, action: #selector(deleteButtonWasTapped))
         deleteBarButtonItem.tintColor = .systemRed

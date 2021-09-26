@@ -41,17 +41,17 @@ enum HelpItem: Int, CaseIterable, SettingsItemType {
     
     var logoImage: UIImage? {
         switch self {
-        case .faq: return .questionMarkIcon
-        case .liveWallpaper: return .infoIcon
-        case .onBoarding: return .boxIcon
+        case .faq: return nil
+        case .liveWallpaper: return nil
+        case .onBoarding: return nil
         }
     }
     
     var logoBackgroundColor: UIColor {
         switch self {
-        case .faq: return .clear
-        case .liveWallpaper: return .clear
-        case .onBoarding: return .clear
+        case .faq: return UIColor(red: 251/255.0, green: 55/255.0, blue: 48/255.0, alpha: 1.0)
+        case .liveWallpaper: return UIColor(red: 2/255.0, green: 111/255.0, blue: 247/255.0, alpha: 1.0)
+        case .onBoarding: return UIColor(red: 49/255.0, green: 191/255.0, blue: 87/255.0, alpha: 1.0)
         }
     }
 }
@@ -71,17 +71,17 @@ enum GeneralItem: Int, CaseIterable, SettingsItemType {
     
     var logoImage: UIImage? {
         switch self {
-        case .rate: return .starIcon
-        case .licenses: return .letterCIcon
-        case .privacyPolicy: return .docIcon
+        case .rate: return nil
+        case .licenses: return nil
+        case .privacyPolicy: return nil
         }
     }
     
     var logoBackgroundColor: UIColor {
         switch self {
-        case .rate: return .clear
-        case .licenses: return .clear
-        case .privacyPolicy: return .clear
+        case .rate: return UIColor(red: 252/255.0, green: 138/255.0, blue: 36/255.0, alpha: 1.0)
+        case .licenses: return UIColor(red: 77/255.0, green: 76/255.0, blue: 203/255.0, alpha: 1.0)
+        case .privacyPolicy: return UIColor(red: 48/255.0, green: 159/255.0, blue: 210/255.0, alpha: 1.0)
         }
     }
 }

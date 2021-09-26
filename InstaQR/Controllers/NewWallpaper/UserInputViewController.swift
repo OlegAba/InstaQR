@@ -123,9 +123,8 @@ class UserInputViewController: ViewController {
             navigationItem.rightBarButtonItem = qrScanBarButtonItem
         }
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        //let backButton = UIBarButtonItem()
+        //navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     fileprivate func setupViews() {

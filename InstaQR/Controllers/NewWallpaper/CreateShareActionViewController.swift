@@ -44,7 +44,7 @@ class CreateShareActionViewController: InsetGroupedTableViewController {
     }
     
     fileprivate func setupTableView() {
-        subtitle = "Set up a share action that will be triggered when your wallpaper is scanned."
+        subtitle = "Create or enter a share action link that will be opened when your wallpaper is scanned."
         tableHeaderViewBottomInset = tableHeaderViewBottomInset * 2.0
         tableView.rowHeight = 50.0
         tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)

@@ -28,7 +28,7 @@ class BarcodeScannerViewController: ViewController {
         navigationBar.translatesAutoresizingMaskIntoConstraints = false
         let navItem = UINavigationItem()
         let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
-        navItem.rightBarButtonItem = cancelBarButtonItem
+        navItem.leftBarButtonItem = cancelBarButtonItem
         navigationBar.setItems([navItem], animated: false)
         return navigationBar
     }()
