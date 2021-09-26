@@ -65,7 +65,7 @@ class PhotoAlbumViewController: ViewController {
     fileprivate func setupViews() {
         
         let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
-        navigationItem.rightBarButtonItem = cancelBarButtonItem
+        navigationItem.leftBarButtonItem = cancelBarButtonItem
         
         view.backgroundColor = .clear
         view.addSubview(tableView)

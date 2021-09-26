@@ -26,13 +26,13 @@ class PopUpNotificationViewController: NotificationViewController {
         return view
     }()
     
-    let inset: CGFloat = 10.0
+    let inset: CGFloat = 25.0
     
     // MARK: - Private Properties
     
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .title2).pointSize, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .title2).pointSize, weight: .medium)
         label.numberOfLines = 1
         label.textAlignment = .center
         label.textColor = .label
@@ -42,7 +42,7 @@ class PopUpNotificationViewController: NotificationViewController {
     
     fileprivate lazy var messageLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
@@ -71,7 +71,9 @@ class PopUpNotificationViewController: NotificationViewController {
     // MARK: - Setup
     
     fileprivate func setupViews() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        view.backgroundColor = UIColor.black.withAlphaComponent(System.shared.globalOpacity)
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.separator.cgColor
         contentView.alpha = 0
         contentView.isHidden = true
         contentView.addSubview(titleLabel)
@@ -87,15 +89,15 @@ class PopUpNotificationViewController: NotificationViewController {
             contentView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset * 1.5),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset * 2.0),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset * 2.0),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: inset * 1),
-            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset * 2.0),
-            messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset * 2.0),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15.0),
+            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             
-            buttonContainerView.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: inset * 2.0),
+            buttonContainerView.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 25.0),
             buttonContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             buttonContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             
