@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://apps.apple.com/us/app/instaqr-live-wallpaper-maker/id1514732973?ign-mpt=uo%3D4">
-    <img src="https://raw.githubusercontent.com/GitHawkApp/GitHawk/master/images/app-store-badge.png" width="250"/>
+    <img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-11-16&amp;kind=iossoftware&amp;bubble=ios_apps" width="250"/>
   </a>
 </p>
 
