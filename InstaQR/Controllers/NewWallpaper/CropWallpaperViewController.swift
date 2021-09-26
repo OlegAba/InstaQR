@@ -104,6 +104,21 @@ class CropWallpaperViewController: UIViewController {
             blurEffectView.bottomAnchor.constraint(equalTo: cropViewController.toolbar.topAnchor)
         ])
     }
+    
+    // MARK: - Private Methods
+    
+    fileprivate func cancelButtonWasTapped() {
+        let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
+        buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
+        buttonsPopUpNotificationViewController.titleText = "Warning"
+        buttonsPopUpNotificationViewController.messageText = "Are you sure you want to discard all changes?"
+        buttonsPopUpNotificationViewController.primaryButton.setTitle("Discard", for: .normal)
+        buttonsPopUpNotificationViewController.primaryButton.backgroundColor = .systemRed
+        buttonsPopUpNotificationViewController.secondaryButton.setTitle("Cancel", for: .normal)
+        buttonsPopUpNotificationViewController.secondaryButton.setTitleColor(.systemRed, for: .normal)
+        buttonsPopUpNotificationViewController.delegate = self
+        present(buttonsPopUpNotificationViewController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - CropViewControllerDelegate
@@ -114,5 +129,25 @@ extension CropWallpaperViewController: CropViewControllerDelegate {
         let resizedImage = image.resized(size: UIScreen.main.nativeBounds.size)
         
         self.delegate.cropWallpaper(self, didCropToImage: resizedImage)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
+        cancelButtonWasTapped()
+    }
+}
+
+// MARK: - ButtonsPopUpNotificationDelegate
+extension CropWallpaperViewController: ButtonsPopUpNotificationDelegate {
+    
+    // NOTE: - Button confirms discard of all crop changes
+    func primaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        
+        buttonsPopUpNotificationViewController.dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        buttonsPopUpNotificationViewController.dismiss(animated: true, completion: nil)
     }
 }
