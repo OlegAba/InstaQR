@@ -37,6 +37,7 @@ class NewWallpaperNavigationController: UINavigationController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationBar.prefersLargeTitles = true
+        
     }
     
     // MARK: - Internal Methods

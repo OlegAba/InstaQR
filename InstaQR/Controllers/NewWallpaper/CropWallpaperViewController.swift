@@ -19,7 +19,6 @@ class CropWallpaperViewController: UIViewController {
     
     var imageToCrop: UIImage!
     var delegate: CropWallpaperDelegate!
-    var imageCropViewLastOriginX: CGFloat?
     
     // MARK: - Private Properties
     
@@ -28,52 +27,32 @@ class CropWallpaperViewController: UIViewController {
         cropViewController.delegate = self
         cropViewController.aspectRatioLockEnabled = true
         cropViewController.customAspectRatio = UIScreen.main.bounds.size
-        cropViewController.toolbar.isHidden = true
-        cropViewController.hidesNavigationBar = false
+        cropViewController.aspectRatioLockEnabled = true
+        cropViewController.resetAspectRatioEnabled = false
+        cropViewController.cancelButtonColor = .systemRed
+        cropViewController.doneButtonColor = .systemBlue
         cropViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        // NOTE: Set TOCropViewControllers subviews to background color
-        cropViewController.children[0].view.backgroundColor = view.backgroundColor
-        cropViewController.cropView.backgroundColor = view.backgroundColor
-        cropViewController.view.backgroundColor = view.backgroundColor
         
         // NOTE: Remove default UIVisualEffectView blur subview
         cropViewController.cropView.subviews[2].removeFromSuperview()
         
         // NOTE: Add custom VisualEffectView blur subview
-        cropViewController.cropView.subviews[1].addSubview(blurredOverlayImageView)
+        cropViewController.cropView.subviews[1].addSubview(blurEffectView)
         
         return cropViewController
     }()
     
     fileprivate lazy var blurEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.translatesAutoresizingMaskIntoConstraints = false
         return blurEffectView
-    }()
-    
-    fileprivate lazy var blurredOverlayImageView: UIImageView = {
-        let imageView = UIImageView(frame: UIScreen.main.bounds)
-        imageView.image = imageToCrop
-        imageView.contentMode = .scaleToFill
-        imageView.addSubview(blurEffectView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    fileprivate lazy var donePrimaryButton: PrimaryButton = {
-        let button = PrimaryButton()
-        button.setTitle("Done", for: .normal)
-        button.addTarget(self, action: #selector(doneButtonWasTapped), for: .touchUpInside)
-        return button
     }()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupViews()
     }
     
@@ -84,23 +63,11 @@ class CropWallpaperViewController: UIViewController {
         cropViewController.delegate = nil
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // NOTE: Save xOrigin of imageCropFrame to use in viewDidAppear
-        imageCropViewLastOriginX = cropViewController.imageCropFrame.origin.x
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // NOTE: Reassign delegate that is set to nil during viewDidDisappear
         cropViewController.delegate = self
-        
-        // NOTE: Prevents bug where imageCropFrame offsets to the left when user begins back gesture on navBar and cancels
-        if let xOrigin = imageCropViewLastOriginX {
-            cropViewController.imageCropFrame.origin.x = xOrigin
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -108,59 +75,49 @@ class CropWallpaperViewController: UIViewController {
         layoutViews()
     }
     
-    // MARK: - Setup
-    
-    fileprivate func setupNavigationBar() {
-        navigationItem.title = "Crop to Screen Size"
-        navigationItem.largeTitleDisplayMode = .never
-        let rotateBarButtonItem = UIBarButtonItem(image: .rotateIcon, style: .plain, target: self, action: #selector(rotateButtonWasTapped))
-        navigationItem.rightBarButtonItem = rotateBarButtonItem
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
+    
+    // MARK: - Setup
     
     fileprivate func setupViews() {
         view.backgroundColor = .systemBackground
         addChild(cropViewController)
         view.addSubview(cropViewController.view)
         cropViewController.didMove(toParent: self)
-        view.addSubview(donePrimaryButton)
     }
     
     // MARK: - Layout
     
     fileprivate func layoutViews() {
         
-        let cropViewControllerToolbarHeight: CGFloat = cropViewController.toolbar.frame.height
-        
         NSLayoutConstraint.activate([
-            donePrimaryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            donePrimaryButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            donePrimaryButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            
             cropViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             cropViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             cropViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            cropViewController.view.bottomAnchor.constraint(equalTo: donePrimaryButton.topAnchor, constant: cropViewControllerToolbarHeight),
-            
-            blurredOverlayImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            blurredOverlayImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            blurredOverlayImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            blurredOverlayImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            blurEffectView.topAnchor.constraint(equalTo: blurredOverlayImageView.topAnchor),
-            blurEffectView.leadingAnchor.constraint(equalTo: blurredOverlayImageView.leadingAnchor),
-            blurEffectView.trailingAnchor.constraint(equalTo: blurredOverlayImageView.trailingAnchor),
-            blurEffectView.bottomAnchor.constraint(equalTo: blurredOverlayImageView.bottomAnchor)
+            cropViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+            blurEffectView.topAnchor.constraint(equalTo: view.topAnchor),
+            blurEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            blurEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            blurEffectView.bottomAnchor.constraint(equalTo: cropViewController.toolbar.topAnchor)
         ])
     }
     
-    // MARK: - Actions
+    // MARK: - Private Methods
     
-    @objc fileprivate func rotateButtonWasTapped() {
-        cropViewController.toolbar.rotateClockwiseButton?.sendActions(for: .touchUpInside)
-    }
-    
-    @objc fileprivate func doneButtonWasTapped() {
-        cropViewController.toolbar.doneTextButton.sendActions(for: .touchUpInside)
+    fileprivate func cancelButtonWasTapped() {
+        let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
+        buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
+        buttonsPopUpNotificationViewController.titleText = "Warning"
+        buttonsPopUpNotificationViewController.messageText = "Are you sure you want to discard all changes?"
+        buttonsPopUpNotificationViewController.primaryButton.setTitle("Discard", for: .normal)
+        buttonsPopUpNotificationViewController.primaryButton.backgroundColor = .systemRed
+        buttonsPopUpNotificationViewController.secondaryButton.setTitle("Cancel", for: .normal)
+        buttonsPopUpNotificationViewController.secondaryButton.setTitleColor(.systemRed, for: .normal)
+        buttonsPopUpNotificationViewController.delegate = self
+        present(buttonsPopUpNotificationViewController, animated: true, completion: nil)
     }
 }
 
@@ -172,5 +129,25 @@ extension CropWallpaperViewController: CropViewControllerDelegate {
         let resizedImage = image.resized(size: UIScreen.main.nativeBounds.size)
         
         self.delegate.cropWallpaper(self, didCropToImage: resizedImage)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
+        cancelButtonWasTapped()
+    }
+}
+
+// MARK: - ButtonsPopUpNotificationDelegate
+extension CropWallpaperViewController: ButtonsPopUpNotificationDelegate {
+    
+    // NOTE: - Button confirms discard of all crop changes
+    func primaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        
+        buttonsPopUpNotificationViewController.dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func secondaryButtonWasTapped(for buttonsPopUpNotificationViewController: ButtonsPopUpNotificationViewController) {
+        buttonsPopUpNotificationViewController.dismiss(animated: true, completion: nil)
     }
 }
