@@ -1,5 +1,3 @@
-<img align="left" width="80" height="80" src="https://github.com/OlegAba/InstaQR/blob/master/Design/Logo/InstaQRLogo.jpg" alt="app icon">
-
 # InstaQR - Live Wallpaper Maker
 
 <br />
