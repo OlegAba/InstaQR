@@ -1,3 +1,5 @@
+<img align="left" width="80" height="80" src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/99/51/15/9951154e-b6a0-6b81-9975-e258fbdef03f/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp" alt="app icon">
+
 # InstaQR - Live Wallpaper Maker
 
 <br />
