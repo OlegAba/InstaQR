@@ -34,7 +34,7 @@ class System {
     }
     
     func triggerFeedbackGenerator() {
-        let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
+        let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .heavy)
         impactFeedbackgenerator.prepare()
         impactFeedbackgenerator.impactOccurred()
     }

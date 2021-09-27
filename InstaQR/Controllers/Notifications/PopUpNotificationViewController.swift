@@ -108,13 +108,13 @@ class PopUpNotificationViewController: NotificationViewController {
     // MARK: - Internal Methods
     
     fileprivate func animatePresentViews() {
-        System.shared.triggerFeedbackGenerator()
         
         contentView.isHidden = false
         contentView.alpha = 1.0
         contentView.transform = contentView.transform.scaledBy(x: 0.9, y: 0.9)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseInOut, animations: {
+            System.shared.triggerFeedbackGenerator()
             self.contentView.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
         })
     }
