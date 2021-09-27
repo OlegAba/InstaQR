@@ -54,7 +54,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
     // MARK: - Setup
     
     fileprivate func setupNavigationBar() {
-        navigationItem.title = "New Wallpaper"
+        navigationItem.title = "Live Wallpaper"
         
         let deleteBarButtonItem = UIBarButtonItem(image: .trashIcon, style: .plain, target: self, action: #selector(deleteButtonWasTapped))
         deleteBarButtonItem.tintColor = .systemRed
@@ -86,8 +86,8 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
         let buttonsPopUpNotificationViewController = ButtonsPopUpNotificationViewController()
         buttonsPopUpNotificationViewController.modalPresentationStyle = .overFullScreen
         buttonsPopUpNotificationViewController.titleText = "Warning"
-        buttonsPopUpNotificationViewController.messageText = "Are you sure you want to delete the current wallpaper?"
-        buttonsPopUpNotificationViewController.primaryButton.setTitle("Delete", for: .normal)
+        buttonsPopUpNotificationViewController.messageText = "Are you sure you want to discard the current wallpaper?"
+        buttonsPopUpNotificationViewController.primaryButton.setTitle("Discard", for: .normal)
         buttonsPopUpNotificationViewController.primaryButton.backgroundColor = .systemRed
         buttonsPopUpNotificationViewController.secondaryButton.setTitle("Cancel", for: .normal)
         buttonsPopUpNotificationViewController.secondaryButton.setTitleColor(.systemRed, for: .normal)

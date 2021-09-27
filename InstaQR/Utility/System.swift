@@ -15,7 +15,7 @@ class System {
     let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     let globalInset: CGFloat = 15.0
     let globalCornerRadius: CGFloat = 15.0
-    let globalOpacity: CGFloat = 0.5
+    let globalOpacity: CGFloat = 0.65
     
     fileprivate let defaults = UserDefaults.standard
     fileprivate let firstTimeKey = "isFirstTime"
@@ -34,7 +34,7 @@ class System {
     }
     
     func triggerFeedbackGenerator() {
-        let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
+        let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .heavy)
         impactFeedbackgenerator.prepare()
         impactFeedbackgenerator.impactOccurred()
     }

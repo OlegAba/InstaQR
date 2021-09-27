@@ -24,11 +24,12 @@ class SettingsViewController: InsetGroupedTableViewController {
     fileprivate func setupNavigationBar() {
         navigationItem.title = "Settings"
         let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
-        navigationItem.rightBarButtonItem = cancelBarButtonItem
+        navigationItem.leftBarButtonItem = cancelBarButtonItem
     }
     
     fileprivate func setupTableView() {
         tableView.rowHeight = 50.0
+        tableView.contentInset.top = 25.0
         tableView.register(TableViewCell.self, forCellReuseIdentifier: tableViewCellID)
         tableView.delegate = self
         tableView.dataSource = self
@@ -124,33 +125,13 @@ extension SettingsViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = SectionTitleLabelHeaderView()
-        header.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .semibold)
-        
-        guard let section = SettingsSection(rawValue: section) else { return header }
-        
-        switch section{
-        case .Help:
-            header.text = SettingsSection.Help.description
-        case .General:
-            header.text = SettingsSection.General.description
-        }
-        
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55.0
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellID, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         cell.isLast = rowIsLast(for: indexPath)
         cell.backgroundColor = .tableViewCellAdaptiveBackgroundColor
         cell.iconImage = UIImage.chevronRightIcon
-        cell.logoImageView.tintColor = .systemBlue
+        cell.logoImageView.tintColor = .white
         cell.logoImageInset = UIEdgeInsets(top: -4, left: 0, bottom: -4, right: 0)
         
         guard let section = SettingsSection(rawValue: indexPath.section) else { return cell }

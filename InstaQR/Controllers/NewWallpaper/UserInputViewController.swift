@@ -122,10 +122,6 @@ class UserInputViewController: ViewController {
             let qrScanBarButtonItem = UIBarButtonItem(image: .scanQRIcon, style: .plain, target: self, action: #selector(qrScanButtonWasTapped))
             navigationItem.rightBarButtonItem = qrScanBarButtonItem
         }
-        
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     fileprivate func setupViews() {

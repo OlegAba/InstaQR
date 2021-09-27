@@ -108,6 +108,8 @@ class TableViewCell: UITableViewCell {
     
     // MARK: - Private Properties
     
+    fileprivate let insets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    
     fileprivate lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -167,11 +169,15 @@ class TableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutMarginsDidChange() {
+        layoutMargins = insets
+    }
+    
     // MARK: - Setup
     
     func setupViews() {
         backgroundColor = .systemGray6
-        layoutMargins = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        layoutMargins = insets
         contentView.addSubview(iconImageView)
         contentView.addSubview(separatorLineView)
         contentView.addSubview(horizontalStackView)

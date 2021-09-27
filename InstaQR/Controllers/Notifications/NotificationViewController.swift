@@ -45,7 +45,7 @@ extension NotificationViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return NotificationAnimationController(animationDuration: 0.1, animationType: .present)
+        return NotificationAnimationController(animationDuration: 0.15, animationType: .present)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

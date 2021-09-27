@@ -43,7 +43,6 @@ class ContainerPageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(pageControl)
-        setupNavigationBar()
         setupPageViewController()
     }
     
@@ -53,11 +52,6 @@ class ContainerPageViewController: UIViewController {
     }
     
     // MARK: - Setup
-    
-    fileprivate func setupNavigationBar() {
-        let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelButtonWasTapped))
-        navigationItem.rightBarButtonItem = cancelBarButtonItem
-    }
     
     fileprivate func setupPageViewController() {
         view.addSubview(pageViewController.view)
