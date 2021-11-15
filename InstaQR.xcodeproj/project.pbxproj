@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		27ADC3710C0C132F499195E1 /* Pods_InstaQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */; };
+		7C0862DC274326340057A044 /* scannable-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7C0862DA274326330057A044 /* scannable-gif.gif */; };
+		7C0862DD274326340057A044 /* live-wallpaper-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7C0862DB274326340057A044 /* live-wallpaper-gif.gif */; };
 		7C44B4C624456D3200C660D2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C44B4C524456D3200C660D2 /* TableViewCell.swift */; };
 		7C5D27FD23AAF6430019111F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D27FC23AAF6430019111F /* AppDelegate.swift */; };
 		7C5D280623AAF6490019111F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280523AAF6490019111F /* Assets.xcassets */; };
 		7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D280723AAF6490019111F /* LaunchScreen.storyboard */; };
-		7C5D281623AB010E0019111F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C5D281523AB010E0019111F /* Keys.plist */; };
 		7C5D281E23AB03580019111F /* InsetGroupedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D281D23AB03580019111F /* InsetGroupedTableViewController.swift */; };
 		7C5D282123AB03A00019111F /* NewWallpaperNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */; };
 		7C5D282323AB04410019111F /* NewWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D282223AB04410019111F /* NewWallpaperViewController.swift */; };
@@ -84,21 +85,21 @@
 		7C6D6F24244BE59A00C258CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D6F23244BE59A00C258CE /* ViewController.swift */; };
 		7C71CD9C2446B9C3006617F6 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */; };
 		7CA62320247646AD00B72D0F /* WallpaperGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA6231F247646AD00B72D0F /* WallpaperGuideViewController.swift */; };
-		7CDE1B4424724BFE003244F4 /* scannable-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CDE1B4324724BFE003244F4 /* scannable-gif.gif */; };
-		7CDE1B4624724DD1003244F4 /* live-wallpaper-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CDE1B4524724DD1003244F4 /* live-wallpaper-gif.gif */; };
+		7CDBB6222743211400B664F9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CDBB6212743211400B664F9 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F0486E14D1FAAA84CC0C62E /* Pods-InstaQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.release.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.release.xcconfig"; sourceTree = "<group>"; };
 		552104CB09E331DA38E5E9EA /* Pods-InstaQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaQR.debug.xcconfig"; path = "Target Support Files/Pods-InstaQR/Pods-InstaQR.debug.xcconfig"; sourceTree = "<group>"; };
 		5C5C19207ABB47454EBF5323 /* Pods_InstaQR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaQR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0862DA274326330057A044 /* scannable-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "scannable-gif.gif"; sourceTree = "<group>"; };
+		7C0862DB274326340057A044 /* live-wallpaper-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "live-wallpaper-gif.gif"; sourceTree = "<group>"; };
 		7C44B4C524456D3200C660D2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7C5D27F923AAF6430019111F /* InstaQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5D27FC23AAF6430019111F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5D280523AAF6490019111F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C5D280823AAF6490019111F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5D280A23AAF6490019111F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C5D281523AB010E0019111F /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		7C5D281D23AB03580019111F /* InsetGroupedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetGroupedTableViewController.swift; sourceTree = "<group>"; };
 		7C5D282023AB03A00019111F /* NewWallpaperNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWallpaperNavigationController.swift; sourceTree = "<group>"; };
 		7C5D282223AB04410019111F /* NewWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWallpaperViewController.swift; sourceTree = "<group>"; };
@@ -170,8 +171,7 @@
 		7C6D6F23244BE59A00C258CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C71CD9B2446B9C3006617F6 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
 		7CA6231F247646AD00B72D0F /* WallpaperGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperGuideViewController.swift; sourceTree = "<group>"; };
-		7CDE1B4324724BFE003244F4 /* scannable-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "scannable-gif.gif"; path = "Design/Gif/OnBoarding/Scannable/scannable-gif.gif"; sourceTree = SOURCE_ROOT; };
-		7CDE1B4524724DD1003244F4 /* live-wallpaper-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "live-wallpaper-gif.gif"; path = "Design/Gif/OnBoarding/LiveWallpaper/live-wallpaper-gif.gif"; sourceTree = SOURCE_ROOT; };
+		7CDBB6212743211400B664F9 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0862D9274326270057A044 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				7C0862DB274326340057A044 /* live-wallpaper-gif.gif */,
+				7C0862DA274326330057A044 /* scannable-gif.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
 		7C5D27F023AAF6430019111F = {
 			isa = PBXGroup;
 			children = (
@@ -222,11 +231,11 @@
 		7C5D281023AAFB790019111F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7C8EF2CE246FC517008D3AE8 /* Gifs */,
+				7C0862D9274326270057A044 /* Gifs */,
 				7C5D280523AAF6490019111F /* Assets.xcassets */,
 				7C5D280723AAF6490019111F /* LaunchScreen.storyboard */,
 				7C5D280A23AAF6490019111F /* Info.plist */,
-				7C5D281523AB010E0019111F /* Keys.plist */,
+				7CDBB6212743211400B664F9 /* Keys.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -425,23 +434,6 @@
 			path = PaymentAddress;
 			sourceTree = "<group>";
 		};
-		7C8EF2CE246FC517008D3AE8 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				7CAA05772470628200BD35CE /* OnBoarding */,
-			);
-			path = Gifs;
-			sourceTree = "<group>";
-		};
-		7CAA05772470628200BD35CE /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				7CDE1B4324724BFE003244F4 /* scannable-gif.gif */,
-				7CDE1B4524724DD1003244F4 /* live-wallpaper-gif.gif */,
-			);
-			path = OnBoarding;
-			sourceTree = "<group>";
-		};
 		81AD8C121B9D1456A742F35E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,11 +511,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CDE1B4624724DD1003244F4 /* live-wallpaper-gif.gif in Resources */,
-				7CDE1B4424724BFE003244F4 /* scannable-gif.gif in Resources */,
-				7C5D281623AB010E0019111F /* Keys.plist in Resources */,
+				7C0862DD274326340057A044 /* live-wallpaper-gif.gif in Resources */,
+				7CDBB6222743211400B664F9 /* Keys.plist in Resources */,
 				7C5D280923AAF6490019111F /* LaunchScreen.storyboard in Resources */,
 				7C5D280623AAF6490019111F /* Assets.xcassets in Resources */,
+				7C0862DC274326340057A044 /* scannable-gif.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
