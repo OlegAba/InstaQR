@@ -33,9 +33,15 @@ We use [CocoaPods](http://cocoapods.org) for our dependency manager. This should
 To access the project, run the following:
 ```
 git clone --recursive https://github.com/OlegAba/InstaQR.git
+cd InstaQR/
 pod install
 ```
 Make sure to open the Xcode workspace!
+
+Optionally add [Unsplash](https://unsplash.com/developers) API keys:
+1. Create Keys.plist at `InstaQR/Resources/`
+2. Add row for `unsplashSecretKey` with the respective value
+3. Add row for `unsplashAccessKey`with the respective value
 
 
 ## Build With
