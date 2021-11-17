@@ -7,7 +7,7 @@
 //
 
 import Photos
-import LPLivePhotoGenerator
+import UIKit
 
 class GenerateLiveWallpaperWithBarcode {
     
@@ -21,7 +21,8 @@ class GenerateLiveWallpaperWithBarcode {
         self.barcode = barcode
     }
     
-    func create(completion: @escaping (LPLivePhoto?) -> ()) {
+    // func create(completion: @escaping (LPLivePhoto?) -> ()) {
+    func create(completion: @escaping (PHLivePhoto?) -> ()) {
         
         guard let barcodeImage = generateBarcode()?.withRoundedCorners(radius: 20.0) else { completion(nil); return }
         
@@ -43,12 +44,10 @@ class GenerateLiveWallpaperWithBarcode {
             let livePhotoImageData = livePhotoImage.jpegData(compressionQuality: 1.0)
             guard let _ = try? livePhotoImageData?.write(to: imageFilePathURL) else { completion(nil); return }
             
-            LPLivePhotoGenerator.create(inputImagePath: imageFilePath, inputVideoPath: videoFilePath, completion: { (livePhoto: LPLivePhoto?, error: Error?) in
-                if let error = error {
-                    print(error)
-                }
+            LivePhoto.generate(from: imageFilePathURL, videoURL: videoFilePathURL, progress: { (percent) in
+            }) { (livePhoto: PHLivePhoto?, resources: LivePhoto.LivePhotoResources?) in
                 completion(livePhoto)
-            })
+            }
         }
     }
     
