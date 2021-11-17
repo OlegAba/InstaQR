@@ -8,19 +8,18 @@
 
 import UIKit
 import PhotosUI
-import LPLivePhotoGenerator
 
 class PreviewWallpaperViewController: ViewController {
     
     // MARK: - Internal Properties
     
-    var livePhoto: LPLivePhoto!
+    var livePhoto: PHLivePhoto!
     
     // MARK: - Private Properties
     
     fileprivate lazy var livePhotoPreviewView: PHLivePhotoView = {
         let phLivePhotoView = PHLivePhotoView()
-        phLivePhotoView.livePhoto = livePhoto.phLivePhoto
+        phLivePhotoView.livePhoto = livePhoto
         phLivePhotoView.translatesAutoresizingMaskIntoConstraints = false
         return phLivePhotoView
     }()
@@ -123,14 +122,29 @@ extension PreviewWallpaperViewController: PhotoAlbumDelegate {
             self.present(loadingNotificationViewController, animated: true) {
                 
                 let albumSaveLocation = album.name == "All Photos" ? nil : album
-                ImageManager.shared.saveLivePhoto(to: albumSaveLocation, imageURL: self.livePhoto.imageURL, videoURL: self.livePhoto.videoURL) { (saved: Bool) in
+                let albumName = album.name == "All Photos" ? "your Photo Library" : album.name
+                
+                LivePhoto.extractResources(from: self.livePhoto) { (resources: LivePhoto.LivePhotoResources?) in
                     
-                    DispatchQueue.main.async {
+                    if let resources = resources {
                         
-                        loadingNotificationViewController.dismiss(animated: true) {
+                        ImageManager.shared.saveLivePhoto(to: albumSaveLocation, imageURL: resources.pairedImage, videoURL: resources.pairedVideo) { (saved: Bool) in
                             
-                            let albumName = album.name == "All Photos" ? "your Photo Library" : album.name
-                            self.presentPopUpNotificationViewController(for: saved, albumName: albumName)
+                            DispatchQueue.main.async {
+                                loadingNotificationViewController.dismiss(animated: true) {
+                                    
+                                    self.presentPopUpNotificationViewController(for: saved, albumName: albumName)
+                                }
+                            }
+                        }
+                    } else {
+                        
+                        DispatchQueue.main.async {
+                            
+                            loadingNotificationViewController.dismiss(animated: true) {
+                                
+                                self.presentPopUpNotificationViewController(for: false, albumName: albumName)
+                            }
                         }
                     }
                 }

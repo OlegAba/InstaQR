@@ -8,7 +8,6 @@
 
 import UIKit
 import PhotosUI
-import LPLivePhotoGenerator
 
 protocol PhotoAlbumDelegate {
     func photoAlbum(_ photoAlbumViewController: PhotoAlbumViewController, didSelect album: PhotoAlbum)
@@ -18,7 +17,7 @@ class PhotoAlbumViewController: ViewController {
     
     // MARK: - Internal Properties
     
-    var livePhoto: LPLivePhoto!
+    var livePhoto: PHLivePhoto!
     var delegate: PhotoAlbumDelegate!
     
     // MARK: - Private Properties

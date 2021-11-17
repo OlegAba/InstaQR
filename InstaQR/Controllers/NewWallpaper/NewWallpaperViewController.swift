@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LPLivePhotoGenerator
+import Photos
 
 protocol NewWallpaperDelegate {
     func newWallpaper(_ newWallpaperViewController: NewWallpaperViewController, didSelectSection section: NewWallpaperSection)
@@ -126,6 +126,30 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
             
             let uuid = UUID().uuidString
             let livePhotoGenerator = GenerateLiveWallpaperWithBarcode(fileName: uuid, wallpaperImage: wallpaperImage, barcode: barcode)
+            
+            livePhotoGenerator.create { (livePhoto: PHLivePhoto?) in
+                
+                DispatchQueue.main.async {
+                    
+                    loadingNotificationViewController.dismiss(animated: true) {
+                        
+                        if let livePhoto = livePhoto {
+                            
+                            let previewWallpaperViewController = PreviewWallpaperViewController()
+                            previewWallpaperViewController.modalPresentationStyle = .overFullScreen
+                            previewWallpaperViewController.livePhoto = livePhoto
+                            self.present(previewWallpaperViewController, animated: true)
+                            
+                            System.shared.firstTimeLaunchingFinished()
+                            
+                        } else {
+                            System.shared.appDelegate().newWallpaperNavigationController?.presentError()
+                        }
+                    }
+                }
+            }
+            
+            /*
             livePhotoGenerator.create { (livePhoto: LPLivePhoto?) in
                 
                 DispatchQueue.main.async {
@@ -147,6 +171,7 @@ class NewWallpaperViewController: InsetGroupedTableViewController {
                     }
                 }
             }
+            */
         }
     }
     
